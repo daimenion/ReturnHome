@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : Actor
 {
-    public bool shocked { get; set; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,4 +16,12 @@ public class PlayerController : Actor
     {
         
     }
+    void InputHandle() {
+
+    }
+
+    void Move() {
+
+    }
+
 }
