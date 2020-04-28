@@ -14,20 +14,20 @@ public class EventController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        switch (eventType)
-        {
-        }
-    }
     void OnTriggerStay(Collider other)
     {
-        if (other.tag == "player")
+        if (other.tag == "Player")
         {
             switch (eventType)
             {
                 case eventEnum.Fire:
-                    //add "on Fire!" to player if not already there
+                    if (other.gameObject.GetComponent<FireEffect>() == null) {
+                        other.gameObject.AddComponent<FireEffect>();
+                    }
+                    else
+                    {
+                        other.gameObject.GetComponent<FireEffect>().Reset();
+                    }
                     break;
                 case eventEnum.WetFloor:
                     //Small chance for the player to trip
