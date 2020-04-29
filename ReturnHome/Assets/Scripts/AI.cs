@@ -10,9 +10,9 @@ public class AI : Actor
     public GameObject spawningAttacks;
 
     protected bool CoolDownStarted;
+    protected bool SeemPlayer;
     public float cooldown;
     float maxCoolDown;
-
     protected override void Awake()
     {
         base.Awake();
@@ -20,7 +20,6 @@ public class AI : Actor
         maxCoolDown = cooldown;
         CoolDownStarted = false;
     }
-
     //changes z-rotation to look at player
     protected virtual void FacePlayer()
     {
@@ -44,10 +43,18 @@ public class AI : Actor
             StartCoroutine(spriteFlashCoroutine);
         }
     }
+    //set seem player
+    void SetSeemplayer(bool x)
+    {
+        SeemPlayer = x;
+    }
+    //Set cool down timer
     public void CoolDownTimer()
     {
         CoolDownStarted = true;
     }
+
+    //timer starts and resets
     public IEnumerator Timer()
     {
         if (CoolDownStarted)
