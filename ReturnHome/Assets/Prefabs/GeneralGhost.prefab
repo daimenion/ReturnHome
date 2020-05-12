@@ -23,11 +23,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897303726293182635}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 1.15, y: 2.73, z: 0}
-  m_LocalScale: {x: 0.99999976, y: 1, z: 0.99999976}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.73, z: 1.1500006}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 7300453509635344300}
+  m_Father: {fileID: 6155283616166994990}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5922755855821676919
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3655649652185209219}
   - component: {fileID: 8278456238716481552}
   - component: {fileID: 7841336314356597325}
-  - component: {fileID: 6816865032687537941}
+  - component: {fileID: 7153414004070067757}
   m_Layer: 0
   m_Name: GeneralGhost
   m_TagString: Untagged
@@ -63,7 +63,7 @@ Transform:
   m_LocalPosition: {x: 0, y: -0, z: -4.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3627848448989687365}
+  - {fileID: 6155283616166994990}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
@@ -110,7 +110,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.4, y: 4.8}
+  m_Size: {x: 4.8, y: 4.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -144,7 +144,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!95 &8278456238716481552
 Animator:
@@ -179,14 +179,72 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 897303726293182635}
   spawningAttacks: {fileID: 0}
+  agent: {fileID: 0}
+  SeemPlayer: 0
   cooldown: 0
---- !u!114 &6816865032687537941
-MonoBehaviour:
+  Viewcircle: {fileID: 8830944358203669064}
+  RandomPosition: {x: 0, y: 0, z: 0}
+--- !u!195 &7153414004070067757
+NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5922755855821676919}
+  m_Enabled: 1
+  m_AgentTypeID: -334000983
+  m_Radius: 2.4000006
+  m_Speed: 5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 9.6
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!1 &8830944358203669064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6155283616166994990}
+  - component: {fileID: 7721028940148065678}
+  m_Layer: 0
+  m_Name: ViewCircle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6155283616166994990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830944358203669064}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.99999976, y: 1, z: 0.99999976}
+  m_Children:
+  - {fileID: 3627848448989687365}
+  m_Father: {fileID: 7300453509635344300}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7721028940148065678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830944358203669064}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df9108c1dbe295944a9cfbde74b9401f, type: 3}
@@ -197,8 +255,8 @@ MonoBehaviour:
   viewAngle: 57
   targetMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16
   visibleTargets: []

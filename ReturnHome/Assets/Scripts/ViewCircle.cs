@@ -17,17 +17,18 @@ public class ViewCircle : MonoBehaviour
 
 
         StartCoroutine("FindTargetsWithDelay", .2f);
+        Player = FindObjectOfType<PlayerController>().transform;
 
     }
     public List<Transform> visibleTargets = new List<Transform>();
     void Update()
     {
-
-
-
         if (visibleTargets.Contains(Player))
         {
-
+            GetComponentInParent<AI>().SeemPlayer = true;
+        }
+        else {
+            GetComponentInParent<AI>().SeemPlayer = false;
         }
         // else {
 
@@ -62,10 +63,7 @@ public class ViewCircle : MonoBehaviour
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
                     visibleTargets.Add(target);
-
                 }
-
-
             }
         }
     }

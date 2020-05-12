@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class AI : Actor
 {
 
     protected PlayerController playerController;
     IEnumerator spriteFlashCoroutine;
     public GameObject spawningAttacks;
+    public NavMeshAgent agent;
 
     protected bool CoolDownStarted;
-    protected bool SeemPlayer;
+    public bool SeemPlayer;
     public float cooldown;
     float maxCoolDown;
     protected override void Awake()
@@ -19,8 +20,9 @@ public class AI : Actor
         playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         maxCoolDown = cooldown;
         CoolDownStarted = false;
+        agent = GetComponent<NavMeshAgent>();
     }
-    //changes z-rotation to look at player
+    // look at player
     protected virtual void FacePlayer()
     {
         Vector3 distanceToPlayer = playerController.transform.position - transform.position;
@@ -48,6 +50,7 @@ public class AI : Actor
     {
         SeemPlayer = x;
     }
+
     //Set cool down timer
     public void CoolDownTimer()
     {

@@ -1,24 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GeneralGhost : AI
 {
+
+    public GameObject Viewcircle;
     public enum States
     {
         Idle,
         Wander,
+        SeemPlayer,
+        Attack,
     }
     float dis;
     public States CurrentState { set; get; } = States.Wander;
+
+    Vector3 finalPosition;
+    public Vector3 RandomPosition;
+    public float wanderingRadius;
+    public bool attacking;
     // Start is called before the first frame update
     void Start()
     {
-        speed = 5;
-        StartCoroutine(RunAI());
+        speed = 500;
+        wanderingRadius = 25;
+        agent.updateRotation = false;
+        StartCoroutine(Rotate());
     }
-    void HandleStates()
+    public virtual void HandleStates()
     {
+        CheckFirst();
         StartCoroutine(Timer());
         dis = Vector3.Distance(this.transform.position, playerController.gameObject.transform.position);
         switch (CurrentState)
@@ -30,8 +43,35 @@ public class GeneralGhost : AI
                 MoveForward();
                 CoolDownTimer();
                 break;
+            case States.SeemPlayer:
+                ChasePlayer();
+                CoolDownTimer();
+                break;
+            case States.Attack:
+                CoolDownTimer();
+                Attack();
+                break;
             default:
                 break;
+        }
+        //StopCoroutine(RunAI());
+    }
+    // check to switch states
+    void CheckFirst()
+    {
+        if (SeemPlayer)
+        {
+            CurrentState = States.SeemPlayer;
+            if (dis < 5)
+            {
+                CurrentState = States.Attack;
+            }
+
+        }
+        else
+        {
+            CurrentState = States.Wander;
+            agent.stoppingDistance = 0;
         }
 
 
@@ -39,57 +79,34 @@ public class GeneralGhost : AI
     // Update is called once per frame
     void Update()
     {
-        //MoveForward();
-        if (dis < 1)
-        {
-            CurrentState = States.Idle;
-        }
-        else
-            CurrentState = States.Wander;
+            HandleStates();
     }
-    void MoveForward()
+    public virtual void MoveForward()
     {
-        rBody.velocity = transform.forward * speed * Time.deltaTime;
-        if (CoolDownStarted == false)
+        agent.SetDestination(new Vector3(finalPosition.x, this.transform.position.y , finalPosition.z));
+        Debug.Log(agent.remainingDistance + this.name);
+        if (agent.pathStatus == NavMeshPathStatus.PathComplete&&(agent.remainingDistance > 0 && agent.remainingDistance < 1))
         {
             StartCoroutine(Rotate());
         }
-    }
-
-    IEnumerator RunAI()
-    {
-
-        yield return new WaitForSeconds(1f);
-        HandleStates();
 
     }
-
     IEnumerator Rotate()
     {
-        switch (Random.Range(1, 4)) {
-            case 1 :
-                LastMoveDirection = Vector3.up;
-                break;
+        yield return new WaitForSeconds(1.0f);
+        RandomPosition = this.transform.position + UnityEngine.Random.insideUnitSphere * wanderingRadius;
+        NavMeshHit hit;
+        NavMesh.SamplePosition(RandomPosition, out hit, wanderingRadius, 1);
+        finalPosition = hit.position;
 
-            case 2:
-                LastMoveDirection = Vector3.down;
-                break;
-
-            case 3:
-                LastMoveDirection = Vector3.left;
-                break;
-
-            case 4:
-                LastMoveDirection = Vector3.right;
-                break;
-
-            default:
-
-                break;
-
-        }
-        yield return new WaitForSeconds(0.5f);
-        transform.Rotate(LastMoveDirection, Space.World);
         StopCoroutine(Rotate());
+    }
+    public virtual void Attack() {
+        //something
+        
+    }
+    public virtual void ChasePlayer() {
+        agent.SetDestination(playerController.transform.position);
+        agent.stoppingDistance = 5;
     }
 }
