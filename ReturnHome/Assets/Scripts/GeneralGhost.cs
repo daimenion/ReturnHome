@@ -21,35 +21,39 @@ public class GeneralGhost : AI
     public Vector3 RandomPosition;
     public float wanderingRadius;
     public bool attacking;
+    public GameObject ViewLight;
+    public GameObject sprite;
     // Start is called before the first frame update
     void Start()
     {
-        speed = 500;
+        speed = 250;
         wanderingRadius = 25;
-        agent.updateRotation = false;
-        StartCoroutine(Rotate());
+        //agent.updateRotation = false;
+        RandomMovePoint();
+        ViewLight.GetComponent<Light>().range = Viewcircle.gameObject.GetComponent<ViewCircle>().viewRadius;
+        ViewLight.GetComponent<Light>().spotAngle = Viewcircle.gameObject.GetComponent<ViewCircle>().viewAngle;
     }
     public virtual void HandleStates()
     {
         CheckFirst();
-        StartCoroutine(Timer());
+        //StartCoroutine(Timer());
         dis = Vector3.Distance(this.transform.position, playerController.gameObject.transform.position);
         switch (CurrentState)
         {
             case States.Idle:
-                CoolDownTimer();
+                //CoolDownTimer();
                 break;
             case States.Wander:
                 MoveForward();
-                CoolDownTimer();
+                //CoolDownTimer();
                 break;
             case States.SeemPlayer:
                 ChasePlayer();
-                CoolDownTimer();
+               //CoolDownTimer();
                 break;
             case States.Attack:
-                CoolDownTimer();
                 Attack();
+                //CoolDownTimer();
                 break;
             default:
                 break;
@@ -62,9 +66,15 @@ public class GeneralGhost : AI
         if (SeemPlayer)
         {
             CurrentState = States.SeemPlayer;
-            if (dis < 5)
+            ViewLight.GetComponent<Light>().color = Color.red;
+            agent.isStopped = true;
+            //agent.updateRotation = false;
+            if (dis < 6)
             {
+                //agent.updateRotation = false;
+                agent.isStopped = true;
                 CurrentState = States.Attack;
+               
             }
 
         }
@@ -72,41 +82,54 @@ public class GeneralGhost : AI
         {
             CurrentState = States.Wander;
             agent.stoppingDistance = 0;
+            ViewLight.GetComponent<Light>().color = Color.green;
+            agent.isStopped = false;
+            //agent.updateRotation = true;
         }
-
+        //if player is in the view circle 
+        if (Viewcircle.GetComponent<ViewCircle>().visibleTargets.Contains(Viewcircle.GetComponent<ViewCircle>().Player))
+        {
+            SeemPlayer = true;
+        }
+        else
+        {
+            SeemPlayer = false;
+        }
 
     }
     // Update is called once per frame
     void Update()
     {
-            HandleStates();
+        HandleStates();
+        sprite.transform.position = new Vector3 (transform.position.x,0, transform.position.z);
+        sprite.transform.rotation = new Quaternion(0, 180, 0, 0);
     }
     public virtual void MoveForward()
     {
-        agent.SetDestination(new Vector3(finalPosition.x, this.transform.position.y , finalPosition.z));
-        Debug.Log(agent.remainingDistance + this.name);
         if (agent.pathStatus == NavMeshPathStatus.PathComplete&&(agent.remainingDistance > 0 && agent.remainingDistance < 1))
         {
-            StartCoroutine(Rotate());
+            RandomMovePoint();
         }
+        if (!attacking)
+        {
+            agent.SetDestination(new Vector3(finalPosition.x, this.transform.position.y, finalPosition.z));
+        }
+        Debug.Log(agent.remainingDistance + this.name);
 
     }
-    IEnumerator Rotate()
+    public void RandomMovePoint()
     {
-        yield return new WaitForSeconds(1.0f);
         RandomPosition = this.transform.position + UnityEngine.Random.insideUnitSphere * wanderingRadius;
         NavMeshHit hit;
         NavMesh.SamplePosition(RandomPosition, out hit, wanderingRadius, 1);
         finalPosition = hit.position;
-
-        StopCoroutine(Rotate());
     }
     public virtual void Attack() {
         //something
         
     }
     public virtual void ChasePlayer() {
-        agent.SetDestination(playerController.transform.position);
-        agent.stoppingDistance = 5;
+        agent.SetDestination(playerController.transform.position - new Vector3(5,0,5));
+        agent.isStopped = false;
     }
 }

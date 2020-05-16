@@ -11,8 +11,6 @@ public class FireGhost : GeneralGhost
 
         if (attacking == false)
         {
-            Skill.transform.LookAt(playerController.gameObject.transform);
-            Skill.transform.rotation = new Quaternion(0, Skill.transform.rotation.y, Skill.transform.rotation.z,1);
             Debug.Log("called");
             Skill.SetActive(true);
             Skill.GetComponent<ParticleSystem>().Play();

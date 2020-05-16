@@ -20,6 +20,9 @@ MonoBehaviour:
   Viewcircle: {fileID: 5572927054680913956}
   RandomPosition: {x: 0, y: 0, z: 0}
   wanderingRadius: 0
+  attacking: 0
+  ViewLight: {fileID: 7895838206341919956}
+  sprite: {fileID: 426403961190973262}
   Skill: {fileID: 7499590466179139610}
 --- !u!1 &7499590466179139610
 GameObject:
@@ -4916,11 +4919,38 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3250849181444793242, guid: 6211723a3caa1d44a8956c627f090bc4,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250849181444793242, guid: 6211723a3caa1d44a8956c627f090bc4,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250849181444793242, guid: 6211723a3caa1d44a8956c627f090bc4,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6211723a3caa1d44a8956c627f090bc4, type: 3}
 --- !u!1 &7343974242252153627 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5922755855821676919, guid: 6211723a3caa1d44a8956c627f090bc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 4024760921108988524}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &426403961190973262 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3616450559135464738, guid: 6211723a3caa1d44a8956c627f090bc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 4024760921108988524}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7895838206341919956 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6505860570189985464, guid: 6211723a3caa1d44a8956c627f090bc4,
     type: 3}
   m_PrefabInstance: {fileID: 4024760921108988524}
   m_PrefabAsset: {fileID: 0}

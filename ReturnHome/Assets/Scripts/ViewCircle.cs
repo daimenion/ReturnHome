@@ -14,22 +14,14 @@ public class ViewCircle : MonoBehaviour
 
     void Start()
     {
-
-
-        StartCoroutine("FindTargetsWithDelay", .2f);
         Player = FindObjectOfType<PlayerController>().transform;
+        StartCoroutine("FindTargetsWithDelay", .2f);
 
     }
     public List<Transform> visibleTargets = new List<Transform>();
     void Update()
     {
-        if (visibleTargets.Contains(Player))
-        {
-            GetComponentInParent<AI>().SeemPlayer = true;
-        }
-        else {
-            GetComponentInParent<AI>().SeemPlayer = false;
-        }
+
         // else {
 
 
