@@ -62,7 +62,15 @@ public class GeneralGhost : AI
     }
     // check to switch states
     void CheckFirst()
-    {
+    {        //if player is in the view circle 
+        if (Viewcircle.GetComponent<ViewCircle>().visibleTargets.Contains(Viewcircle.GetComponent<ViewCircle>().Player))
+        {
+            SeemPlayer = true;
+        }
+        else
+        {
+            SeemPlayer = false;
+        }
         if (SeemPlayer)
         {
             CurrentState = States.SeemPlayer;
@@ -86,15 +94,7 @@ public class GeneralGhost : AI
             agent.isStopped = false;
             //agent.updateRotation = true;
         }
-        //if player is in the view circle 
-        if (Viewcircle.GetComponent<ViewCircle>().visibleTargets.Contains(Viewcircle.GetComponent<ViewCircle>().Player))
-        {
-            SeemPlayer = true;
-        }
-        else
-        {
-            SeemPlayer = false;
-        }
+
 
     }
     // Update is called once per frame
@@ -129,7 +129,8 @@ public class GeneralGhost : AI
         
     }
     public virtual void ChasePlayer() {
-        agent.SetDestination(playerController.transform.position - new Vector3(5,0,5));
+        agent.SetDestination(playerController.transform.position);
+        agent.stoppingDistance = 2;
         agent.isStopped = false;
     }
 }
