@@ -36,14 +36,10 @@ public class Actor : MonoBehaviour
 
     void CheckHealth() {
         if (health <= 0) {
-            Die();
+            Death();
         }
     }
 
-    protected virtual void updateAnimations() {
-
-
-    }
     void UpdateLastMoveDirection() {
         if (moveDirection != Vector3.zero)
         {
@@ -58,7 +54,7 @@ public class Actor : MonoBehaviour
         else { Debug.Log(name + " recovered " + amount + " health."); }
     }
 
-    void Die() {
+    void Death() {
 
 
     }
