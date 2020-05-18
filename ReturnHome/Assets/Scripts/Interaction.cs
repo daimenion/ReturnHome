@@ -3,37 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class Interaction : MonoBehaviour
+public class Interaction : MonoBehaviour//This will eventually be an abstract class when it stops being used in an example prefab
 {
-    private Collider range;
     protected bool inRange;
+    GameObject canvas;
     void Start()
     {
-        range = GetComponent<Collider>();
+        canvas = gameObject.transform.Find("Canvas").gameObject;
     }
     private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "Player" && Input.GetButtonDown("Interact"))
+        if (other.tag == "Player" && Input.GetButtonDown("Interact"))
         {
             myInteraction();
         }
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
-        {
-            inRange = true;
-        }
+        canvas.SetActive(true);
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
-        {
-            inRange = false;
-        }
+        canvas.SetActive(false);
     }
-    void myInteraction()
+    protected void myInteraction()
     {
-        print("The object has been interacted with");
+        print("Interact");
     }
 }

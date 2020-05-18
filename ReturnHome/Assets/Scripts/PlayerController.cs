@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerController : Actor
 {
-
+    public bool isMoving;
+    public float oxygen;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,9 @@ public class PlayerController : Actor
     }
 
     void Move() {
-        transform.Translate(new Vector3(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, Input.GetAxis("Vertical") * speed * Time.deltaTime));
+        Vector3 moveVector = new Vector3 (Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, Input.GetAxis("Vertical") * speed * Time.deltaTime);
+        transform.Translate(moveVector);
+        isMoving = (moveVector != Vector3.zero);
     }
 
 }
