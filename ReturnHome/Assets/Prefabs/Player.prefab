@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 188222898465771440}
   - component: {fileID: 188222898465771443}
   - component: {fileID: 188222898465771452}
-  m_Layer: 0
+  - component: {fileID: 3491585615020316068}
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -133,6 +134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
+  isMoving: 0
+  oxygen: 0
 --- !u!136 &188222898465771452
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -147,3 +150,18 @@ CapsuleCollider:
   m_Height: 4.7999997
   m_Direction: 1
   m_Center: {x: 0, y: 2.3999999, z: 0}
+--- !u!114 &3491585615020316068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188222898465771442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1021d542c9aaeca419a23e822eafc67f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: -1
+  effectName: Damp
+  effectDescription: In space, no-one can see you shiver.

@@ -18,11 +18,11 @@ public class InventoryIcons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inv.Items.Length != 0)
+        if (inv.Inventory.Length != 0)
         {
-            if (inv.Items[ItemNumber] != null)
+            if (inv.Inventory[ItemNumber] != null)
             {
-                GetComponent<Image>().sprite = inv.Items[ItemNumber].GetComponent<SpriteRenderer>().sprite;
+                GetComponent<Image>().sprite = inv.Inventory[ItemNumber].GetComponent<SpriteRenderer>().sprite;
             }
             else
             {

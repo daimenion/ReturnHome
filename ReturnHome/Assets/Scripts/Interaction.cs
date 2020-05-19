@@ -7,6 +7,7 @@ public class Interaction : MonoBehaviour//This will eventually be an abstract cl
 {
     protected bool inRange;
     GameObject canvas;
+    public bool Interacted;
     void Start()
     {
         canvas = gameObject.transform.Find("Canvas").gameObject;
@@ -25,9 +26,11 @@ public class Interaction : MonoBehaviour//This will eventually be an abstract cl
     private void OnTriggerExit(Collider other)
     {
         canvas.SetActive(false);
+        Interacted = false;
     }
     protected void myInteraction()
     {
         print("Interact");
+        Interacted = true;
     }
 }

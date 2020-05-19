@@ -6,54 +6,60 @@ using UnityEngine;
 public class InventorySystem : MonoBehaviour
 {
     public GameObject[] Items;
+    public Item[] Inventory;
+    int currentItem;
+    public int itemA;
+    public int itemB;
+
     // Start is called before the first frame update
     void Start()
     {
         //Items = new List<GameObject>(5);
-        Items = new GameObject[5];
+        //Item = new GameObject[5];
+        Inventory = new Item[5];
     }
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.P))
-        {
 
-            AddItem(FindObjectOfType<PickUpAbleObjects>().gameObject);
-        }
-        if (Input.GetKeyUp(KeyCode.O))
+        if (Input.GetButton("UseItem"))
         {
-
-            RemoveItem(0);
+            if (Inventory[currentItem].aresol)
+            {
+                Inventory[currentItem].UseItem();
+            }
+            else//Might want some type of cooldown
+            {
+                if (Input.GetButtonDown("UseItem"))
+                {
+                    Inventory[currentItem].UseItem();
+                }
+            }
         }
-        if (Input.GetKeyUp(KeyCode.U))
-        {
 
-            SwitchItems(Items, 1,3);
-        }
     }
 
-    public void AddItem(GameObject Item) {
+
+    public void AddItem(Item Item) {
         //check if last item of the array is empty
-        if (Items[Items.Length - 1] == null)
+        if (Inventory[Inventory.Length - 1] == null)
         {
-            Items[Items.Length - 1] = Item;
-            for (int i = 0; i < Items.Length - 1; i++)
+            Inventory[Inventory.Length - 1] = Item;
+            for (int i = 0; i < Inventory.Length - 1; i++)
             {
-                if (Items[i] == null)
+                if (Inventory[i] == null)
                 {
-                    Items[i] = Items[Items.Length - 1];
-                    Items[Items.Length - 1] = null;
+                    Inventory[i] = Inventory[Inventory.Length - 1];
+                    Inventory[Inventory.Length - 1] = null;
                 }
             }
         }
         else 
         {
-            for (int i = 0; i < Items.Length - 1; i++)
+            for (int i = 0; i < Inventory.Length - 1; i++)
             {
-                if (Items[i] == null)
+                if (Inventory[i] == null)
                 {
-                    Items[i] = Item;
+                    Inventory[i] = Item;
                     //Items[Items.Length - 1] = null;
                 }
             }
@@ -62,11 +68,11 @@ public class InventorySystem : MonoBehaviour
 
     }
     public void RemoveItem(int Item) {
-        Items[Item] = null;
+        Inventory[Item] = null;
     }
-    public void SwitchItems<T>(IList<T> list,int A, int B) {
-        T Temp = list[A];
-        list[A] = list[B];
-        list[B] = Temp;
+    public void SwitchItems<T>(IList<T> list) {
+        T Temp = list[itemA];
+        list[itemA] = list[itemB];
+        list[itemB] = Temp;
     }
 }

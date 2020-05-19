@@ -101,8 +101,9 @@ public class GeneralGhost : AI
     void Update()
     {
         HandleStates();
+        // stop sprite from moving or rotating 
         sprite.transform.position = new Vector3 (transform.position.x,0, transform.position.z);
-        sprite.transform.rotation = new Quaternion(0, 180, 0, 0);
+        sprite.transform.rotation = new Quaternion(0, sprite.transform.rotation.y, 0, 0);
     }
     public virtual void MoveForward()
     {
@@ -114,7 +115,7 @@ public class GeneralGhost : AI
         {
             agent.SetDestination(new Vector3(finalPosition.x, this.transform.position.y, finalPosition.z));
         }
-        Debug.Log(agent.remainingDistance + this.name);
+        //Debug.Log(agent.remainingDistance + this.name);
 
     }
     public void RandomMovePoint()
