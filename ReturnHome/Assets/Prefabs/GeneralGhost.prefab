@@ -287,6 +287,7 @@ MonoBehaviour:
   attacking: 0
   ViewLight: {fileID: 6505860570189985464}
   sprite: {fileID: 3616450559135464738}
+  StoppingDistance: 0
 --- !u!195 &7153414004070067757
 NavMeshAgent:
   m_ObjectHideFlags: 0

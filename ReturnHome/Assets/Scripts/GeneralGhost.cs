@@ -23,6 +23,7 @@ public class GeneralGhost : AI
     public bool attacking;
     public GameObject ViewLight;
     public GameObject sprite;
+    public int StoppingDistance;
     // Start is called before the first frame update
     void Start()
     {
@@ -77,7 +78,7 @@ public class GeneralGhost : AI
             ViewLight.GetComponent<Light>().color = Color.red;
             agent.isStopped = true;
             //agent.updateRotation = false;
-            if (dis < 6)
+            if (dis < StoppingDistance)
             {
                 //agent.updateRotation = false;
                 agent.isStopped = true;
@@ -130,8 +131,9 @@ public class GeneralGhost : AI
         
     }
     public virtual void ChasePlayer() {
+        StoppingDistance = 5;
         agent.SetDestination(playerController.transform.position);
-        agent.stoppingDistance = 2;
+        agent.stoppingDistance = StoppingDistance;
         agent.isStopped = false;
     }
 }

@@ -338,8 +338,8 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 4
-      minScalar: 4
+      scalar: 1
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -550,8 +550,8 @@ ParticleSystem:
     startRotation:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 4.712389
-      minScalar: 4.712389
+      scalar: 0
+      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -9619,26 +9619,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7841336314356597325, guid: 6211723a3caa1d44a8956c627f090bc4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816865032687537941, guid: 6211723a3caa1d44a8956c627f090bc4,
-        type: 3}
-      propertyPath: viewAngle
-      value: 53
-      objectReference: {fileID: 0}
-    - target: {fileID: 897303726293182635, guid: 6211723a3caa1d44a8956c627f090bc4,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8830944358203669064, guid: 6211723a3caa1d44a8956c627f090bc4,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4693936461890892061, guid: 6211723a3caa1d44a8956c627f090bc4,
         type: 3}
       propertyPath: m_Color.a
@@ -9659,6 +9639,21 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7841336314356597325, guid: 6211723a3caa1d44a8956c627f090bc4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 897303726293182635, guid: 6211723a3caa1d44a8956c627f090bc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8830944358203669064, guid: 6211723a3caa1d44a8956c627f090bc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3250849181444793242, guid: 6211723a3caa1d44a8956c627f090bc4,
         type: 3}
       propertyPath: m_Color.r
@@ -9673,6 +9668,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816865032687537941, guid: 6211723a3caa1d44a8956c627f090bc4,
+        type: 3}
+      propertyPath: viewAngle
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 2196143436386457812, guid: 6211723a3caa1d44a8956c627f090bc4,
         type: 3}

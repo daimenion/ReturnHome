@@ -10,7 +10,6 @@ public class FireGhost : GeneralGhost
     {
         if (attacking == false)
         {
-            Debug.Log("called");
             Skill.SetActive(true);
             Skill.GetComponent<ParticleSystem>().Play();
             base.Attack();
