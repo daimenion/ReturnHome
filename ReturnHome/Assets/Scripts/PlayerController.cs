@@ -5,8 +5,12 @@ using UnityEngine;
 public class PlayerController : Actor
 {
     public bool isMoving;
+    //oxygen
     public float oxygen;
-
+    public bool LowOxygen;
+    //Ill
+    bool Ill;
+    float Illdmg;
     public enum PlayerStates
     {
         Idle,
@@ -15,11 +19,15 @@ public class PlayerController : Actor
     PlayerStates state;
 
     // Start is called before the first frame update
-
+    protected override void Awake()
+    {
+        MaxHealth = 100;
+        base.Awake();
+    }
     void Start()
     {
         state = PlayerStates.Move;
-        speed = 5;
+        speed = 10;
     }
 
     // Update is called once per frame
@@ -27,6 +35,8 @@ public class PlayerController : Actor
     {
         //Move();
         HandleStates();
+
+        CheckOxygen();
     }
     void HandleStates()
     {
@@ -53,5 +63,13 @@ public class PlayerController : Actor
         transform.Translate(moveVector);
         isMoving = (moveVector != Vector3.zero);
     }
-
+    //check Oxygen levels and Low Oxygen effects
+    void CheckOxygen() {
+        if (oxygen <= 0) {
+            Death();
+        }
+        else if (oxygen < 30) {
+            LowOxygen = true;
+        }
+    }
 }

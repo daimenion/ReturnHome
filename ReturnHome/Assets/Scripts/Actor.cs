@@ -54,7 +54,7 @@ public class Actor : MonoBehaviour
         else { Debug.Log(name + " recovered " + amount + " health."); }
     }
 
-    void Death() {
+    public void Death() {
 
 
     }

@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
   isMoving: 0
-  oxygen: 0
+  oxygen: 100
 --- !u!136 &188222898465771452
 CapsuleCollider:
   m_ObjectHideFlags: 0

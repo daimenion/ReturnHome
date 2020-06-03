@@ -10,9 +10,10 @@ public class FireGhost : GeneralGhost
     {
         if (attacking == false)
         {
+
+            base.Attack();
             Skill.SetActive(true);
             Skill.GetComponent<ParticleSystem>().Play();
-            base.Attack();
             StartCoroutine(reset());
             attacking = true;
         }

@@ -280,7 +280,7 @@ MonoBehaviour:
   spawningAttacks: {fileID: 0}
   agent: {fileID: 7153414004070067757}
   SeemPlayer: 0
-  cooldown: 0
+  cooldown: 1
   Viewcircle: {fileID: 8830944358203669064}
   RandomPosition: {x: 0, y: 0, z: 0}
   wanderingRadius: 0

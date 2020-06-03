@@ -36,6 +36,7 @@ public abstract class Item : MonoBehaviour
     public string description;
     public string type; //part of the user-facing description
     Interaction interact;
+    public bool Equipped;
     public void UseItem()
     {
         OnUse();

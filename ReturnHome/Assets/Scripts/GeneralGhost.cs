@@ -24,6 +24,7 @@ public class GeneralGhost : AI
     public GameObject ViewLight;
     public GameObject sprite;
     public int StoppingDistance;
+    bool Chasing;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +38,7 @@ public class GeneralGhost : AI
     public virtual void HandleStates()
     {
         CheckFirst();
-        //StartCoroutine(Timer());
+        StartCoroutine(Timer());
         dis = Vector3.Distance(this.transform.position, playerController.gameObject.transform.position);
         switch (CurrentState)
         {
@@ -53,8 +54,13 @@ public class GeneralGhost : AI
                //CoolDownTimer();
                 break;
             case States.Attack:
-                Attack();
-                //CoolDownTimer();
+                BasicAttack();
+
+                if (!CoolDownStarted)
+                {
+                    Attack();
+                }
+                CoolDownTimer();
                 break;
             default:
                 break;
@@ -67,6 +73,7 @@ public class GeneralGhost : AI
         if (Viewcircle.GetComponent<ViewCircle>().visibleTargets.Contains(Viewcircle.GetComponent<ViewCircle>().Player))
         {
             SeemPlayer = true;
+            Chasing = true;
         }
         else
         {
@@ -83,11 +90,13 @@ public class GeneralGhost : AI
                 //agent.updateRotation = false;
                 agent.isStopped = true;
                 CurrentState = States.Attack;
-               
             }
-
         }
-        else
+        else if (!SeemPlayer && Chasing) {
+            CurrentState = States.SeemPlayer;
+            StartCoroutine(PlayerOutOfSight());
+        }
+        else if (!Chasing)
         {
             CurrentState = States.Wander;
             agent.stoppingDistance = 0;
@@ -128,6 +137,9 @@ public class GeneralGhost : AI
     }
     public virtual void Attack() {
         //something
+
+    }
+    protected virtual void BasicAttack() { 
         
     }
     public virtual void ChasePlayer() {
@@ -135,5 +147,10 @@ public class GeneralGhost : AI
         agent.SetDestination(playerController.transform.position);
         agent.stoppingDistance = StoppingDistance;
         agent.isStopped = false;
+    }
+    IEnumerator PlayerOutOfSight() {
+        yield return new WaitForSeconds(4.0f);
+        Chasing = false;
+        StopCoroutine(PlayerOutOfSight());
     }
 }
