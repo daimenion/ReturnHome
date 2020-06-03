@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897303726293182635}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1500009, y: 2.73, z: 0}
+  m_LocalPosition: {x: -0.37, y: 0.96, z: 0.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6155283616166994990}
@@ -55,13 +55,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3616450559135464738}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: -0.38268343, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7300453509635344300}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!212 &3250849181444793242
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -100,8 +100,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7147553b1e72eec449c5ace4f9f4d13a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.29803923}
+  m_Sprite: {fileID: 21300000, guid: 7ae24e9d38bceb64c83b728a3447f2b5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7490196}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -157,7 +157,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5922755855821676919}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: -4.69}
+  m_LocalPosition: {x: 0, y: 0.692, z: -4.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6142755932947472398}
@@ -225,10 +225,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.155
-  m_Height: 4.800002
+  m_Radius: 0.40474868
+  m_Height: 1.8858099
   m_Direction: 1
-  m_Center: {x: -0.11670053, y: 2.4, z: 1.1794214e-16}
+  m_Center: {x: 0, y: 0.71608114, z: 0.023579359}
 --- !u!54 &3655649652185209219
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -352,7 +352,7 @@ Light:
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 0, g: 1, b: 0, a: 1}
-  m_Intensity: 200
+  m_Intensity: 100
   m_Range: 20
   m_SpotAngle: 57
   m_InnerSpotAngle: 2
@@ -446,8 +446,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  viewRadius: 20
-  viewAngle: 57
+  viewRadius: 10
+  viewAngle: 71
   targetMask:
     serializedVersion: 2
     m_Bits: 1024

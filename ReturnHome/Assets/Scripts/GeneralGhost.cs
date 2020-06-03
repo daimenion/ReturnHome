@@ -23,6 +23,7 @@ public class GeneralGhost : AI
     public bool attacking;
     public GameObject ViewLight;
     public GameObject sprite;
+    Quaternion iniRot;
     public int StoppingDistance;
     bool Chasing;
     // Start is called before the first frame update
@@ -30,6 +31,7 @@ public class GeneralGhost : AI
     {
         speed = 250;
         wanderingRadius = 25;
+        iniRot = sprite.transform.rotation;
         //agent.updateRotation = false;
         RandomMovePoint();
         ViewLight.GetComponent<Light>().range = Viewcircle.gameObject.GetComponent<ViewCircle>().viewRadius;
@@ -112,8 +114,8 @@ public class GeneralGhost : AI
     {
         HandleStates();
         // stop sprite from moving or rotating 
-        sprite.transform.position = new Vector3 (transform.position.x,0, transform.position.z);
-        sprite.transform.rotation = new Quaternion(0, sprite.transform.rotation.y, 0, 0);
+        //sprite.transform.position = new Vector3 (transform.position.x,0, transform.position.z);
+        sprite.transform.rotation = iniRot;
     }
     public virtual void MoveForward()
     {
@@ -150,7 +152,10 @@ public class GeneralGhost : AI
     }
     IEnumerator PlayerOutOfSight() {
         yield return new WaitForSeconds(4.0f);
-        Chasing = false;
+        if (!Viewcircle.GetComponent<ViewCircle>().visibleTargets.Contains(Viewcircle.GetComponent<ViewCircle>().Player))
+        {
+            Chasing = false;
+        }
         StopCoroutine(PlayerOutOfSight());
     }
 }

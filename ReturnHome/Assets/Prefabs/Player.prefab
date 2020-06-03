@@ -29,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 188222898465771442}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0.35, z: 3.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!212 &188222898465771454
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -74,8 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3258305651147157043, guid: dfc7090c56f3626418196653e1eb610d,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ae24e9d38bceb64c83b728a3447f2b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112,7 +111,7 @@ Animator:
   m_GameObject: {fileID: 188222898465771442}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b9901ed754b2c1a469259156df03f85c, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -136,6 +135,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 0}
   isMoving: 0
   oxygen: 100
+  LowOxygen: 0
 --- !u!136 &188222898465771452
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -146,10 +146,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.1550002
-  m_Height: 4.7999997
+  m_Radius: 0.33339712
+  m_Height: 2.0000005
   m_Direction: 1
-  m_Center: {x: 0, y: 2.3999999, z: 0}
+  m_Center: {x: 0.010335028, y: -0.142488, z: -3.5847308e-17}
 --- !u!114 &3491585615020316068
 MonoBehaviour:
   m_ObjectHideFlags: 0
