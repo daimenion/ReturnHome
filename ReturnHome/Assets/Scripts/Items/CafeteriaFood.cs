@@ -23,7 +23,7 @@ public class CafeteriaFood : Item
         GetComponent<PlayerController>().DecreaseHealth(-10f);
         if (Random.Range(0, 5) == 0)
         {
-            //gameObject.AddComponent<IllEffect>(); //add the "ill" effect to the player
+            gameObject.AddComponent<IllEffect>(); //add the "ill" effect to the player
         }
     }
 

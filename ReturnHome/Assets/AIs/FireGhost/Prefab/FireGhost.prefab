@@ -4784,13 +4784,14 @@ MonoBehaviour:
   spawningAttacks: {fileID: 0}
   agent: {fileID: 0}
   SeemPlayer: 0
-  cooldown: 0
+  cooldown: 15
   Viewcircle: {fileID: 5572927054680913956}
   RandomPosition: {x: 0, y: 0, z: 0}
   wanderingRadius: 0
   attacking: 0
   ViewLight: {fileID: 7895838206341919956}
   sprite: {fileID: 426403961190973262}
+  StoppingDistance: 0
   Skill: {fileID: 7499590466179139610}
 --- !u!1 &7499590466179139610
 GameObject:

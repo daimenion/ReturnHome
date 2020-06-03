@@ -9,9 +9,10 @@ public class AI : Actor
     IEnumerator spriteFlashCoroutine;
     public GameObject spawningAttacks;
     public NavMeshAgent agent;
-
-    protected bool CoolDownStarted;
     public bool SeemPlayer;
+    //skill cooldown
+    protected bool CoolDownStarted;
+    int CoolDownOnce;
     public float cooldown;
     float maxCoolDown;
     protected override void Awake()
@@ -55,23 +56,30 @@ public class AI : Actor
     public void CoolDownTimer()
     {
         CoolDownStarted = true;
+         CoolDownOnce++;
     }
 
     //timer starts and resets
     public IEnumerator Timer()
     {
-        if (CoolDownStarted)
+        if (CoolDownOnce == 1)
         {
-            yield return new WaitForSeconds(1);
-            cooldown--;
+            if (CoolDownStarted)
+            {
+                yield return new WaitForSeconds(1);
+                cooldown--;
+                CoolDownOnce = 0;
+            }
         }
         if (cooldown <= 0)
         {
-           cooldown = maxCoolDown;
-           CoolDownStarted = false;
-           StopCoroutine(Timer());
+            cooldown = maxCoolDown;
+  
+            CoolDownStarted = false;
+            StopCoroutine(Timer());
+            CoolDownOnce = 0;
         }
-        
+        StopCoroutine(Timer());
     }
 
 }

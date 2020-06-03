@@ -70,9 +70,9 @@ public class InventorySystem : MonoBehaviour
     public void RemoveItem(int Item) {
         Inventory[Item] = null;
     }
-    public void SwitchItems<T>(IList<T> list) {
-        T Temp = list[itemA];
-        list[itemA] = list[itemB];
-        list[itemB] = Temp;
-    }
+    //public void SwitchItems<T>(IList<T> list) {
+    //    T Temp = list[itemA];
+    //    list[itemA] = list[itemB];
+    //    list[itemB] = Temp;
+    //}
 }
