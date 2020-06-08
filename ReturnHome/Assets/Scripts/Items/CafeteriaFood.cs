@@ -17,14 +17,15 @@ public class CafeteriaFood : Item
         description = "Its probably better than starving... Probably.";
         type = "Consumable";
     }
-    new void OnUse()
+    public override void OnUse()
     {
-        base.OnUse();
-        GetComponent<PlayerController>().DecreaseHealth(-10f);
-        if (Random.Range(0, 5) == 0)
+        
+        FindObjectOfType<PlayerController>().DecreaseHealth(-10f);
+        if (Random.Range(0, 0) == 0)
         {
-            gameObject.AddComponent<IllEffect>(); //add the "ill" effect to the player
+            FindObjectOfType<PlayerController>().gameObject.AddComponent<IllEffect>(); //add the "ill" effect to the player
         }
+        base.OnUse();
     }
 
 }
