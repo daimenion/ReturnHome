@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+[RequireComponent(typeof(DialogManager))]
 public class NPCDialog : MonoBehaviour
 {
     public Dialog[] dialogue;
@@ -23,7 +25,7 @@ public class NPCDialog : MonoBehaviour
     {
         if (dialogManager != null)
         {
-            if (GetComponent<Interaction>().Interacted)
+            if (Input.GetButtonDown("Interact"))
             {
                if (start )
                {
@@ -52,14 +54,7 @@ public class NPCDialog : MonoBehaviour
                     StartCoroutine(dialogManager.DisplayNextSentence());
                }
                 dialogManager.SetStarted(false);
-
-                if (dialogue[dialogManager.returnPressedCount()].NoSkip)
-                {
-                //     dialogManager.SetStarted(false);
-                //     //if(dialogManager.returnstarted() )
-                //     Debug.Log("called");
-                }
-                // start = false;
+                //GetComponent<Interaction>().Interacted = false;
             }
             if (dialogManager.returnPressedCount() > dialogManager.returnlength())
             {
@@ -86,7 +81,7 @@ public class NPCDialog : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            dialogManager = FindObjectOfType<DialogManager>();
+            dialogManager = GetComponent<DialogManager>();
 
             start = true;
         }
@@ -106,7 +101,7 @@ public class NPCDialog : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        dialogManager = FindObjectOfType<DialogManager>();
+        dialogManager = GetComponent<DialogManager>();
         if (GameObject.FindObjectOfType<PlayerController>() != null)
             //GameObject.FindObjectOfType<PlayerController>().setStop(true);
 
@@ -117,7 +112,7 @@ public class NPCDialog : MonoBehaviour
 
     public void NewTriggerDialogue()
     {
-        dialogManager = FindObjectOfType<DialogManager>();
+        dialogManager = GetComponent<DialogManager>();
         if(GameObject.FindObjectOfType<PlayerController>() !=null)
         //GameObject.FindObjectOfType<PlayerController>().setStop(true);
         start = true;

@@ -132,7 +132,7 @@ public class DialogManager : MonoBehaviour
         end = new bool[dialogue.Length];
         delay = new bool[dialogue.Length];
         delayTime = new float[dialogue.Length];
-        names = new string[dialogue.Length];
+        //names = new string[dialogue.Length];
         sentences = new string[dialogue.Length];
         ids = new int[dialogue.Length];
         choices = new string[0];
@@ -153,7 +153,7 @@ public class DialogManager : MonoBehaviour
         length = dialogue.Length;
         for (int i = 0; i < dialogue.Length; i++)
         {
-            names[i] = dialogue[i].name;
+            //names[i] = dialogue[i].name;
             sentences[i] = dialogue[i].sentences;
             ids[i] = dialogue[i].id;
             end[i] = dialogue[i].End;
@@ -186,7 +186,7 @@ public class DialogManager : MonoBehaviour
                 }
                 else
                 {
-                    nameText.text = names[ids[count]];
+                    //nameText.text = names[ids[count]];
                     dialogueText.text = sentences[ids[count]];
                     StopAllCoroutines();
                     StartCoroutine(TypeSentence(sentences[ids[count]]));
@@ -212,7 +212,7 @@ public class DialogManager : MonoBehaviour
 
                 else
                 {
-                    nameText.text = names[ids[count]];
+                    //nameText.text = names[ids[count]];
                     dialogueText.text = sentences[ids[count]];
                     StopAllCoroutines();
                     StartCoroutine(TypeSentence(sentences[ids[count]]));
@@ -264,7 +264,7 @@ public class DialogManager : MonoBehaviour
                 if (choices[0] != null)
                 {
                     firstChoiceButton.SetActive(true);
-                    firstChoiceButton.GetComponent<Selectable>().Select();
+                    firstChoiceButton.GetComponent<Button>().Select();
                     firstChoice.text = choices[0];
                     firstChoiceButton.GetComponent<Button>().onClick.AddListener(delegate { setPressedCount(choicesid[0], 1); });
                 }
@@ -329,7 +329,9 @@ public class DialogManager : MonoBehaviour
 
     public void setPressedCount(int x, int y)
     {
+
         count = x;
+        Debug.Log("called" + count);
         chosedid = y;
         GameObject myEventSystem = GameObject.Find("EventSystem");
         myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
