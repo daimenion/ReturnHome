@@ -1080,25 +1080,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1866873722208786681}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 686cea49fc2d0f34fa0bc5430c333e92, type: 3}
+  m_Script: {fileID: 11500000, guid: 536e2b3ce84518047b416ba57fefce40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
   - id: 0
-    sentences: Hi There
-    choices:
-    - 'A '
-    - Or B
-    choiceid: 0100000001000000
+    sentences: 
+    choices: []
+    choiceid: 
     End: 0
     Delay: 0
     DelayTime: 0
     NoSkip: 0
-  - id: 1
-    sentences: Finally you made up your mind
+  - id: 0
+    sentences: 
     choices: []
     choiceid: 
-    End: 1
+    End: 0
     Delay: 0
     DelayTime: 0
     NoSkip: 0
