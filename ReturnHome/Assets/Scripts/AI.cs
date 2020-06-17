@@ -56,7 +56,7 @@ public class AI : Actor
     public void CoolDownTimer()
     {
         CoolDownStarted = true;
-         CoolDownOnce++;
+        CoolDownOnce++;
     }
 
     //timer starts and resets
