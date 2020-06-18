@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class Honey : Item
 {
-    // Start is called before the first frame update
-
-    // Update is called once per frame
     void Update()
     {
-        
+        interaction();
     }
+
     public Honey()
     {
         aresol = false;
@@ -19,4 +17,15 @@ public class Honey : Item
         description = "It tastes sweet.";
         type = "Consumable";
     }
+
+    public override void OnUse()
+    {
+        FindObjectOfType<PlayerController>().DecreaseHealth(-20f);
+        if (FindObjectOfType<PlayerController>().gameObject.GetComponent<IllEffect>())
+        { 
+            Destroy(FindObjectOfType<PlayerController>().gameObject.GetComponent<IllEffect>());//delete the add the "ill" effect to the player(?)
+        }
+        base.OnUse();
+    }
+
 }
