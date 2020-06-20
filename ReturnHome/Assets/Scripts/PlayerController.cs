@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : Actor
 {
@@ -11,6 +12,8 @@ public class PlayerController : Actor
     //Ill
     bool Ill;
     float Illdmg;
+    public Slider HPBar;
+    public Camera cam;
     public enum PlayerStates
     {
         Idle,
@@ -27,7 +30,9 @@ public class PlayerController : Actor
     void Start()
     {
         state = PlayerStates.Move;
-        speed = 10;
+        speed = 5;
+        HPBar.maxValue = MaxHealth;
+        HPBar.value = health;
     }
 
     // Update is called once per frame
@@ -37,6 +42,7 @@ public class PlayerController : Actor
         HandleStates();
 
         CheckOxygen();
+        HPBar.value = health;
     }
     void HandleStates()
     {
@@ -71,5 +77,44 @@ public class PlayerController : Actor
         else if (oxygen < 30) {
             LowOxygen = true;
         }
+    }
+    void OnTriggerEnter( Collider other) {
+
+        if (other.CompareTag("EnemyAttacks")) {
+            StartCoroutine(TakeDamage(0.0f,10.0f));
+        }
+        if (other.CompareTag("Room"))
+        {
+            cam.gameObject.SetActive(false);
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("EnemyAttacks"))
+        {
+            StartCoroutine(TakeDamage(1.0f, 0.2f));
+        }
+        if (other.CompareTag("Room"))
+        {
+            other.GetComponentInChildren<Camera>().enabled = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("EnemyAttacks"))
+        {
+            StopCoroutine("TakeDamage");
+        }
+        if (other.CompareTag("Room"))
+        {
+            cam.gameObject.SetActive(true);
+            other.GetComponentInChildren<Camera>().enabled = false;
+        }
+    }
+
+    IEnumerator TakeDamage( float time, float Damage) {
+        yield return new WaitForSeconds(time);
+        DecreaseHealth(Damage);
+        StopCoroutine("TakeDamage");
     }
 }

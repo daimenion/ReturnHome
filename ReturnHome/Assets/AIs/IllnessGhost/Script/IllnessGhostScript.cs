@@ -23,7 +23,7 @@ public class IllnessGhostScript : GeneralGhost
     IEnumerator AttackOvertime()
     {
         yield return new WaitForSeconds(0.5f);
-        playerController.DecreaseHealth(0.5f);
+        playerController.DecreaseHealth(2f);
 
        // Debug.log(PlayerController.Health);
 

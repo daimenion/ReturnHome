@@ -42,10 +42,11 @@ public abstract class Item : MonoBehaviour
         OnUse();
         if (usesLeft == 0)
         {
+            RemoveItem();
             //Remove item from inventory. In some cases, replace the item with a dead version of itself (Empty Fire Extinguisher can be used as a blunt weapon)
         }
     }
-    protected void OnUse()
+    public virtual void OnUse()
     {
         if (aresol)
         {
@@ -64,6 +65,7 @@ public abstract class Item : MonoBehaviour
         interact = GetComponent<Interaction>();
         if (interact.Interacted) {
             FindObjectOfType<InventorySystem>().AddItem(this);
+            this.gameObject.transform.position += new Vector3(100, 500, 300);
             interact.Interacted = false;
         }
     }

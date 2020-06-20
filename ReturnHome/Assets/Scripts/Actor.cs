@@ -51,8 +51,10 @@ public class Actor : MonoBehaviour
         health = Mathf.Clamp(health - amount, 0, MaxHealth);
 
         if (amount >= 0) { Debug.Log(name + " took " + amount + " damage."); }
-        else { Debug.Log(name + " recovered " + amount + " health."); }
+        else { Debug.Log(name + " recovered " + -amount + " health."); }
     }
+
+  
 
     public void Death() {
 

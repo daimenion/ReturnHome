@@ -49,11 +49,19 @@ public class GeneralGhost : AI
                 break;
             case States.Wander:
                 MoveForward();
+                if (CoolDownStarted)
+                {
+                    CoolDownTimer();
+                }
                 //CoolDownTimer();
                 break;
             case States.SeemPlayer:
                 ChasePlayer();
-               //CoolDownTimer();
+                //CoolDownTimer();
+                if (CoolDownStarted)
+                {
+                    CoolDownTimer();
+                }
                 break;
             case States.Attack:
                 BasicAttack();
@@ -114,7 +122,7 @@ public class GeneralGhost : AI
     {
         HandleStates();
         // stop sprite from moving or rotating 
-        //sprite.transform.position = new Vector3 (transform.position.x,0, transform.position.z);
+        sprite.transform.position = new Vector3 (transform.position.x,1.5f, transform.position.z);
         sprite.transform.rotation = iniRot;
     }
     public virtual void MoveForward()

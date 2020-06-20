@@ -16,6 +16,7 @@ public class FireGhost : GeneralGhost
             Skill.GetComponent<ParticleSystem>().Play();
             StartCoroutine(reset());
             attacking = true;
+            
         }
         
     }
