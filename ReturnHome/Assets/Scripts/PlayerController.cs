@@ -117,4 +117,8 @@ public class PlayerController : Actor
         DecreaseHealth(Damage);
         StopCoroutine("TakeDamage");
     }
+    public void Electrocute(float Damage)
+    {
+        StartCoroutine(TakeDamage(0.0f, Damage));
+    }
 }

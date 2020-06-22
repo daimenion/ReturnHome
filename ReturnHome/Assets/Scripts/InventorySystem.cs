@@ -24,7 +24,11 @@ public class InventorySystem : MonoBehaviour
         currentItem = FindObjectOfType<InventorySelector>().ItemNumber;
         if (Input.GetButton("UseItem"))
         {
-            if (Inventory[currentItem].aresol)
+            if (Inventory[currentItem] == null)
+            {
+                //do nothing
+            }
+            else if (Inventory[currentItem].aresol)
             {
                 Inventory[currentItem].UseItem();
             }
