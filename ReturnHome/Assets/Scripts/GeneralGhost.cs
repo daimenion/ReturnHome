@@ -118,8 +118,9 @@ public class GeneralGhost : AI
 
     }
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         HandleStates();
         // stop sprite from moving or rotating 
         sprite.transform.position = new Vector3 (transform.position.x,1.5f, transform.position.z);

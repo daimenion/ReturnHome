@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Dynamic;
 using UnityEngine;
@@ -6,6 +7,13 @@ using UnityEngine;
 public class FireGhost : GeneralGhost
 {
     public GameObject Skill;
+    protected override void Awake()
+    {
+        MaxHealth = 75;
+        base.Awake();
+        
+
+    }
     public override void Attack()
     {
         if (attacking == false)

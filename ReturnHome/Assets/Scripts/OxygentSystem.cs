@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpAbleObjects : MonoBehaviour
+public class OxygentSystem : MonoBehaviour
 {
+    public int OxygenLevel;
+    
     // Start is called before the first frame update
     void Start()
     {

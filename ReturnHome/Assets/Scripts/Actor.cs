@@ -31,6 +31,7 @@ public class Actor : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
+        CheckHealth();
 
     }
 
@@ -56,7 +57,7 @@ public class Actor : MonoBehaviour
 
   
 
-    public void Death() {
+    public virtual void Death() {
 
 
     }
