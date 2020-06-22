@@ -8,25 +8,22 @@ public class FollowThePath : MonoBehaviour
     public bool isActive = false;
     public MeshCollider myCollider;
     public LineRenderer myLine;
+    GameObject goal;
 
     // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        goal = transform.Find("Goal").gameObject;
     }
     void OnMouseOver()
     {
-        if (Input.GetMouseButtonUp(0))
-        {
-            isActive = false;
-        }
     }
     void OnMouseExit()
     {
         if (isActive)
         {
-            StartCoroutine(SelfDestruct());
-            isActive = false;
+                StartCoroutine(SelfDestruct());
+                isActive = false;
         }
     }
     private IEnumerator SelfDestruct()
@@ -34,6 +31,15 @@ public class FollowThePath : MonoBehaviour
         print("OH SHIT");
         myLine.startColor = Color.red;
         myLine.endColor = Color.red;
+        yield return new WaitForSeconds(1.5f);
+        
+        Destroy(transform.parent.gameObject);
+    }
+    public IEnumerator WinGame()
+    {
+
+        myLine.startColor = Color.green;
+        myLine.endColor = Color.green;
         yield return new WaitForSeconds(1.5f);
         Destroy(transform.parent.gameObject);
     }

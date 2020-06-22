@@ -5,6 +5,8 @@ using UnityEngine;
 public class FollowSelector : MonoBehaviour
 {
     Vector3 initialPosition;
+    public FollowThePath followScript;
+    bool isActive = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -12,18 +14,29 @@ public class FollowSelector : MonoBehaviour
     }
     void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)&&!isActive)
         {
             gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
-            transform.parent.GetComponent<FollowThePath>().isActive = true;
+            followScript.isActive = true;
+            isActive = true;
         }
     }
-    /*void Update()
+    void Update()
     {
-        Vector3 pz = Camera.main.ScreenToViewportPoint(Input.mousePosition) + initialPosition;
-        pz.z = -0.2f;
-        pz.x = pz.x *Camera.main.pixelWidth/Camera.main.aspect;
-        pz.y = pz.y *Camera.main.pixelHeight/Camera.main.aspect;
-        gameObject.transform.localPosition = pz;
-    }*/
+        if (isActive && followScript.isActive)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Vector3 hitPoint = ray.GetPoint(0);
+            transform.position = hitPoint;
+            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, -0.244f);
+        }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Goal")
+        {
+            print("Nice");
+            followScript.StartCoroutine(followScript.WinGame());
+        }
+    }
 }

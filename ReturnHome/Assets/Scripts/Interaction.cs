@@ -6,11 +6,12 @@ using UnityEngine;
 public class Interaction : MonoBehaviour//This will eventually be an abstract class when it stops being used in an example prefab
 {
     protected bool inRange;
-    GameObject canvas;
+    private GameObject canvas;
     public bool Interacted;
-    void Start()
+    virtual protected void Start()
     {
         canvas = gameObject.transform.Find("Canvas").gameObject;
+        //if (canvas == null) print("no canvas");
     }
     private void OnTriggerStay(Collider other)
     {
@@ -26,9 +27,9 @@ public class Interaction : MonoBehaviour//This will eventually be an abstract cl
     private void OnTriggerExit(Collider other)
     {
         canvas.SetActive(false);
-        Interacted = false;
+        //Interacted = false;
     }
-    protected void myInteraction()
+     virtual protected void myInteraction()
     {
         print("Interact");
         Interacted = true;
