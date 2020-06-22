@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowThePath : MonoBehaviour
+public class FollowThePath : MinigameScript
 {
     // Start is called before the first frame update
     public bool isActive = false;
     public MeshCollider myCollider;
     public LineRenderer myLine;
-    GameObject goal;
 
     // Update is called once per frame
     void Start()
     {
-        goal = transform.Find("Goal").gameObject;
     }
     void OnMouseOver()
     {
@@ -26,18 +24,18 @@ public class FollowThePath : MonoBehaviour
                 isActive = false;
         }
     }
-    private IEnumerator SelfDestruct()
+    protected IEnumerator SelfDestruct()
     {
-        print("OH SHIT");
         myLine.startColor = Color.red;
         myLine.endColor = Color.red;
         yield return new WaitForSeconds(1.5f);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().Electrocute(100f);//Temp Value for Mike Test, to kill player
         
         Destroy(transform.parent.gameObject);
     }
     public IEnumerator WinGame()
     {
-
+        isBroken = false;
         myLine.startColor = Color.green;
         myLine.endColor = Color.green;
         yield return new WaitForSeconds(1.5f);

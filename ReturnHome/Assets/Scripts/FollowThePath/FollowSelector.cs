@@ -35,7 +35,6 @@ public class FollowSelector : MonoBehaviour
     {
         if (other.gameObject.name == "Goal")
         {
-            print("Nice");
             followScript.StartCoroutine(followScript.WinGame());
         }
     }
