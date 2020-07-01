@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MedPack : Item
 {
+    public float AddAmountHP;
     void Update()
     {
         interaction();
@@ -20,7 +21,7 @@ public class MedPack : Item
 
     public override void OnUse()
     {
-        FindObjectOfType<PlayerController>().DecreaseHealth(-20f);    
+        FindObjectOfType<PlayerController>().DecreaseHealth(-AddAmountHP);    
         base.OnUse();
     }
 

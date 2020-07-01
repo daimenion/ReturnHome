@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Honey : Item
 {
+    public float AddAmountHP;
     void Update()
     {
         interaction();
@@ -20,7 +21,7 @@ public class Honey : Item
 
     public override void OnUse()
     {
-        FindObjectOfType<PlayerController>().DecreaseHealth(-20f);
+        FindObjectOfType<PlayerController>().DecreaseHealth(-AddAmountHP);
         if (FindObjectOfType<PlayerController>().gameObject.GetComponent<IllEffect>())
         { 
             Destroy(FindObjectOfType<PlayerController>().gameObject.GetComponent<IllEffect>());//delete the add the "ill" effect to the player(?)
