@@ -57,7 +57,7 @@ public class Beehive : AI
                 StartCoroutine(Timer());
                 break;
             case States.Wander:
-                MoveForward();
+                //MoveForward();
                 break;
             case States.Attack:
                 UpdateAttack();
@@ -70,7 +70,7 @@ public class Beehive : AI
         }
     }
 
-    public virtual void MoveForward()
+    /*public virtual void MoveForward()
     {
         if (agent.pathStatus == NavMeshPathStatus.PathComplete && (agent.remainingDistance > 0 && agent.remainingDistance < 1))
         {
@@ -81,7 +81,7 @@ public class Beehive : AI
             agent.SetDestination(new Vector3(finalPosition.x, this.transform.position.y, finalPosition.z));
         }
         //Debug.Log(agent.remainingDistance + this.name);
-    }
+    }*/
 
     public void RandomMovePoint()
     {
@@ -108,5 +108,8 @@ public class Beehive : AI
     {
         return CurrentState == States.Attack;
     }
-    //spawn bees
+
+    //TO DO
+    //Check if bees are alive
+    //Spawn bees if some are dead
 }
