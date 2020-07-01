@@ -23,13 +23,13 @@ public class Bee : AI
     {
         if (BHParent == null)
             BHParent = this.transform.parent.gameObject;
-
+        RandomMovePoint();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        HandleStates();
     }
 
     public virtual void HandleStates()
