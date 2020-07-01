@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1525792930125627141}
   - component: {fileID: 1525792930125627140}
   - component: {fileID: 1525792930125627143}
-  m_Layer: 0
+  - component: {fileID: 5417689934440261873}
+  m_Layer: 9
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,6 +81,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521364ea3bd1b3a47b98d597a72b273c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5417689934440261873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525792930125627163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &1525792930206953086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -126,6 +143,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4ccc3e4ee39d1fb44bffb718f678e0fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 4ccc3e4ee39d1fb44bffb718f678e0fc,
         type: 3}
@@ -187,6 +209,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 0b17405eda4ebfe47aa4bca9d414c398,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 0b17405eda4ebfe47aa4bca9d414c398,
         type: 3}
       propertyPath: m_Materials.Array.data[2]
@@ -246,6 +273,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: df90127305d83fc41a5e7c3eb360e3ed,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: df90127305d83fc41a5e7c3eb360e3ed,
         type: 3}

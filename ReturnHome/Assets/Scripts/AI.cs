@@ -90,7 +90,7 @@ public class AI : Actor
 
     }
     IEnumerator reset() {
-        yield return new WaitForSeconds(15.0f);
+        yield return new WaitForSeconds(20.0f);
 
         Instantiate(this.gameObject, OriginalPos, transform.rotation);
         Destroy(this.gameObject);

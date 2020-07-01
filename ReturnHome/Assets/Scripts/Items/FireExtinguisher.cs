@@ -21,7 +21,7 @@ public class FireExtinguisher : Weapon
         myName = "Fire Extinguisher";
         description = "The enemy of fire . . . you got a wild Fire Extinguisher";
         type = "Weapon";
-        damage = 5.0f;
+        damage = 0.5f;
     }
     void OnTriggerStay(Collider other) {
 

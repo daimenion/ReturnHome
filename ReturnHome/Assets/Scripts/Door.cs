@@ -18,22 +18,14 @@ public class Door : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Ghost"))
-        {
-
-        }
-        else
+        if (!other.CompareTag("Ghost"))
         {
             anim.SetTrigger("Enter");
         }
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Ghost"))
-        {
-
-        }
-        else
+        if (!other.CompareTag("Ghost"))
         {
             anim.SetTrigger("Enter");
         }
@@ -41,13 +33,10 @@ public class Door : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Ghost"))
-        {
-
-        }
-        else
+        if (!other.CompareTag("Ghost"))
         {
             anim.ResetTrigger("Enter");
         }
+
     }
 }
