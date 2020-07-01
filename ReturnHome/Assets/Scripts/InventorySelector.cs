@@ -24,20 +24,19 @@ public class InventorySelector : MonoBehaviour
             PerviousNumber = ItemNumber;
             if (inv.Inventory[PerviousNumber] != null)
             {
-                inv.Inventory[PerviousNumber].Equipped = false;
+                inv.Inventory[ItemNumber].Equipped = false;
             }
-            ItemNumber++;
-            UpdateSelected(100);
-            if (inv.Inventory[PerviousNumber] != null)
-            {
-                inv.Inventory[ItemNumber].Equipped = true;
-            }
-            if (ItemNumber > inv.Inventory.Length-1)
+            if (ItemNumber >= inv.Inventory.Length - 1)
             {
                 transform.localPosition = new Vector3(-200, transform.localPosition.y);
                 ItemNumber = 0;
-
             }
+            else {
+                ItemNumber++;
+                UpdateSelected(100);
+            }
+
+
 
         }
        else if (Input.GetAxis("Mouse ScrollWheel") < 0)
@@ -47,19 +46,22 @@ public class InventorySelector : MonoBehaviour
             {
                 inv.Inventory[PerviousNumber].Equipped = false;
             }
-            ItemNumber--;
-            UpdateSelected(-100);
-            if (inv.Inventory[PerviousNumber] != null)
-            {
-                inv.Inventory[ItemNumber].Equipped = true;
-            }
-            if (ItemNumber < 0)
+            if (ItemNumber <= 0)
             {
                 transform.localPosition = new Vector3(200, transform.localPosition.y);
                 ItemNumber = inv.Inventory.Length-1;
 
             }
+            else {
+                ItemNumber--;
+                UpdateSelected(-100);
+            }
+
        }
+        if (inv.Inventory[ItemNumber] != null)
+        {
+            inv.Inventory[ItemNumber].Equipped = true;
+        }
     }
 
     public void UpdateSelected(float x) {

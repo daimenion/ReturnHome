@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 public class InventorySystem : MonoBehaviour
@@ -10,17 +10,18 @@ public class InventorySystem : MonoBehaviour
     int currentItem;
     public int itemA;
     public int itemB;
-
+    PlayerController player;
     // Start is called before the first frame update
     void Start()
     {
         //Items = new List<GameObject>(5);
         //Item = new GameObject[5];
         Inventory = new Item[5];
+        player = FindObjectOfType<PlayerController>();
     }
     void Update()
     {
-
+        currentItem = FindObjectOfType<InventorySelector>().ItemNumber;
         if (Input.GetButton("UseItem"))
         {
             if (Inventory[currentItem].aresol)
@@ -32,8 +33,15 @@ public class InventorySystem : MonoBehaviour
                 if (Input.GetButtonDown("UseItem"))
                 {
                     Inventory[currentItem].UseItem();
+                    
                 }
             }
+        }
+        if (Input.GetButton("DropItem")) {
+            RemoveItem(currentItem);
+        }
+        if (Inventory[currentItem] == null) {
+            Inventory[currentItem] = null;
         }
 
     }
@@ -68,7 +76,14 @@ public class InventorySystem : MonoBehaviour
 
     }
     public void RemoveItem(int Item) {
+        //Inventory[Item]
+        DropItem(Item);
         Inventory[Item] = null;
+    }
+
+    void DropItem(int Item)
+    {
+        Inventory[Item].gameObject.transform.position = player.gameObject.transform.position + new Vector3 (Random.Range(-1.5f, 1.5f),0, Random.Range(-1.5f ,1.5f));
     }
     //public void SwitchItems<T>(IList<T> list) {
     //    T Temp = list[itemA];
