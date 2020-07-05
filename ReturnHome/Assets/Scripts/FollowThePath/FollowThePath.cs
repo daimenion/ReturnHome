@@ -29,7 +29,7 @@ public class FollowThePath : MinigameScript
         myLine.startColor = Color.red;
         myLine.endColor = Color.red;
         yield return new WaitForSeconds(1.5f);
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().Electrocute(100f);//Temp Value for Mike Test, to kill player
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().PlayerDecreaseHealth(100f, "Electricity");//Temp Value for Mike Test, to kill player
         
         Destroy(transform.parent.gameObject);
     }

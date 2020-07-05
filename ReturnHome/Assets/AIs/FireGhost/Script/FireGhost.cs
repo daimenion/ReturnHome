@@ -38,5 +38,26 @@ public class FireGhost : GeneralGhost
         attacking = false;
         StopCoroutine(reset());
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerController.PlayerDecreaseHealth(10.0f, "Fire");
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerController.PlayerDecreaseHealth(0.001f, "Fire");
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+
+        }
+    }
 
 }

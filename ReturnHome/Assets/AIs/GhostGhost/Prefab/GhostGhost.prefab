@@ -15,15 +15,16 @@ MonoBehaviour:
   spawnPoint: {fileID: 1843296714244311824}
   spawningAttacks: {fileID: 0}
   agent: {fileID: 8548219424352308630}
+  OriginalPos: {x: 0, y: 0, z: 0}
   SeemPlayer: 0
-  cooldown: 0
+  cooldown: 10
   Viewcircle: {fileID: 8028433239586871795}
   RandomPosition: {x: 0, y: 0, z: 0}
   wanderingRadius: 0
   attacking: 0
   ViewLight: {fileID: 5741559407236306179}
   sprite: {fileID: 2870867720213339801}
-  StoppingDistance: 0
+  StoppingDistance: 2
   Ghost: {fileID: 5922755855821676919, guid: 6211723a3caa1d44a8956c627f090bc4, type: 3}
 --- !u!1001 &1578344974355506107
 PrefabInstance:
@@ -92,11 +93,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7841336314356597325, guid: 6211723a3caa1d44a8956c627f090bc4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4693936461890892061, guid: 6211723a3caa1d44a8956c627f090bc4,
         type: 3}
       propertyPath: m_Color.r
@@ -112,7 +108,28 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.6886792
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7841336314356597325, guid: 6211723a3caa1d44a8956c627f090bc4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250849181444793242, guid: 6211723a3caa1d44a8956c627f090bc4,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250849181444793242, guid: 6211723a3caa1d44a8956c627f090bc4,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3250849181444793242, guid: 6211723a3caa1d44a8956c627f090bc4,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.9145675
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7841336314356597325, guid: 6211723a3caa1d44a8956c627f090bc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6211723a3caa1d44a8956c627f090bc4, type: 3}
 --- !u!1 &5176522142520836812 stripped
 GameObject:

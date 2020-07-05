@@ -17,6 +17,8 @@ public class Actor : MonoBehaviour
     Vector3 moveDirection;
     public Vector3 LastMoveDirection { set; get; }
 
+    public string AttackType { set; get; }
+
 
 
     // Start is called before the first frame update
@@ -50,12 +52,17 @@ public class Actor : MonoBehaviour
     public virtual void DecreaseHealth(float amount)
     {
         health = Mathf.Clamp(health - amount, 0, MaxHealth);
-
+        if (amount >= 0) { Debug.Log(name + " took " + amount + " damage."); }
+        else { Debug.Log(name + " recovered " + -amount + " health."); }
+    }
+    public virtual void PlayerDecreaseHealth(float amount, string type)
+    {
+        health = Mathf.Clamp(health - amount, 0, MaxHealth);
+        AttackType = type;
         if (amount >= 0) { Debug.Log(name + " took " + amount + " damage."); }
         else { Debug.Log(name + " recovered " + -amount + " health."); }
     }
 
-  
 
     public virtual void Death() {
 
