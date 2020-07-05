@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 7153414004070067757}
   m_Layer: 0
   m_Name: GeneralGhost
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,7 +223,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5922755855821676919}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.40474868
   m_Height: 1.8858099
@@ -279,6 +279,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 897303726293182635}
   spawningAttacks: {fileID: 0}
   agent: {fileID: 7153414004070067757}
+  OriginalPos: {x: 0, y: 0, z: 0}
   SeemPlayer: 0
   cooldown: 1
   Viewcircle: {fileID: 8830944358203669064}

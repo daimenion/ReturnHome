@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class MedPack : Item
 {
-
-    void OnTriggerEnter(Collider other)
+    public float AddAmountHP;
+    void Update()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            other.gameObject.GetComponent<PlayerController>().DecreaseHealth(-25.0f);
-            Destroy(this.gameObject);
-        }
+        interaction();
+    }
+
+    public MedPack()
+    {
+        aresol = false;
+        usesLeft = 1;
+        myName = "Med Pack";
+        description = "Heals the player, one time use";
+        type = "Consumable";
+    }
+
+    public override void OnUse()
+    {
+        FindObjectOfType<PlayerController>().DecreaseHealth(-AddAmountHP);    
+        base.OnUse();
     }
 
 }

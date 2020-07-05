@@ -9,6 +9,7 @@ public class AI : Actor
     IEnumerator spriteFlashCoroutine;
     public GameObject spawningAttacks;
     public NavMeshAgent agent;
+    public Vector3 OriginalPos;
     public bool SeemPlayer;
     //skill cooldown
     protected bool CoolDownStarted;
@@ -74,12 +75,37 @@ public class AI : Actor
         if (cooldown <= 0)
         {
             cooldown = maxCoolDown;
-  
+
             CoolDownStarted = false;
             StopCoroutine(Timer());
             CoolDownOnce = 0;
         }
         StopCoroutine(Timer());
     }
+    public override void Death() {
+        base.Death();
+        StartCoroutine(reset());
+        OriginalPos = transform.position;
+        transform.position = new Vector3(500, 500, 600);
 
+    }
+    IEnumerator reset() {
+        yield return new WaitForSeconds(20.0f);
+
+        Instantiate(this.gameObject, OriginalPos, transform.rotation);
+        Destroy(this.gameObject);
+    }
+    void OnTriggerEnter(Collider other) { 
+    
+    }
+
+    void OnTriggerStay(Collider other) {
+        if (other.CompareTag("PlayerHitBox")) {
+            DecreaseHealth(other.GetComponentInParent<Weapon>().damage);
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+
+    }
 }

@@ -71,11 +71,18 @@ public class PlayerController : Actor
     }
     //check Oxygen levels and Low Oxygen effects
     void CheckOxygen() {
-        if (oxygen <= 0) {
+        if (oxygen <= 0)
+        {
+            health = 0;
             Death();
         }
-        else if (oxygen < 30) {
+        else if (oxygen < 40)
+        {
             LowOxygen = true;
+            GetComponent<LowOxygenEffect>().enabled = true;
+        }
+        else {
+            GetComponent<LowOxygenEffect>().enabled = false;
         }
     }
     void OnTriggerEnter( Collider other) {
@@ -86,6 +93,7 @@ public class PlayerController : Actor
         if (other.CompareTag("Room"))
         {
             cam.gameObject.SetActive(false);
+            cam.GetComponentInChildren<Camera>().enabled = false;
         }
     }
     private void OnTriggerStay(Collider other)
@@ -108,6 +116,7 @@ public class PlayerController : Actor
         if (other.CompareTag("Room"))
         {
             cam.gameObject.SetActive(true);
+            cam.GetComponentInChildren<Camera>().enabled = true;
             other.GetComponentInChildren<Camera>().enabled = false;
         }
     }

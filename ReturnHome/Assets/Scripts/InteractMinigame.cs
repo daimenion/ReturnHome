@@ -24,6 +24,7 @@ public class InteractMinigame : Interaction
     {
         if (!Interacted && isBroken) {
             myGame = Instantiate(minigame, transform.parent);
+            minigame.transform.localPosition = new Vector3(1.5f, 0, 1.5f);
             MinigameScript = myGame.GetComponentInChildren<MinigameScript>();
         }
         Interacted = true;

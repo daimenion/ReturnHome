@@ -8,6 +8,8 @@ TagManager:
   - EnemyAttacks
   - Interactable
   - Room
+  - Ghost
+  - PlayerHitBox
   layers:
   - Default
   - TransparentFX

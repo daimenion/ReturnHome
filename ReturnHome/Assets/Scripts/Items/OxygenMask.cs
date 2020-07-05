@@ -11,13 +11,13 @@ public class OxygenMask : Item
 
     }
     public OxygenMask() {
-        aresol = false;
+        aresol = true;
         usesLeft = 20;
         myName = "Oxygen Mask";
         description = "This will give you air";
         type = "Consumable";
     }
-    new void OnUse()
+    public override void OnUse()
     {
         base.OnUse();
         StartCoroutine(Using());
@@ -25,7 +25,7 @@ public class OxygenMask : Item
     }
     IEnumerator Using() {
         yield return new WaitForSeconds(0.2f);
-        FindObjectOfType<PlayerController>().oxygen += 3;
+        FindObjectOfType<PlayerController>().oxygen = Mathf.Clamp(FindObjectOfType<PlayerController>().oxygen + 0.5f, 0, 100); ;
         StopCoroutine(Using());
     }
 }

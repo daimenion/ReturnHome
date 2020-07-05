@@ -87,7 +87,12 @@ public class InventorySystem : MonoBehaviour
 
     void DropItem(int Item)
     {
+        Inventory[Item].gameObject.transform.parent = null;
+        Inventory[Item].GetComponent<Interaction>().enabled = true;
+        Inventory[Item].Equipped = false;
+        Inventory[Item].GetComponent<BoxCollider>().enabled = true;
         Inventory[Item].gameObject.transform.position = player.gameObject.transform.position + new Vector3 (Random.Range(-1.5f, 1.5f),0, Random.Range(-1.5f ,1.5f));
+
     }
     //public void SwitchItems<T>(IList<T> list) {
     //    T Temp = list[itemA];

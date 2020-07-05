@@ -25,7 +25,7 @@ public class FollowSelector : MonoBehaviour
     {
         if (isActive && followScript.isActive)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = Camera.allCameras[0].ScreenPointToRay(Input.mousePosition);
             Vector3 hitPoint = ray.GetPoint(0);
             transform.position = hitPoint;
             transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, -0.244f);
