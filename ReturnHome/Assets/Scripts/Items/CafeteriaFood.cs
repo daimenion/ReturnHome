@@ -7,7 +7,6 @@ public class CafeteriaFood : Item
     void Update()
     {
         interaction();
-
     }
     public CafeteriaFood()
     {
