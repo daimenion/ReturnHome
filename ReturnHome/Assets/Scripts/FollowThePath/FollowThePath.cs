@@ -12,6 +12,7 @@ public class FollowThePath : MinigameScript
     // Update is called once per frame
     void Start()
     {
+        isBroken = true;
     }
     void OnMouseOver()
     {
@@ -29,15 +30,15 @@ public class FollowThePath : MinigameScript
         myLine.startColor = Color.red;
         myLine.endColor = Color.red;
         yield return new WaitForSeconds(1.5f);
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().Electrocute(100f);//Temp Value for Mike Test, to kill player
+        base.failure();
         
         Destroy(transform.parent.gameObject);
     }
     public IEnumerator WinGame()
     {
-        isBroken = false;
         myLine.startColor = Color.green;
         myLine.endColor = Color.green;
+        base.success();
         yield return new WaitForSeconds(1.5f);
         Destroy(transform.parent.gameObject);
     }

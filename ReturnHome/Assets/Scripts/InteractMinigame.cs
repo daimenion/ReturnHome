@@ -31,13 +31,16 @@ public class InteractMinigame : Interaction
     }
     void Update()
     {
+        if (MinigameScript != null)
+        {
+            //print(MinigameScript.gameObject.name);
+        }
         if (myGame == null && isBroken)
         {
             Interacted = false;
         }
         else if (isBroken && !MinigameScript.isBroken)
         {
-            print("Match");
             particle.Stop();
             isBroken = false;
         }

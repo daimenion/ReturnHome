@@ -6,7 +6,8 @@ public class MoveWire : MonoBehaviour
 {
     public bool Example;
     public GameObject myGoal;
-    private bool isActive = true;
+    public bool isActive = true;
+    public int isBroken = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class MoveWire : MonoBehaviour
     {
         if (isActive && !Example)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = Camera.allCameras[0].ScreenPointToRay(Input.mousePosition);
             Vector3 hitPoint = ray.GetPoint(0);
             transform.position = hitPoint;
             transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, -0.244f);
@@ -42,10 +43,11 @@ public class MoveWire : MonoBehaviour
             {
                 other.gameObject.tag = "Untagged";
                 transform.position = other.transform.position;
+                isBroken = 1;
             }
             else
             {
-                print("Fuck You");
+                isBroken = -1;
             }
         }
     }
