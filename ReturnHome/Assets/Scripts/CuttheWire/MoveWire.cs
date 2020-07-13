@@ -14,12 +14,6 @@ public class MoveWire : MonoBehaviour
     {
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     void OnMouseDrag()
     {
         if (isActive && !Example)
@@ -29,10 +23,6 @@ public class MoveWire : MonoBehaviour
             transform.position = hitPoint;
             transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, -0.244f);
         }
-    }
-    void OnMouseExit()
-    {
-
     }
     void OnTriggerStay(Collider other)
     {
