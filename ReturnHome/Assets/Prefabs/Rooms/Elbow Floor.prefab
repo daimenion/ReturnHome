@@ -169,6 +169,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (41)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &5146413977035384387 stripped
@@ -244,6 +254,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &4808585827370900194 stripped
@@ -319,6 +339,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (35)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &5545273324519873228 stripped
@@ -394,6 +424,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (7)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &5422554280119846871 stripped
@@ -469,6 +509,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (16)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &5340073078064969587 stripped
@@ -544,6 +594,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (31)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &5981744210136232700 stripped
@@ -619,6 +679,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (39)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &5976855497695902187 stripped
@@ -694,6 +764,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &6703556673532353934 stripped
@@ -769,6 +849,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (24)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &6668288346949346636 stripped
@@ -844,6 +934,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (17)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &6384555533720095077 stripped
@@ -919,6 +1019,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (30)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &6625895236032028884 stripped
@@ -994,6 +1104,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (36)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &7447816796492112148 stripped
@@ -1069,6 +1189,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (3)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &7373421713337163843 stripped
@@ -1144,6 +1274,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (10)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &7402851088998067571 stripped
@@ -1219,6 +1359,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (25)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &7041234296044855126 stripped
@@ -1294,6 +1444,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (29)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &7556803607645211350 stripped
@@ -1369,6 +1529,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (14)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &7712374525771915369 stripped
@@ -1444,6 +1614,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (2)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &8586923769138977776 stripped
@@ -1519,6 +1699,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (28)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &8764885876681450110 stripped
@@ -1594,6 +1784,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (40)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &8676986545301319365 stripped
@@ -1669,6 +1869,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (6)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &8669232928980449971 stripped
@@ -1744,6 +1954,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (4)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &447439456821286247 stripped
@@ -1819,6 +2039,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (34)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &502966510179134898 stripped
@@ -1894,6 +2124,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (32)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &1060537549213009808 stripped
@@ -1969,6 +2209,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (15)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &800918360097881230 stripped
@@ -2044,6 +2294,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (38)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &1542166266098175919 stripped
@@ -2119,6 +2379,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (5)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &1579503723196030616 stripped
@@ -2194,6 +2464,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (23)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &1709159516725699097 stripped
@@ -2269,6 +2549,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (21)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &2042173031995959370 stripped
@@ -2344,6 +2634,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (18)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &2055215655779556777 stripped
@@ -2419,6 +2719,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (8)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &2258661280501450263 stripped
@@ -2494,6 +2804,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (43)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &2172800164075022367 stripped
@@ -2569,6 +2889,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (22)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &2215369806145281634 stripped
@@ -2644,6 +2974,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (26)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &1767505682178616014 stripped
@@ -2719,6 +3059,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (9)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &2726390607224552519 stripped
@@ -2794,6 +3144,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (19)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &2651137303614282899 stripped
@@ -2869,6 +3229,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (11)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &3248769502846302429 stripped
@@ -2944,6 +3314,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (33)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &3409027634537466383 stripped
@@ -3019,6 +3399,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (27)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &3032542989086892393 stripped
@@ -3094,6 +3484,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (37)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &3858769332830316958 stripped
@@ -3169,6 +3569,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (20)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &3751505880057203228 stripped
@@ -3244,6 +3654,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (13)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &3517336906501549258 stripped
@@ -3319,6 +3739,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (42)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &3633702742206746032 stripped
@@ -3394,6 +3824,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile_Light (12)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 83bd0285af034d74e892d2370d33f2ff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3324ae06d244364287fb7ea626cf14c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83bd0285af034d74e892d2370d33f2ff, type: 3}
 --- !u!4 &4430483901147598353 stripped
