@@ -10,6 +10,7 @@ TagManager:
   - Room
   - Ghost
   - PlayerHitBox
+  - ItemSpawnPoint
   layers:
   - Default
   - TransparentFX

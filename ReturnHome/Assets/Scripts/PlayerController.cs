@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,8 @@ public class PlayerController : Actor
     float Illdmg;
     public Slider HPBar;
     public Camera cam;
+    public Vector3 CamPos;
+    string TypeOfAttack;
     public enum PlayerStates
     {
         Idle,
@@ -33,6 +36,7 @@ public class PlayerController : Actor
         speed = 5;
         HPBar.maxValue = MaxHealth;
         HPBar.value = health;
+        CamPos = cam.gameObject.transform.localPosition;
     }
 
     // Update is called once per frame
@@ -43,6 +47,7 @@ public class PlayerController : Actor
 
         CheckOxygen();
         HPBar.value = health;
+        TypeOfAttack = AttackType;
     }
     void HandleStates()
     {
@@ -73,7 +78,7 @@ public class PlayerController : Actor
     void CheckOxygen() {
         if (oxygen <= 0)
         {
-            health = 0;
+            PlayerDecreaseHealth(100, "Oxygen");
             Death();
         }
         else if (oxygen < 40)
@@ -87,41 +92,54 @@ public class PlayerController : Actor
     }
     void OnTriggerEnter( Collider other) {
 
-        if (other.CompareTag("EnemyAttacks")) {
-            StartCoroutine(TakeDamage(0.0f,10.0f));
-        }
+        //if (other.CompareTag("EnemyAttacks")) {
+        //    StartCoroutine(TakeDamage(0.0f,10.0f));
+        //}
         if (other.CompareTag("Room"))
         {
-            cam.gameObject.SetActive(false);
-            cam.GetComponentInChildren<Camera>().enabled = false;
+
+            //if (cam.gameObject.transform.position == other.GetComponentInChildren<Camera>().gameObject.transform.position)
+            //{
+            //    cam.gameObject.SetActive(false);
+            //    cam.GetComponentInChildren<Camera>().enabled = false;
+            //}
+            cam.gameObject.transform.parent = null;
         }
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("EnemyAttacks"))
-        {
-            StartCoroutine(TakeDamage(1.0f, 0.2f));
-        }
+        //if (other.CompareTag("EnemyAttacks"))
+        //{
+        //    StartCoroutine(TakeDamage(1.0f, 0.2f));
+        //}
         if (other.CompareTag("Room"))
         {
-            other.GetComponentInChildren<Camera>().enabled = true;
+            cam.gameObject.transform.position = Vector3.MoveTowards(cam.gameObject.transform.position, other.GetComponentInChildren<Camera>().gameObject.transform.position,15*Time.deltaTime);
+            if (cam.gameObject.transform.position == other.GetComponentInChildren<Camera>().gameObject.transform.position)
+            {
+                cam.gameObject.SetActive(false);
+                cam.GetComponentInChildren<Camera>().enabled = false;
+                other.GetComponentInChildren<Camera>().enabled = true;
+            }
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("EnemyAttacks"))
-        {
-            StopCoroutine("TakeDamage");
-        }
+        //if (other.CompareTag("EnemyAttacks"))
+        //{
+        //    StopCoroutine("TakeDamage");
+        //}
         if (other.CompareTag("Room"))
         {
+            cam.gameObject.transform.parent = this.gameObject.transform;
+            cam.gameObject.transform.localPosition =  CamPos;
             cam.gameObject.SetActive(true);
             cam.GetComponentInChildren<Camera>().enabled = true;
             other.GetComponentInChildren<Camera>().enabled = false;
         }
     }
 
-    IEnumerator TakeDamage( float time, float Damage) {
+    public IEnumerator TakeDamage( float time, float Damage) {
         yield return new WaitForSeconds(time);
         DecreaseHealth(Damage);
         StopCoroutine("TakeDamage");

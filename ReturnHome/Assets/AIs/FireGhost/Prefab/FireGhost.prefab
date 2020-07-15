@@ -4781,8 +4781,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 4298983021530688199}
+  MaxHealth: 0
   spawningAttacks: {fileID: 0}
-  agent: {fileID: 0}
+  agent: {fileID: 6096988347081026625}
+  OriginalPos: {x: 0, y: 0, z: 0}
   SeemPlayer: 0
   cooldown: 15
   Viewcircle: {fileID: 5572927054680913956}
@@ -9645,6 +9647,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7841336314356597325, guid: 6211723a3caa1d44a8956c627f090bc4,
+        type: 3}
+      propertyPath: MaxHealth
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 897303726293182635, guid: 6211723a3caa1d44a8956c627f090bc4,
         type: 3}
       propertyPath: m_Layer
@@ -9695,6 +9702,12 @@ PrefabInstance:
 --- !u!1 &7343974242252153627 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5922755855821676919, guid: 6211723a3caa1d44a8956c627f090bc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 4024760921108988524}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &6096988347081026625 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 7153414004070067757, guid: 6211723a3caa1d44a8956c627f090bc4,
     type: 3}
   m_PrefabInstance: {fileID: 4024760921108988524}
   m_PrefabAsset: {fileID: 0}

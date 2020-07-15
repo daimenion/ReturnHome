@@ -11,11 +11,13 @@ public class Actor : MonoBehaviour
     public GameObject spawnPoint;
     public float speed { set; get; }
     public float health { set; get; }
-    public float MaxHealth { set; get; }
+    public float MaxHealth;
     public float AttackDamage { set; get; }
 
     Vector3 moveDirection;
     public Vector3 LastMoveDirection { set; get; }
+
+    public string AttackType { set; get; }
 
 
 
@@ -50,12 +52,17 @@ public class Actor : MonoBehaviour
     public virtual void DecreaseHealth(float amount)
     {
         health = Mathf.Clamp(health - amount, 0, MaxHealth);
-
+        if (amount >= 0) { Debug.Log(name + " took " + amount + " damage."); }
+        else { Debug.Log(name + " recovered " + -amount + " health."); }
+    }
+    public virtual void PlayerDecreaseHealth(float amount, string type)
+    {
+        health = Mathf.Clamp(health - amount, 0, MaxHealth);
+        AttackType = type;
         if (amount >= 0) { Debug.Log(name + " took " + amount + " damage."); }
         else { Debug.Log(name + " recovered " + -amount + " health."); }
     }
 
-  
 
     public virtual void Death() {
 

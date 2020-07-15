@@ -15,7 +15,7 @@ public class FireEffect : StatusEffect
     new void Update()
     {
         base.Update();
-        gameObject.GetComponent<PlayerController>().DecreaseHealth(damage * Time.deltaTime);
+        gameObject.GetComponent<PlayerController>().PlayerDecreaseHealth(damage * Time.deltaTime,"Fire");
     }
     public void Reset()
     {

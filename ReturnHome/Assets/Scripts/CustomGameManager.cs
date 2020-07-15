@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class CustomGameManager : MonoBehaviour
@@ -8,20 +9,36 @@ public class CustomGameManager : MonoBehaviour
     int playerDeaths;
     PlayerController player;
     public GameObject[] ghosts;
+
     int HowPlayerDie;
+    int[] Deaths;
     public bool reset;
+
+    //
+    GameObject[] ItemSpawnPoints;
+    public GameObject Box;
     // Start is called before the first frame update
     void Start()
     {
+        Deaths = new int[5];
+
         if(reset)
             PlayerPrefs.DeleteAll();
         player = FindObjectOfType<PlayerController>();
         playerDeaths = PlayerPrefs.GetInt("PlayerDeath");
         if (playerDeaths > 0)
         {
-            HowPlayerDie = PlayerPrefs.GetInt("HowPlayerDie");
-            Instantiate(ghosts[HowPlayerDie],StringToVector3(PlayerPrefs.GetString("LastLocation")), ghosts[HowPlayerDie].transform.rotation);
+            Deaths = GetIntPref();
+            for(int i = 0; i < playerDeaths; i++)
+            {
+                Instantiate(ghosts[Deaths[i]], StringToVector3(PlayerPrefs.GetString("LastLocation")), ghosts[Deaths[i]].transform.rotation);
+            }
+           
 
+        }
+        ItemSpawnPoints = GameObject.FindGameObjectsWithTag("ItemSpawnPoint");
+        for (int i = 0; i < ItemSpawnPoints.Length - 1; i++) {
+            Instantiate(Box, ItemSpawnPoints[i].transform.position, ItemSpawnPoints[i].transform.rotation);
         }
     }
 
@@ -29,6 +46,7 @@ public class CustomGameManager : MonoBehaviour
     void Update()
     {
         if (player.health <= 0 && once == 0) {
+            CheckEverything(); 
             player.gameObject.transform.Rotate(0,0,90);
             playerDeaths++;
             SaveData();
@@ -44,12 +62,44 @@ public class CustomGameManager : MonoBehaviour
     void SaveData() {
         PlayerPrefs.SetInt("PlayerDeath", playerDeaths);
         PlayerPrefs.SetString("LastLocation", player.gameObject.transform.position.ToString());
-        PlayerPrefs.SetInt("HowPlayerDie", HowPlayerDie);
+        SetIntPrefArray();
         PlayerPrefs.Save();
     }
 
-    void CheckEverything() { 
-    
+    void CheckEverything() {
+        switch (player.AttackType) {
+            case "None":
+                HowPlayerDie = 1;
+                break;
+            case "Fire":
+                HowPlayerDie = 2;
+                break;
+
+            case "Ghost":
+                HowPlayerDie = 3;
+                break;
+
+            case "Bee":
+                HowPlayerDie = 4;
+                break;
+
+            case "FoodPoisoning":
+                HowPlayerDie = 5;
+                break;
+
+            case "Oxygen":
+                HowPlayerDie = 6;
+                break;
+
+            case "Electricity":
+                HowPlayerDie = 7;
+                break;
+
+            case "SuckIntoSpace":
+                HowPlayerDie = 8;
+                break;
+
+        }
     }
 
     public static Vector3 StringToVector3(string sVector)
@@ -67,5 +117,24 @@ public class CustomGameManager : MonoBehaviour
             float.Parse(sArray[2]));
 
         return result;
+    }
+
+    void SetIntPrefArray() {
+        for (int i = 0; i < playerDeaths; i++) {
+            if (Deaths[i] == 0) {
+                Deaths[i] = HowPlayerDie;
+                PlayerPrefs.SetInt("HowPlayerDie" + i, Deaths[i]);
+            }
+        }
+    }
+
+    int[] GetIntPref() {
+        int[] temp = new int[5];
+        for (int i = 0; i < Deaths.Length; i++)
+        {
+            temp[i] = PlayerPrefs.GetInt("HowPlayerDie" + i);
+        }
+        return temp;
+
     }
 }

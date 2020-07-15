@@ -12,7 +12,7 @@ public class VacuumCleaner : Weapon
     public bool isModified;
 
     void Update()
-    {
+    {base.Update();
         interaction();
     }
 
@@ -38,7 +38,7 @@ public class VacuumCleaner : Weapon
 
         foreach (GeneralGhost ghost in ghosts)
         {
-            if (Vector3.Distance(ghost.transform.position, this.transform.position) <= range)    //Adjust the range
+            if (Vector3.Distance(ghost.transform.position, FindObjectOfType<PlayerController>().gameObject.transform.position) <= range)    //Adjust the range
             {
                 yield return new WaitForSeconds(0.2f);
 

@@ -6,6 +6,13 @@ using UnityEngine;
 public class IllnessGhostScript : GeneralGhost
 {
     //public GameObject Skill;
+    protected override void Awake()
+    {
+        MaxHealth = 75;
+        base.Awake();
+
+
+    }
     public override void Attack()
     {
         if(attacking == false)
@@ -23,7 +30,7 @@ public class IllnessGhostScript : GeneralGhost
     IEnumerator AttackOvertime()
     {
         yield return new WaitForSeconds(0.5f);
-        playerController.DecreaseHealth(2f);
+        playerController.PlayerDecreaseHealth(2f,"Ghost");
 
        // Debug.log(PlayerController.Health);
 

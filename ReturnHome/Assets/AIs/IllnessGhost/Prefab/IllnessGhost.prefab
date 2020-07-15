@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 2322422874422105544}
+  MaxHealth: 75
   spawningAttacks: {fileID: 0}
   agent: {fileID: 5696828757795115854}
+  OriginalPos: {x: 0, y: 0, z: 0}
   SeemPlayer: 0
   cooldown: 0.5
   Viewcircle: {fileID: 6252380200315979563}
@@ -91,11 +93,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7841336314356597325, guid: 6211723a3caa1d44a8956c627f090bc4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4693936461890892061, guid: 6211723a3caa1d44a8956c627f090bc4,
         type: 3}
       propertyPath: m_Color.r
@@ -110,6 +107,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.33922213
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841336314356597325, guid: 6211723a3caa1d44a8956c627f090bc4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3250849181444793242, guid: 6211723a3caa1d44a8956c627f090bc4,
         type: 3}
@@ -126,7 +128,8 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7841336314356597325, guid: 6211723a3caa1d44a8956c627f090bc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6211723a3caa1d44a8956c627f090bc4, type: 3}
 --- !u!1 &9113280834669943828 stripped
 GameObject:
