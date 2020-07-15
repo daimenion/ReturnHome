@@ -11,7 +11,7 @@ public class Actor : MonoBehaviour
     public GameObject spawnPoint;
     public float speed { set; get; }
     public float health { set; get; }
-    public float MaxHealth { set; get; }
+    public float MaxHealth;
     public float AttackDamage { set; get; }
 
     Vector3 moveDirection;

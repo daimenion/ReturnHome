@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class CustomGameManager : MonoBehaviour
@@ -8,9 +9,14 @@ public class CustomGameManager : MonoBehaviour
     int playerDeaths;
     PlayerController player;
     public GameObject[] ghosts;
+
     int HowPlayerDie;
     int[] Deaths;
     public bool reset;
+
+    //
+    GameObject[] ItemSpawnPoints;
+    public GameObject Box;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +35,10 @@ public class CustomGameManager : MonoBehaviour
             }
            
 
+        }
+        ItemSpawnPoints = GameObject.FindGameObjectsWithTag("ItemSpawnPoint");
+        for (int i = 0; i < ItemSpawnPoints.Length - 1; i++) {
+            Instantiate(Box, ItemSpawnPoints[i].transform.position, ItemSpawnPoints[i].transform.rotation);
         }
     }
 

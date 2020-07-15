@@ -4781,6 +4781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 4298983021530688199}
+  MaxHealth: 0
   spawningAttacks: {fileID: 0}
   agent: {fileID: 6096988347081026625}
   OriginalPos: {x: 0, y: 0, z: 0}
@@ -9645,6 +9646,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841336314356597325, guid: 6211723a3caa1d44a8956c627f090bc4,
+        type: 3}
+      propertyPath: MaxHealth
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 897303726293182635, guid: 6211723a3caa1d44a8956c627f090bc4,
         type: 3}

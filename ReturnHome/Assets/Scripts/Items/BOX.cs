@@ -19,7 +19,7 @@ public class BOX : MonoBehaviour
     public void spawnItem()
     {
         GameObject item = Instantiate(SpawnList[Random.Range(0, SpawnList.Length - 1)], 
-            transform.position, transform.rotation) as GameObject;
+            transform.position, new Quaternion(0,45,0,1)) as GameObject;
         Debug.Log("Spawned in " + item.name);   
         Destroy(this.gameObject);
     }

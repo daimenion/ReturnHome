@@ -42,14 +42,14 @@ public class FireGhost : GeneralGhost
     {
         if (other.CompareTag("Player"))
         {
-            playerController.PlayerDecreaseHealth(10.0f, "Fire");
+            playerController.PlayerDecreaseHealth(10.0f, "Ghost");
         }
     }
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            playerController.PlayerDecreaseHealth(0.001f, "Fire");
+            playerController.PlayerDecreaseHealth(0.001f, "Ghost");
         }
     }
     private void OnTriggerExit(Collider other)

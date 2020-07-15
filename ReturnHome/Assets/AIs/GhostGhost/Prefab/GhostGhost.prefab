@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1843296714244311824}
+  MaxHealth: 50
   spawningAttacks: {fileID: 0}
   agent: {fileID: 8548219424352308630}
   OriginalPos: {x: 0, y: 0, z: 0}

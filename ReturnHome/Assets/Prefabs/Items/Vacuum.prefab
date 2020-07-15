@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4091349628512790328}
   - component: {fileID: 3431843912379892606}
-  - component: {fileID: 534912089943440675}
   - component: {fileID: 217910745384781360}
   - component: {fileID: 6987678586933404559}
   - component: {fileID: 6847577833384740426}
+  - component: {fileID: 2282030570456838213}
   m_Layer: 0
   m_Name: Vacuum
   m_TagString: Untagged
@@ -49,19 +49,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &534912089943440675
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4400171518245295845}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &217910745384781360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,11 +82,11 @@ MonoBehaviour:
   Equipped: 0
   damage: 0.3
   WeaponHitBox: {fileID: 0}
-  pullForceX: 0
-  pullForceZ: 0
-  range: 0
-  baseDmg: 0
-  increasedDmg: 0
+  pullForceX: 1
+  pullForceZ: 1
+  range: 2
+  baseDmg: 1
+  increasedDmg: 2
   isModified: 0
 --- !u!212 &6847577833384740426
 SpriteRenderer:
@@ -150,6 +137,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2282030570456838213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4400171518245295845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df9108c1dbe295944a9cfbde74b9401f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  viewRadius: 6
+  viewAngle: 41
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 256
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 1591
+  visibleTargets: []
 --- !u!1 &4945915666771673432
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +186,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4945915666771673432}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.146061}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8776924189038789615}
@@ -186,7 +195,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 510.98938, y: 386.76}
+  m_AnchoredPosition: {x: 0, y: 1.08}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &506571286099824543
