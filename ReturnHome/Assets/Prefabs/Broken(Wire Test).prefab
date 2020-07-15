@@ -136,7 +136,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49916ef75fe5a0e468719680cd170544, type: 2}
+  - {fileID: 2100000, guid: 64cb9ddbf78d99e4bb6083cfbd427674, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -814,8 +814,8 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0.1, y: 0.48, z: -1.58}
-    m_Rotation: {x: 0, y: 0, z: 0}
+    m_Position: {x: 0.75, y: 0.06, z: -0.59}
+    m_Rotation: {x: -90, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0

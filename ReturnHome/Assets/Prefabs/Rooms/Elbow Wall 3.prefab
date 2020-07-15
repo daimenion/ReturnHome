@@ -130,6 +130,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallTile (2)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 004531c2b4e989f4cbcb70f7a0d1d827,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a2c68ef0917081f498db5c086d59bc79, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 004531c2b4e989f4cbcb70f7a0d1d827,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ff59903398eaa8444a8ff5aacee7b2f4, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 004531c2b4e989f4cbcb70f7a0d1d827,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: e29098f0acb25034eb4d95451bec695f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 004531c2b4e989f4cbcb70f7a0d1d827, type: 3}
 --- !u!4 &5121663487577951927 stripped
@@ -205,6 +220,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallTile
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 004531c2b4e989f4cbcb70f7a0d1d827,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a2c68ef0917081f498db5c086d59bc79, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 004531c2b4e989f4cbcb70f7a0d1d827,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ff59903398eaa8444a8ff5aacee7b2f4, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 004531c2b4e989f4cbcb70f7a0d1d827,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: e29098f0acb25034eb4d95451bec695f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 004531c2b4e989f4cbcb70f7a0d1d827, type: 3}
 --- !u!4 &5620739960529656849 stripped
@@ -280,6 +310,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallTile (3)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 004531c2b4e989f4cbcb70f7a0d1d827,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a2c68ef0917081f498db5c086d59bc79, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 004531c2b4e989f4cbcb70f7a0d1d827,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ff59903398eaa8444a8ff5aacee7b2f4, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 004531c2b4e989f4cbcb70f7a0d1d827,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: e29098f0acb25034eb4d95451bec695f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 004531c2b4e989f4cbcb70f7a0d1d827, type: 3}
 --- !u!4 &954844644659133867 stripped
@@ -295,11 +340,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1713706556809947284}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 4191f348b59c422429c6778b2f285bf5,
-        type: 3}
-      propertyPath: m_Name
-      value: WallTile_Inner Corner
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4191f348b59c422429c6778b2f285bf5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -355,6 +395,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4191f348b59c422429c6778b2f285bf5,
+        type: 3}
+      propertyPath: m_Name
+      value: WallTile_Inner Corner
+      objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 4191f348b59c422429c6778b2f285bf5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a2c68ef0917081f498db5c086d59bc79, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 4191f348b59c422429c6778b2f285bf5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ff59903398eaa8444a8ff5aacee7b2f4, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 4191f348b59c422429c6778b2f285bf5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: e29098f0acb25034eb4d95451bec695f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4191f348b59c422429c6778b2f285bf5, type: 3}
 --- !u!4 &2176497952184724399 stripped
@@ -430,6 +490,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallTile (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 004531c2b4e989f4cbcb70f7a0d1d827,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a2c68ef0917081f498db5c086d59bc79, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 004531c2b4e989f4cbcb70f7a0d1d827,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ff59903398eaa8444a8ff5aacee7b2f4, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 004531c2b4e989f4cbcb70f7a0d1d827,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: e29098f0acb25034eb4d95451bec695f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 004531c2b4e989f4cbcb70f7a0d1d827, type: 3}
 --- !u!4 &4079607281116479161 stripped
