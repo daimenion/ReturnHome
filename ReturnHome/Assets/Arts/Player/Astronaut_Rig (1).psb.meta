@@ -7097,7 +7097,7 @@ ScriptedImporter:
     index: 17
   - go: {fileID: -3505750312837258216, guid: 7a0d4123e7b3a764cab9965e7a4a1e59, type: 3}
     index: 18
-  generateGOHierarchy: 0
+  generateGOHierarchy: 1
   textureAssetName: Astronaut_Rig (1) Texture
   prefabAssetName: Astronaut_Rig (1) Prefab
   spriteLibAssetName: Astronaut_Rig (1) Sprite Lib

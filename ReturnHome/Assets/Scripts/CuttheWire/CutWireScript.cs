@@ -36,7 +36,7 @@ public class CutWireScript : MinigameScript
         }
         if (isComplete)
         {
-            base.success();
+            StartCoroutine(WinGame());
         }
     }
     protected IEnumerator SelfDestruct()
@@ -51,9 +51,10 @@ public class CutWireScript : MinigameScript
     }
     public IEnumerator WinGame()
     {
+        print("Win");
         isBroken = false;
         base.success();
         yield return new WaitForSeconds(1.5f);
-        Destroy(transform.parent.gameObject);
+        Destroy(transform.gameObject);
     }
 }

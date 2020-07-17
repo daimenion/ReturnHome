@@ -9,5 +9,7 @@ public class GetActiveCamera : MonoBehaviour
     {
         myCanvas = GetComponent<Canvas>();
         myCanvas.worldCamera = Camera.allCameras[0];
+        myCanvas.planeDistance = 1f;
+        myCanvas.renderMode = RenderMode.WorldSpace;
     }
 }

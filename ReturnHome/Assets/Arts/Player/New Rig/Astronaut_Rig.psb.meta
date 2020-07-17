@@ -94,7 +94,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 463
-      y: 4
+      y: 2060
       width: 576
       height: 474
     spriteID: 98fd1279b8125014cb8f3eddaa85caaf
@@ -494,7 +494,7 @@ ScriptedImporter:
     - {x: 0, y: 31}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 18, y: -1399}
+    uvTransform: {x: 18, y: 657}
   - name: Front Hand
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -502,8 +502,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 463
-      y: 1684
+      x: 1047
+      y: 2868
       width: 299
       height: 325
     spriteID: 34f40e5e73e510e4f93245063d015ddb
@@ -1012,7 +1012,7 @@ ScriptedImporter:
     - {x: 0, y: 40}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -319, y: 975}
+    uvTransform: {x: 265, y: 2159}
   - name: Front Arm
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1020,8 +1020,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 794
-      y: 833
+      x: 1047
+      y: 2060
       width: 228
       height: 492
     spriteID: 98386525fee07fc4ba05c8e69d2ebda7
@@ -1446,7 +1446,7 @@ ScriptedImporter:
     - {x: 0, y: 31}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -69, y: -96}
+    uvTransform: {x: 184, y: 1131}
   - name: Neck
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1454,8 +1454,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1360
-      y: 486
+      x: 1047
+      y: 3201
       width: 313
       height: 261
     spriteID: fb27f6f1777477541b577a9a96bb7d28
@@ -1816,7 +1816,7 @@ ScriptedImporter:
     - {x: 0, y: 27}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 773, y: -844}
+    uvTransform: {x: 460, y: 1871}
   - name: Torso
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1825,7 +1825,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 716
+      y: 2772
       width: 407
       height: 619
     spriteID: 7c9adf4dff064424d8481e083b7447ef
@@ -2286,7 +2286,7 @@ ScriptedImporter:
     - {x: 37, y: 32}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -561, y: -171}
+    uvTransform: {x: -561, y: 1885}
   - name: Front Foot
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2294,8 +2294,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1047
-      y: 4
+      x: 463
+      y: 3212
       width: 558
       height: 339
     spriteID: d4aeda5d35e91c142b76aaf8281651cf
@@ -2695,7 +2695,7 @@ ScriptedImporter:
     - {x: 0, y: 31}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 491, y: -131}
+    uvTransform: {x: -93, y: 3077}
   - name: Front Leg
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2704,7 +2704,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 1343
+      y: 3399
       width: 338
       height: 690
     spriteID: 54381a70e7ee6f9449443a70a11d5eb8
@@ -3244,7 +3244,7 @@ ScriptedImporter:
     - {x: 0, y: 36}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -663, y: 1001}
+    uvTransform: {x: -663, y: 3057}
   - name: Back Foot
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -3252,8 +3252,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 794
-      y: 486
+      x: 463
+      y: 3559
       width: 558
       height: 339
     spriteID: 5a5ef04586dfb6d4fbd6ede875f10659
@@ -3663,7 +3663,7 @@ ScriptedImporter:
     - {x: 0, y: 31}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 409, y: 316}
+    uvTransform: {x: 78, y: 3389}
   - name: Back leg
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -3672,7 +3672,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 463
-      y: 486
+      y: 2542
       width: 323
       height: 662
     spriteID: c04db0647c4f0914e8d58e34daf7af0f
@@ -4181,7 +4181,7 @@ ScriptedImporter:
     - {x: 0, y: 35}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -54, y: 109}
+    uvTransform: {x: -54, y: 2165}
   - name: Back Hand
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -4189,8 +4189,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1613
-      y: 4
+      x: 1047
+      y: 2560
       width: 328
       height: 300
     spriteID: 80ec0eb01b71bf44298c0355014f4569
@@ -4666,7 +4666,7 @@ ScriptedImporter:
     - {x: 0, y: 37}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 1234, y: -729}
+    uvTransform: {x: 668, y: 1827}
   - name: Back Arm
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -4674,8 +4674,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 463
-      y: 1156
+      x: 794
+      y: 2542
       width: 232
       height: 520
     spriteID: 353f15d5a9989db4eab8b9357b6d5541
@@ -5151,7 +5151,7 @@ ScriptedImporter:
     - {x: 0, y: 32}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -18, y: 255}
+    uvTransform: {x: 313, y: 1641}
   - name: Pack
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -5160,7 +5160,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
+      y: 2060
       width: 451
       height: 704
     spriteID: dfef606f0f08ce945972af84fc21f9fa
@@ -5873,13 +5873,35 @@ ScriptedImporter:
     - {x: 55, y: 59}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -656, y: -891}
+    uvTransform: {x: -656, y: 1165}
+  - name: Background
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1536
+      height: 2048
+    spriteID: 097b2c8b7d31d0d48b0c52ef8b6a594d
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
-  importHiddenLayers: 0
-  importedTextureWidth: 2048
+  importHiddenLayers: 1
+  importedTextureWidth: 1024
   importedTextureHeight: 2048
   documentSize: {x: 1536, y: 2048}
   paperDollMode: 0
@@ -5887,7 +5909,7 @@ ScriptedImporter:
   spriteCategoryList:
     categories: []
   textureActualWidth: 2048
-  textureActualHeight: 2048
+  textureActualHeight: 4096
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 1
@@ -5899,83 +5921,90 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 98fd1279b8125014cb8f3eddaa85caaf
     layerID: 13
-    mosaicPosition: {x: 463, y: 4}
+    mosaicPosition: {x: 463, y: 2060}
   - name: Front Hand
     spriteName: Front Hand
     isGroup: 0
     parentIndex: -1
     spriteID: 34f40e5e73e510e4f93245063d015ddb
     layerID: 12
-    mosaicPosition: {x: 463, y: 1684}
+    mosaicPosition: {x: 1047, y: 2868}
   - name: Front Arm
     spriteName: Front Arm
     isGroup: 0
     parentIndex: -1
     spriteID: 98386525fee07fc4ba05c8e69d2ebda7
     layerID: 11
-    mosaicPosition: {x: 794, y: 833}
+    mosaicPosition: {x: 1047, y: 2060}
   - name: Neck
     spriteName: Neck
     isGroup: 0
     parentIndex: -1
     spriteID: fb27f6f1777477541b577a9a96bb7d28
     layerID: 10
-    mosaicPosition: {x: 1360, y: 486}
+    mosaicPosition: {x: 1047, y: 3201}
   - name: Torso
     spriteName: Torso
     isGroup: 0
     parentIndex: -1
     spriteID: 7c9adf4dff064424d8481e083b7447ef
     layerID: 9
-    mosaicPosition: {x: 4, y: 716}
+    mosaicPosition: {x: 4, y: 2772}
   - name: Front Foot
     spriteName: Front Foot
     isGroup: 0
     parentIndex: -1
     spriteID: d4aeda5d35e91c142b76aaf8281651cf
     layerID: 8
-    mosaicPosition: {x: 1047, y: 4}
+    mosaicPosition: {x: 463, y: 3212}
   - name: Front Leg
     spriteName: Front Leg
     isGroup: 0
     parentIndex: -1
     spriteID: 54381a70e7ee6f9449443a70a11d5eb8
     layerID: 7
-    mosaicPosition: {x: 4, y: 1343}
+    mosaicPosition: {x: 4, y: 3399}
   - name: Back Foot
     spriteName: Back Foot
     isGroup: 0
     parentIndex: -1
     spriteID: 5a5ef04586dfb6d4fbd6ede875f10659
     layerID: 6
-    mosaicPosition: {x: 794, y: 486}
+    mosaicPosition: {x: 463, y: 3559}
   - name: Back leg
     spriteName: Back leg
     isGroup: 0
     parentIndex: -1
     spriteID: c04db0647c4f0914e8d58e34daf7af0f
     layerID: 5
-    mosaicPosition: {x: 463, y: 486}
+    mosaicPosition: {x: 463, y: 2542}
   - name: Back Hand
     spriteName: Back Hand
     isGroup: 0
     parentIndex: -1
     spriteID: 80ec0eb01b71bf44298c0355014f4569
     layerID: 4
-    mosaicPosition: {x: 1613, y: 4}
+    mosaicPosition: {x: 1047, y: 2560}
   - name: Back Arm
     spriteName: Back Arm
     isGroup: 0
     parentIndex: -1
     spriteID: 353f15d5a9989db4eab8b9357b6d5541
     layerID: 3
-    mosaicPosition: {x: 463, y: 1156}
+    mosaicPosition: {x: 794, y: 2542}
   - name: Pack
     spriteName: Pack
     isGroup: 0
     parentIndex: -1
     spriteID: dfef606f0f08ce945972af84fc21f9fa
     layerID: 2
+    mosaicPosition: {x: 4, y: 2060}
+  - name: Background
+    spriteName: Background
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 097b2c8b7d31d0d48b0c52ef8b6a594d
+    layerID: 1
     mosaicPosition: {x: 4, y: 4}
   characterData:
     bones:
