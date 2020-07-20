@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(Animator))]
+//[RequireComponent(typeof(Animator))]
 public class Actor : MonoBehaviour
 {
     protected Rigidbody rBody;
@@ -25,7 +25,8 @@ public class Actor : MonoBehaviour
     protected virtual void Awake()
     {
         rBody = GetComponent<Rigidbody>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
+        if (anim == null) Debug.LogError("No Animator Found!");
 
         health = MaxHealth;
     }

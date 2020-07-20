@@ -17,6 +17,7 @@ public class PlayerController : Actor
     public Camera cam;
     public Vector3 CamPos;
     string TypeOfAttack;
+    public Transform rig;
     public enum PlayerStates
     {
         Idle,
@@ -73,6 +74,15 @@ public class PlayerController : Actor
         Vector3 moveVector = new Vector3 (Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * speed * Time.deltaTime;
         transform.Translate(moveVector);
         isMoving = (moveVector != Vector3.zero);
+        anim.SetBool("isMoving", isMoving);
+        if (Input.GetAxis("Horizontal") > 0)
+        {
+            rig.localScale = new Vector3(-0.1f, 0.1f, 0.1f);
+        }
+        else if (Input.GetAxis("Horizontal") < 0)
+        {
+            rig.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        }
     }
     //check Oxygen levels and Low Oxygen effects
     void CheckOxygen() {
@@ -146,6 +156,7 @@ public class PlayerController : Actor
     }
     public void Electrocute(float Damage)
     {
-        StartCoroutine(TakeDamage(0.0f, Damage));
+        //StartCoroutine(TakeDamage(0.0f, Damage)); Change damage to new damage type when it's available
+        anim.Play("Base Layer.electrocution", 0, .25f);
     }
 }

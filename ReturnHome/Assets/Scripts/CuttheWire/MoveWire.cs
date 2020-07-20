@@ -1,18 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(ParticleSystem))]
 public class MoveWire : MonoBehaviour
 {
     public bool Example;
     public GameObject myGoal;
     public bool isActive = true;
     public int isBroken = 0;
+    private ParticleSystem particle;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        particle = GetComponent<ParticleSystem>();
+        if (Example)
+        {
+            particle.Stop();
+        }
     }
     void OnMouseDrag()
     {
@@ -34,6 +39,7 @@ public class MoveWire : MonoBehaviour
                 other.gameObject.tag = "Untagged";
                 transform.position = other.transform.position;
                 isBroken = 1;
+                particle.Stop();
             }
             else
             {

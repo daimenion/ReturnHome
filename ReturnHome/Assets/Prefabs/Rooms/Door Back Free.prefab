@@ -117,7 +117,7 @@ Transform:
   - {fileID: 5153255595420906923}
   - {fileID: 1582217973208911738}
   - {fileID: 5592309370878716484}
-  - {fileID: 1122711135256275176}
+  - {fileID: 4080235737955154125}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -449,22 +449,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1001 &1925323210147223534
+--- !u!1001 &3293077316172449739
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 5153255595607663840}
     m_Modifications:
-    - target: {fileID: 1525792930125627163, guid: 512589e0bacf3c44fa8f45fa02b1ec20,
-        type: 3}
-      propertyPath: m_Name
-      value: Door
-      objectReference: {fileID: 0}
     - target: {fileID: 1525792930125627142, guid: 512589e0bacf3c44fa8f45fa02b1ec20,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 2.02
       objectReference: {fileID: 0}
     - target: {fileID: 1525792930125627142, guid: 512589e0bacf3c44fa8f45fa02b1ec20,
         type: 3}
@@ -474,7 +469,7 @@ PrefabInstance:
     - target: {fileID: 1525792930125627142, guid: 512589e0bacf3c44fa8f45fa02b1ec20,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2
+      value: -1.96
       objectReference: {fileID: 0}
     - target: {fileID: 1525792930125627142, guid: 512589e0bacf3c44fa8f45fa02b1ec20,
         type: 3}
@@ -516,16 +511,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5788814751866694031, guid: 512589e0bacf3c44fa8f45fa02b1ec20,
+    - target: {fileID: 1525792930125627163, guid: 512589e0bacf3c44fa8f45fa02b1ec20,
         type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2
+      propertyPath: m_Name
+      value: Door
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 512589e0bacf3c44fa8f45fa02b1ec20, type: 3}
---- !u!4 &1122711135256275176 stripped
+--- !u!4 &4080235737955154125 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1525792930125627142, guid: 512589e0bacf3c44fa8f45fa02b1ec20,
     type: 3}
-  m_PrefabInstance: {fileID: 1925323210147223534}
+  m_PrefabInstance: {fileID: 3293077316172449739}
   m_PrefabAsset: {fileID: 0}
