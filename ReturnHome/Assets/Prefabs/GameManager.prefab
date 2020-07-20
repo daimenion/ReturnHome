@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8226711440829455089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8226711440829455095}
+  - component: {fileID: 8226711440829455088}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8226711440829455095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8226711440829455089}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.156088, y: 2.0093882, z: 3.2770553}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8226711440829455088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8226711440829455089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d8fe08ba267b146af8264fbde3c9e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghosts:
+  - {fileID: 5922755855821676919, guid: 6211723a3caa1d44a8956c627f090bc4, type: 3}
+  - {fileID: 5922755855821676919, guid: 6211723a3caa1d44a8956c627f090bc4, type: 3}
+  - {fileID: 7343974242252153627, guid: 77ce61b5c395af945a2a437ae646c8e9, type: 3}
+  - {fileID: 5176522142520836812, guid: 7420a454230fd8841bbe4edd16dd0424, type: 3}
+  - {fileID: 3519482869002174733, guid: 08b7f384e3c58b04db0877d2dd3f3387, type: 3}
+  - {fileID: 9113280834669943828, guid: 9f2d42bd5096f7843b9576619a20f9b8, type: 3}
+  - {fileID: 9113280834669943828, guid: 9f2d42bd5096f7843b9576619a20f9b8, type: 3}
+  - {fileID: 9113280834669943828, guid: 9f2d42bd5096f7843b9576619a20f9b8, type: 3}
+  - {fileID: 9113280834669943828, guid: 9f2d42bd5096f7843b9576619a20f9b8, type: 3}
+  reset: 0
+  MaxShipHealth: 150
+  Box: {fileID: 9025200576874599676, guid: b6bb0e522ba1bf64ea57f0556afa9bf4, type: 3}
+  HPBar: {fileID: 0}

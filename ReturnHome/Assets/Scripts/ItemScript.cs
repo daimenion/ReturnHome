@@ -92,7 +92,7 @@ public abstract class Weapon : Item //Weapons: use a collider for weapon range
     public virtual void Update() {
         if (Equipped)
         {
-            this.gameObject.GetComponent<Interaction>().enabled = false;
+            //this.gameObject.GetComponent<Interaction>().enabled = false;
             this.GetComponent<BoxCollider>().enabled = false;
             this.gameObject.transform.localPosition = new Vector3(0, 0, 0);
 
@@ -100,13 +100,16 @@ public abstract class Weapon : Item //Weapons: use a collider for weapon range
             {
                 if (cameras[i].isActiveAndEnabled)
                 {
-                    Vector2 PositionOnScreen = cameras[i].WorldToViewportPoint(transform.position);
+                    Vector2 PositionOnScreen = Camera.allCameras[0].WorldToViewportPoint(transform.position);
 
-                    Vector2 MouseOnScreen = (Vector2)cameras[i].ScreenToViewportPoint(Input.mousePosition);
+                    Vector2 MouseOnScreen = (Vector2)Camera.allCameras[0].ScreenToViewportPoint(Input.mousePosition);
                     float angle = AngleBetweenTwoPoints(PositionOnScreen, MouseOnScreen);
                     this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0f, -angle - 45, 0f));
                 }
             }
+        }
+        else if (transform.parent != null && !Equipped) {
+            this.gameObject.transform.localPosition += new Vector3(100, 500, 300);
         }
 
        

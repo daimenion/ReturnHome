@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 
 public class FireExtinguisher : Weapon
 {
+    public ParticleSystem particles;
     public GameObject particle;
     void Update()
     {
@@ -27,10 +28,23 @@ public class FireExtinguisher : Weapon
 
 
     }
+    void OnParticleCollision(GameObject other)
+    {
+        Debug.Log("collided");
+        if (other.tag == "Ghost") {
+            other.GetComponent<AI>().DecreaseHealth(0.1f);
+
+        }
+
+    }
+    void OnParticleTrigger() { 
+    
+    }
     public override void OnUse()
     {
         base.OnUse();
         particle.SetActive(true);
+        particles.Emit(1);
 
     }
 }

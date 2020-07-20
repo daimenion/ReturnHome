@@ -10,46 +10,53 @@ public class VacuumCleaner : Weapon
     public float baseDmg;
     public float increasedDmg; //damage when modified
     public bool isModified;
+    public ViewCircle view;
 
-    void Update()
-    {base.Update();
+    public override void Update()
+    {
+        base.Update();
         interaction();
     }
 
     public VacuumCleaner()
     {
         aresol = true; //Get button down(?)
-        usesLeft = 6;
+        usesLeft = 20;
         myName = "Vacuum Cleaner";
         description = "Pull the ghost's closer to you.";
         type = "Cleaning tool"; //(?)
         damage = 0.3f;
+        //view = transform.GetComponentInChildren<ViewCircle>();
     }
 
     public override void OnUse()
     {
         base.OnUse();
-        StartCoroutine(Using());
+ 
+        Using();
     }
 
-    IEnumerator Using()
+     void Using()
     {
         GeneralGhost[] ghosts = GameObject.FindObjectsOfType<GeneralGhost>();
 
         foreach (GeneralGhost ghost in ghosts)
         {
-            if (Vector3.Distance(ghost.transform.position, FindObjectOfType<PlayerController>().gameObject.transform.position) <= range)    //Adjust the range
+            if (view.visibleTargets.Contains(ghost.gameObject.transform))    //Adjust the range
             {
-                yield return new WaitForSeconds(0.2f);
+                //yield return new WaitForSeconds(0.2f);
 
                 //Deal damage to ghost
 
-                ghost.GetComponent<Rigidbody>().AddForce (new Vector3
-                    (FindObjectOfType<GeneralGhost>().speed * pullForceX, 0, 
-                    FindObjectOfType<GeneralGhost>().speed * pullForceZ));
+                //ghost.GetComponent<Rigidbody>().AddForce (new Vector3
+                //    (FindObjectOfType<GeneralGhost>().speed * pullForceX, 0, 
+                //    FindObjectOfType<GeneralGhost>().speed * pullForceZ));
+                Vector3 windowPosition = new Vector3(transform.position.x, ghost.transform.position.y, transform.position.z);
+                ghost.transform.position = Vector3.MoveTowards(ghost.transform.position, transform.position, 0.1f);
                 Debug.Log("Pulling ghost in");
             }
+
         }
-        StopCoroutine(Using());
+        //StopCoroutine(Using());
     }
 }

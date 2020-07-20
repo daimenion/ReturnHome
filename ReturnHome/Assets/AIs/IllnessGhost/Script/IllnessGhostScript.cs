@@ -5,17 +5,46 @@ using UnityEngine;
 
 public class IllnessGhostScript : GeneralGhost
 {
+    LineRenderer line;
+    GameObject lineStart;
+    GameObject lineEnd;
+    Vector3 endPosition;
     //public GameObject Skill;
     protected override void Awake()
     {
         MaxHealth = 75;
         base.Awake();
+        
+
+    }
+    protected override void Update()
+    {
+        base.Update();
+        if (attacking)
+        {
+            endPosition.x = lineEnd.transform.localPosition.x;
+            endPosition.z = lineEnd.transform.localPosition.z;
+            line.SetPosition(1, endPosition);
+
+        }
+        if (CurrentState != States.Attack) {
+            endPosition.x = lineStart.transform.localPosition.x;
+            endPosition.z = lineStart.transform.localPosition.z;
+            line.SetPosition(1, endPosition);
+        }
 
 
     }
     public override void Attack()
     {
-        if(attacking == false)
+        lineStart = this.gameObject;
+        lineEnd = playerController.gameObject;
+        line = transform.GetComponentInChildren<LineRenderer>();
+        Vector3 startPosition = new Vector3(lineStart.transform.localPosition.x, 1.75f, lineStart.transform.localPosition.z);
+        line.SetPosition(0, startPosition);
+        endPosition = new Vector3(lineEnd.transform.localPosition.x, 1.75f, lineEnd.transform.localPosition.z);
+
+        if (attacking == false)
         {
             attacking = true;
             //Skill.SetActive(true);
@@ -24,6 +53,7 @@ public class IllnessGhostScript : GeneralGhost
         else
         {
             StartCoroutine(AttackOvertime());
+
         }
     }
 

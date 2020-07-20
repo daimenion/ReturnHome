@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4468445222991521840}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.247}
+  m_LocalPosition: {x: 0, y: 0, z: 1.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5497391569715702954}
@@ -3555,7 +3555,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 2}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 3
     type: 1
     collisionMode: 1
@@ -4821,7 +4821,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7499590466179139610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2482405151199806680}
@@ -9697,7 +9697,8 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7841336314356597325, guid: 6211723a3caa1d44a8956c627f090bc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6211723a3caa1d44a8956c627f090bc4, type: 3}
 --- !u!1 &7343974242252153627 stripped
 GameObject:

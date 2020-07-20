@@ -53,8 +53,9 @@ public class CutWireScript : MinigameScript
     {
         print("Win");
         isBroken = false;
-        base.success();
+     
         yield return new WaitForSeconds(1.5f);
+        base.success();
         Destroy(transform.gameObject);
     }
 }

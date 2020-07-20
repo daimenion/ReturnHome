@@ -9,7 +9,7 @@ public class BrokenWindow : MonoBehaviour
     private Collider roomCollider;
     private GameObject player;
     private Rigidbody playerBody;
-    void Start()
+    void Awake()
     {
         player = GameObject.FindWithTag("Player");
         playerBody = player.GetComponent<Rigidbody>();
@@ -35,7 +35,7 @@ public class BrokenWindow : MonoBehaviour
     {
         if (Other.gameObject == player)
         {
-            //player.GetComponent<PlayerController>().PlayerDecreaseHealth(10, "OuterSpace"); //Whatever the code for getting sucked into space is
+            player.GetComponent<PlayerController>().PlayerDecreaseHealth(100, "SuckIntoSpace"); //Whatever the code for getting sucked into space is
             print("Kill");
         }
     }

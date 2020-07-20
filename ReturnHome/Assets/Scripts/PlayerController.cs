@@ -13,7 +13,7 @@ public class PlayerController : Actor
     //Ill
     bool Ill;
     float Illdmg;
-    public Slider HPBar;
+    //public Slider HPBar;
     public Camera cam;
     public Vector3 CamPos;
     string TypeOfAttack;
@@ -34,8 +34,8 @@ public class PlayerController : Actor
     {
         state = PlayerStates.Move;
         speed = 5;
-        HPBar.maxValue = MaxHealth;
-        HPBar.value = health;
+        //HPBar.maxValue = MaxHealth;
+        //HPBar.value = health;
         CamPos = cam.gameObject.transform.localPosition;
     }
 
@@ -46,7 +46,7 @@ public class PlayerController : Actor
         HandleStates();
 
         CheckOxygen();
-        HPBar.value = health;
+        //HPBar.value = health;
         TypeOfAttack = AttackType;
     }
     void HandleStates()

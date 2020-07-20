@@ -34,7 +34,7 @@ public class GhostGhost : GeneralGhost
             {
                 if (SmallGhost[i] == null)
                 {
-                    GameObject a = Instantiate(Ghost, new Vector3(this.transform.localPosition.x + 2, 0, this.transform.localPosition.z + 2), Quaternion.identity);
+                    GameObject a = Instantiate(Ghost, new Vector3(this.transform.localPosition.x + 2, 0, this.transform.localPosition.z + 2), Ghost.transform.rotation);
                     SmallGhost[i] = a;
                 }
             }

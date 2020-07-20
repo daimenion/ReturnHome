@@ -5,17 +5,20 @@ using UnityEngine;
 public class MinigameScript : MonoBehaviour
 {
     public bool isBroken = true;
-
+    CustomGameManager GameManager;
+    void Awake() {
+        GameManager = FindObjectOfType<CustomGameManager>();
+    }
     protected void failure()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().Electrocute(100f);//Temp Value for Mike Test, to kill player
-        //PlayerDecreaseHealth(10, "Electricity");
+        //GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().Electrocute(100f);//Temp Value for Mike Test, to kill player
+        FindObjectOfType<PlayerController>().PlayerDecreaseHealth(10, "Electricity");
 
     }
     protected void success()
     {
         isBroken = false;
         //What do we put here?
-        //Script to raise total repair on the whole ship.
+        GameManager.AdjustShipHealth(GameManager.MaxShipHealth * 0.15f);
     }
 }
