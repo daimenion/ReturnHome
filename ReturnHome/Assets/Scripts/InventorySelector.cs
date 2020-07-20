@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
+using UnityEngine.UI;
 
 public class InventorySelector : MonoBehaviour
 {
@@ -9,11 +10,13 @@ public class InventorySelector : MonoBehaviour
     InventorySystem inv;
     PlayerController player;
     int PerviousNumber;
+    Text name;
     // Start is called before the first frame update
     void Start()
     {
         inv = FindObjectOfType<InventorySystem>();
         player = FindObjectOfType<PlayerController>();
+        name = transform.GetComponentInChildren<Text>();
     }
 
     // Update is called once per frame
@@ -61,6 +64,11 @@ public class InventorySelector : MonoBehaviour
         if (inv.Inventory[ItemNumber] != null)
         {
             inv.Inventory[ItemNumber].Equipped = true;
+            name.text = inv.Inventory[ItemNumber].myName;
+
+        }
+        else {
+            name.text ="";
         }
     }
 

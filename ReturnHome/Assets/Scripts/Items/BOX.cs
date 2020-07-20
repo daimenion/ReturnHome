@@ -10,9 +10,13 @@ public class BOX : MonoBehaviour
     public float spawnRate;
     public Sprite openbox;
     public Sprite emptybox;
+    InventorySystem inventory;
 
     int once = 0;
     GameObject item;
+    void Start() {
+        inventory = FindObjectOfType<InventorySystem>();
+    }
     void Update() {
         if (GetComponent<Interaction>().Interacted && once == 0) {
             once = 1;
@@ -22,23 +26,50 @@ public class BOX : MonoBehaviour
             StartCoroutine(spawnItem());
 
         }
-        if (once == 1)
+        if (once == 1 && inventory.Inventory[inventory.Inventory.Length - 1] == null)
             item.transform.position = new Vector3(item.transform.position.x, item.transform.position.y + 1.5f * Time.deltaTime, item.transform.position.z);
     }
 
     IEnumerator spawnItem()
     {
-        
-       item = Instantiate(SpawnList[Random.Range(0, SpawnList.Length - 1)],
-             transform.position, new Quaternion(0, 45, 0, 1)) as GameObject;
-      
-        yield return new WaitForSeconds(1);
-      
-        item.GetComponent<Interaction>().Interacted = true;
+        int rand = Random.Range(0, SpawnList.Length);
+        if (rand != SpawnList.Length)
+        {
+            if (inventory.Inventory[inventory.Inventory.Length - 1] == null)
+            {
+                item = Instantiate(SpawnList[rand],
+                      transform.position, new Quaternion(0, 45, 0, 1)) as GameObject;
+
+                yield return new WaitForSeconds(1);
+
+                item.GetComponent<Interaction>().Interacted = true;
+                changeBox();
+
+            }
+            else
+            {
+                item = Instantiate(SpawnList[rand],
+              transform.position + new Vector3(Random.Range(-2, -2.5f), 0, Random.Range(-2, -2.5f)), new Quaternion(0, 45, 0, 1)) as GameObject;
+
+                yield return new WaitForSeconds(1);
+
+                changeBox();
+            }
+        }
+        else {
+            FindObjectOfType<PlayerController>().PlayerDecreaseHealth(10, "None");
+            yield return new WaitForSeconds(1);
+            changeBox();
+        }
+        StopCoroutine(spawnItem());
+
+    }
+
+    void changeBox() {
         Debug.Log("Spawned in " + item.name);
         transform.GetComponentInChildren<SpriteRenderer>().sprite = emptybox;
         transform.GetComponentInChildren<ParticleSystem>().Stop();
         once = 2;
-        StopCoroutine(spawnItem());
+
     }
 }

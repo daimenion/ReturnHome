@@ -47,7 +47,7 @@ public class VacuumCleaner : Weapon
                 //yield return new WaitForSeconds(0.2f);
 
                 //Deal damage to ghost
-
+                ghost.DecreaseHealth(0.01f);
                 //ghost.GetComponent<Rigidbody>().AddForce (new Vector3
                 //    (FindObjectOfType<GeneralGhost>().speed * pullForceX, 0, 
                 //    FindObjectOfType<GeneralGhost>().speed * pullForceZ));
