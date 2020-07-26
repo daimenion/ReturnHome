@@ -45,4 +45,18 @@ public class InteractMinigame : Interaction
             isBroken = false;
         }
     }
+    new void OnTriggerExit(Collider other)
+    {
+        base.OnTriggerExit(other);
+        if (myGame != null)
+        {
+            Destroy(myGame);
+            int i = Random.Range(1, 100);
+            if (i <= 30)
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().Electrocute(15f);
+                print("Electrocuted because of leaving");
+            }
+        }
+    }
 }

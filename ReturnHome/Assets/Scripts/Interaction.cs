@@ -24,7 +24,7 @@ public class Interaction : MonoBehaviour//This will eventually be an abstract cl
     {
         canvas.SetActive(true);
     }
-    private void OnTriggerExit(Collider other)
+    protected void OnTriggerExit(Collider other)
     {
         canvas.SetActive(false);
         //Interacted = false;

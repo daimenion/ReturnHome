@@ -22,16 +22,15 @@ public class CutWireScript : MinigameScript
         bool isComplete = true;
         for (int i = 0; i < wireScripts.Length; i += 1)
         {
-            if (wireScripts[i].isBroken == 0)
-            {
-                isComplete = false;
-                break;
-            }
-            else if (wireScripts[i].isBroken == -1)
+            if (wireScripts[i].isBroken == -1)
             {
                 StartCoroutine(SelfDestruct());
                 isComplete = false;
                 break;
+            }
+            else if (wireScripts[i].isBroken == 0)
+            {
+                isComplete = false;
             }
         }
         if (isComplete)
@@ -51,7 +50,6 @@ public class CutWireScript : MinigameScript
     }
     public IEnumerator WinGame()
     {
-        print("Win");
         isBroken = false;
      
         yield return new WaitForSeconds(1.5f);
