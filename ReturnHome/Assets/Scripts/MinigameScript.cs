@@ -12,7 +12,7 @@ public class MinigameScript : MonoBehaviour
     protected void failure()
     {
         //GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().Electrocute(100f);//Temp Value for Mike Test, to kill player
-        FindObjectOfType<PlayerController>().PlayerDecreaseHealth(10, "Electricity");
+        FindObjectOfType<PlayerController>().Electrocute(10f);
 
     }
     protected void success()

@@ -5,18 +5,22 @@ using UnityEngine;
 public class NavigationInteraction : Interaction
 {
     private CustomGameManager gameManager;
+    private Animator anim;
     // Start is called before the first frame update
     override protected void Start()
     {
         base.Start();
         gameManager = FindObjectOfType<CustomGameManager>();
+        anim = GetComponentInChildren<Animator>();
     }
     override protected void myInteraction()
     {
-        float health = gameManager.GetShipHealth();
-        if (health >= gameManager.MaxShipHealth*0.80)
+        float currentHealth = gameManager.GetShipHealth();
+        if (currentHealth >= gameManager.MaxShipHealth && Interacted == false)
         {
             print("Congrats, you returned home.");
+            anim.Play("Base Layer.Winscreen",0,0.25f);
+            Interacted = true;
         }
     }
 }
