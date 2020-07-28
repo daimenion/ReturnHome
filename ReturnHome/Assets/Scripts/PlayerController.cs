@@ -13,6 +13,8 @@ public class PlayerController : Actor
     //Ill
     bool Ill;
     float Illdmg;
+    //Coffee
+    public bool bCoffee;
     public Slider HPBar;
     public Camera cam;
     public Vector3 CamPos;
@@ -147,5 +149,14 @@ public class PlayerController : Actor
     public void Electrocute(float Damage)
     {
         StartCoroutine(TakeDamage(0.0f, Damage));
+    }
+
+    public IEnumerator Coffee(float time, int newSpeed)
+    {
+        speed = newSpeed;
+        yield return new WaitForSeconds(time);
+        bCoffee = false;
+        speed = 5;
+        StopCoroutine("Coffee");
     }
 }

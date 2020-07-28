@@ -16,7 +16,7 @@ public class Lighter : Item
     }
     public Lighter()
     {
-        aresol = true;
+        aresol = false;
         usesLeft = 30.0f;
         myName = "Lighter";
         description = "Could use a cigarette.";
@@ -42,6 +42,7 @@ public class Lighter : Item
         {
             light.intensity = 0;
         }
+        base.OnUse();
     }
 
 }
