@@ -6,9 +6,14 @@ public class Hairspray : Weapon
 {
     //public boolean to check if it's being used, can change to private later
     public bool IsUsed;
+    public ParticleSystem particles;
+    public GameObject particle;
     void Update() {
         interaction();
-        
+        if (Input.GetButtonUp("UseItem"))
+        {
+            particle.SetActive(false);
+        }
     }
     public Hairspray()
     {
@@ -24,6 +29,8 @@ public class Hairspray : Weapon
     {
         IsUsed = !IsUsed;
         base.OnUse();
+        particle.SetActive(true);
+        particles.Emit(1);
     }
 
     public void OnTriggerEnter(Collider other)

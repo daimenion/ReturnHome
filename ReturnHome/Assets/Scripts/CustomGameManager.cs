@@ -22,6 +22,7 @@ public class CustomGameManager : MonoBehaviour
     //
     GameObject[] ItemSpawnPoints;
     public GameObject Box;
+    public GameObject loosescreen;
 
     public Image HPBar;
     // Start is called before the first frame update
@@ -77,10 +78,11 @@ public class CustomGameManager : MonoBehaviour
             once = 1;
         }
         if (ShipHealth >= MaxShipHealth) {
-            Time.timeScale = 0;
+            //Time.timeScale = 0; Moved funtionality to the Navigational Console
         }
         if (playerDeaths >= 5) {
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
+            Instantiate(loosescreen);
         }
     }
     IEnumerator ResetScene() {

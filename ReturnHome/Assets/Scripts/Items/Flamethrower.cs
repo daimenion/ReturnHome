@@ -6,11 +6,17 @@ public class Flamethrower : Weapon
 {
     //public boolean to check if it's being used, can change to private later
     public bool IsUsed;
+    public ParticleSystem particles;
+    public GameObject particle;
     // Update is called once per frame
     public override void Update()
     {
         interaction();
         base.Update();
+        if (Input.GetButtonUp("UseItem"))
+        {
+            particle.SetActive(false);
+        }
     }
 
     public Flamethrower()
@@ -31,5 +37,12 @@ public class Flamethrower : Weapon
             //Do damage to other object
 
         }
+    }
+    public override void OnUse()
+    {
+        base.OnUse();
+        particle.SetActive(true);
+        particles.Emit(1);
+
     }
 }
