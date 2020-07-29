@@ -7,9 +7,10 @@ public class Flamethrower : Weapon
     //public boolean to check if it's being used, can change to private later
     public bool IsUsed;
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
         interaction();
+        base.Update();
     }
 
     public Flamethrower()

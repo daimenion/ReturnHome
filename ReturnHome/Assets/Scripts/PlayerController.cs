@@ -15,6 +15,7 @@ public class PlayerController : Actor
     bool Ill;
     float Illdmg;
     //public Slider HPBar;
+    public bool bCoffee;
     public Camera cam;
     public Vector3 CamPos;
     string TypeOfAttack;
@@ -108,6 +109,16 @@ public class PlayerController : Actor
             GetComponent<LowOxygenEffect>().enabled = false;
         }
     }
+    void OnParticleCollision(GameObject other)
+    {
+        Debug.Log("collided");
+        if (other.tag == "EnemyAttacks")
+        {
+            PlayerDecreaseHealth(1.0f, "Ghost");
+
+        }
+
+    }
     void OnTriggerEnter( Collider other) {
 
         //if (other.CompareTag("EnemyAttacks")) {
@@ -133,7 +144,7 @@ public class PlayerController : Actor
         if (other.CompareTag("Room"))
         {
             //make objects visible 
-            other.transform.FindChild("fog").gameObject.SetActive(false);
+            other.transform.Find("fog").gameObject.SetActive(false);
             //move camera
             cam.gameObject.transform.position = Vector3.MoveTowards(cam.gameObject.transform.position, other.GetComponentInChildren<Camera>().gameObject.transform.position,15*Time.deltaTime);
             if (cam.gameObject.transform.position == other.GetComponentInChildren<Camera>().gameObject.transform.position)
@@ -152,7 +163,7 @@ public class PlayerController : Actor
         //}
         if (other.CompareTag("Room"))
         {
-            other.transform.FindChild("fog").gameObject.SetActive(true);
+            other.transform.Find("fog").gameObject.SetActive(true);
             cam.gameObject.transform.parent = this.gameObject.transform;
             cam.gameObject.transform.localPosition =  CamPos;
             cam.gameObject.SetActive(true);
@@ -171,5 +182,14 @@ public class PlayerController : Actor
         //StartCoroutine(TakeDamage(0.0f, Damage)); Change damage to new damage type when it's available
         PlayerDecreaseHealth(10, "Electricity");
         anim.Play("Base Layer.electrocution", 0, .25f);
+    }
+
+    public IEnumerator Coffee(float time, int newSpeed)
+    {
+        speed = newSpeed;
+        yield return new WaitForSeconds(time);
+        bCoffee = false;
+        speed = 5;
+        StopCoroutine("Coffee");
     }
 }

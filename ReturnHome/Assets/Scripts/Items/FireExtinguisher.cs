@@ -22,7 +22,7 @@ public class FireExtinguisher : Weapon
         myName = "Fire Extinguisher";
         description = "The enemy of fire . . . you got a wild Fire Extinguisher";
         type = "Weapon";
-        damage = 0.5f;
+        damage = 0.1f;
     }
     void OnTriggerStay(Collider other) {
 
@@ -32,7 +32,7 @@ public class FireExtinguisher : Weapon
     {
         Debug.Log("collided");
         if (other.tag == "Ghost") {
-            other.GetComponent<AI>().DecreaseHealth(0.1f);
+            other.GetComponent<AI>().DecreaseHealth(damage);
 
         }
 

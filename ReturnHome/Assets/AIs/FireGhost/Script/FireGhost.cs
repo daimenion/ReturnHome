@@ -22,6 +22,7 @@ public class FireGhost : GeneralGhost
             base.Attack();
             Skill.SetActive(true);
             Skill.GetComponent<ParticleSystem>().Play();
+            Skill.GetComponent<ParticleSystem>().Emit(1);
             StartCoroutine(reset());
             attacking = true;
             

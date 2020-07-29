@@ -87,7 +87,7 @@ public abstract class Item : MonoBehaviour
             this.gameObject.transform.localPosition = new Vector3(0, 0, 0);
             //this.gameObject.transform.parent = FindObjectOfType<PlayerController>().gameObject.transform;
             //this.gameObject.transform.position += new Vector3(100, 500, 300);
-            transform.FindChild("Canvas").gameObject.SetActive(false);
+            transform.Find("Canvas").gameObject.SetActive(false);
             interact.Interacted = false;
 
         }
@@ -108,10 +108,12 @@ public abstract class Weapon : Item //Weapons: use a collider for weapon range
     }
     void Start() {
         cameras = FindObjectsOfType<Camera>();
+       
     }
     public override void Update() {
         if (Equipped)
         {
+            FindObjectOfType<PlayerController>().AttackDamage = damage;
             //this.gameObject.GetComponent<Interaction>().enabled = false;
             this.GetComponent<BoxCollider>().enabled = false;
             this.gameObject.transform.localPosition = new Vector3(0, 0, 0);

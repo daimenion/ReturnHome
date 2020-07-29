@@ -225,9 +225,9 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5922755855821676919}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.40474868
+  m_Radius: 0.25
   m_Height: 1.8858099
   m_Direction: 1
   m_Center: {x: 0, y: 0.71608114, z: 0.023579359}
@@ -290,7 +290,7 @@ MonoBehaviour:
   wanderingRadius: 0
   attacking: 0
   ViewLight: {fileID: 6505860570189985464}
-  sprite: {fileID: 3616450559135464738}
+  sprite: {fileID: 3972460119086815943}
   StoppingDistance: 0
 --- !u!195 &7153414004070067757
 NavMeshAgent:
@@ -301,7 +301,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 5922755855821676919}
   m_Enabled: 1
   m_AgentTypeID: -334000983
-  m_Radius: 0.5
+  m_Radius: 0.25
   m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -776,6 +776,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb0089dae392f584e890c9c33b8177bf, type: 3}
+--- !u!1 &3972460119086815943 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8875294976625562428, guid: fb0089dae392f584e890c9c33b8177bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 5479300389335468539}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3728566682496192851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9202231765367445672, guid: fb0089dae392f584e890c9c33b8177bf,

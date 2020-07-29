@@ -4733,7 +4733,6 @@ GameObject:
   - component: {fileID: 2482405151199806680}
   - component: {fileID: 1090587656165625997}
   - component: {fileID: 5391971433988249461}
-  - component: {fileID: 973888426954704993}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: EnemyAttacks
@@ -4828,7 +4827,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -5583,7 +5582,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
@@ -8277,10 +8276,10 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 2}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
     type: 1
-    collisionMode: 1
+    collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
@@ -8347,7 +8346,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -8451,15 +8450,15 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     minKillSpeed: 0
-    maxKillSpeed: 10000
+    maxKillSpeed: 0
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 1024
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -9476,20 +9475,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!136 &973888426954704993
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4468445222991521840}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.88234115
-  m_Height: 11.327562
-  m_Direction: 2
-  m_Center: {x: -1.9232493e-14, y: 0, z: 5.3533654}
 --- !u!114 &1862698506664205562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9514,7 +9499,7 @@ MonoBehaviour:
   wanderingRadius: 0
   attacking: 0
   ViewLight: {fileID: 7895838206341919956}
-  sprite: {fileID: 426403961190973262}
+  sprite: {fileID: 70880935033182379}
   StoppingDistance: 0
   Skill: {fileID: 7499590466179139610}
 --- !u!1 &7499590466179139610
@@ -14289,6 +14274,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8830944358203669064, guid: 6211723a3caa1d44a8956c627f090bc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7300453509635344300, guid: 6211723a3caa1d44a8956c627f090bc4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14373,16 +14363,6 @@ PrefabInstance:
         type: 3}
       propertyPath: MaxHealth
       value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 897303726293182635, guid: 6211723a3caa1d44a8956c627f090bc4,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8830944358203669064, guid: 6211723a3caa1d44a8956c627f090bc4,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3250849181444793242, guid: 6211723a3caa1d44a8956c627f090bc4,
         type: 3}
@@ -14809,6 +14789,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.00000026822082
       objectReference: {fileID: 0}
+    - target: {fileID: 897303726293182635, guid: 6211723a3caa1d44a8956c627f090bc4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6816865032687537941, guid: 6211723a3caa1d44a8956c627f090bc4,
         type: 3}
       propertyPath: viewAngle
@@ -14841,12 +14826,6 @@ GameObject:
 --- !u!195 &6096988347081026625 stripped
 NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 7153414004070067757, guid: 6211723a3caa1d44a8956c627f090bc4,
-    type: 3}
-  m_PrefabInstance: {fileID: 4024760921108988524}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &426403961190973262 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3616450559135464738, guid: 6211723a3caa1d44a8956c627f090bc4,
     type: 3}
   m_PrefabInstance: {fileID: 4024760921108988524}
   m_PrefabAsset: {fileID: 0}

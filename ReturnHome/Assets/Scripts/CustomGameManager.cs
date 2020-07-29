@@ -155,9 +155,9 @@ public class CustomGameManager : MonoBehaviour
         for (int i = 0; i < rooms.Length - 1; i++)
         {
 
-            if (rooms[i].transform.FindChild("fog") != null)
+            if (rooms[i].transform.Find("fog") != null)
             {
-                rooms[i].transform.FindChild("fog").gameObject.SetActive(true);
+                rooms[i].transform.Find("fog").gameObject.SetActive(true);
             }
         }
     }

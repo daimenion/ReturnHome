@@ -65,7 +65,7 @@ public class GeneralGhost : AI
                 break;
             case States.Attack:
                 BasicAttack();
-
+                RotateTowards(playerController.gameObject.transform);
                 if (!CoolDownStarted)
                 {
                     Attack();
@@ -123,7 +123,7 @@ public class GeneralGhost : AI
         base.Update();
         HandleStates();
         // stop sprite from moving or rotating 
-        sprite.transform.position = new Vector3 (transform.position.x,1.5f, transform.position.z);
+        sprite.transform.position = new Vector3 (transform.position.x,-0.1f, transform.position.z);
         sprite.transform.rotation = iniRot;
     }
     public virtual void MoveForward()
@@ -166,5 +166,11 @@ public class GeneralGhost : AI
             Chasing = false;
         }
         StopCoroutine(PlayerOutOfSight());
+    }
+    private void RotateTowards(Transform target)
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5);
     }
 }

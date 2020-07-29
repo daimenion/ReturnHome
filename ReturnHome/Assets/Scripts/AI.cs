@@ -38,7 +38,7 @@ public class AI : Actor
     {
         if (other.CompareTag("PlayerHitBox"))
         {
-            //DecreaseHealth(playerController.attack);
+            DecreaseHealth(playerController.AttackDamage);
 
             if (spriteFlashCoroutine != null)
             {
@@ -95,13 +95,16 @@ public class AI : Actor
         Instantiate(this.gameObject, OriginalPos, transform.rotation);
         Destroy(this.gameObject);
     }
-    void OnTriggerEnter(Collider other) { 
-    
+    void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("PlayerHitBox"))
+        {
+            DecreaseHealth(playerController.AttackDamage);// other.GetComponentInParent<Weapon>().damage);
+        }
     }
 
     void OnTriggerStay(Collider other) {
         if (other.CompareTag("PlayerHitBox")) {
-            DecreaseHealth(other.GetComponentInParent<Weapon>().damage);
+            DecreaseHealth(playerController.AttackDamage);// other.GetComponentInParent<Weapon>().damage);
         }
     }
     void OnTriggerExit(Collider other)

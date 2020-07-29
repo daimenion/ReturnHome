@@ -5081,6 +5081,7 @@ MonoBehaviour:
   - {fileID: 4400171518245295845, guid: b3849fe08ae440447aec7814bd1c3cf9, type: 3}
   - {fileID: 5369780014575304015, guid: c49e5dbf36a8a4c43a28443d874873c7, type: 3}
   - {fileID: 4885785761811188491, guid: 1464eee4e2185fc4ba66f5988c8afa1e, type: 3}
+  - {fileID: 3054366791823221833, guid: 960470604d4cba84e8aee3a95dd3f5c8, type: 3}
   spawnRate: 0
   openbox: {fileID: 21300000, guid: 4ddaa7d0e02928d4eb38f7b54c5a98d1, type: 3}
   emptybox: {fileID: 21300000, guid: 37b0d16eb3e9d7641a8d7535df38a8e8, type: 3}
