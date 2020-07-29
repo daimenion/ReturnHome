@@ -9,12 +9,13 @@ public class IllnessGhostScript : GeneralGhost
     GameObject lineStart;
     GameObject lineEnd;
     Vector3 endPosition;
+    public float MultiDamage;
     //public GameObject Skill;
     protected override void Awake()
     {
         MaxHealth = 75;
         base.Awake();
-        
+        AttackDamage = 2.0f;
 
     }
     protected override void Update()
@@ -32,7 +33,9 @@ public class IllnessGhostScript : GeneralGhost
             endPosition.z = lineStart.transform.localPosition.z;
             line.SetPosition(1, endPosition);
         }
-
+        if (playerController.gameObject.GetComponent<IllEffect>()) {
+            AttackDamage = AttackDamage * MultiDamage;
+        }
 
     }
     public override void Attack()
@@ -60,7 +63,7 @@ public class IllnessGhostScript : GeneralGhost
     IEnumerator AttackOvertime()
     {
         yield return new WaitForSeconds(0.5f);
-        playerController.PlayerDecreaseHealth(2f,"Ghost");
+        playerController.PlayerDecreaseHealth(AttackDamage,"Ghost");
 
        // Debug.log(PlayerController.Health);
 
