@@ -48,6 +48,20 @@ public abstract class Item : MonoBehaviour
             //Remove item from inventory. In some cases, replace the item with a dead version of itself (Empty Fire Extinguisher can be used as a blunt weapon)
         }
     }
+    public virtual void Update()
+    {
+        if (Equipped)
+        {
+            //this.gameObject.GetComponent<Interaction>().enabled = false;
+            this.GetComponent<BoxCollider>().enabled = false;
+            this.gameObject.transform.localPosition = new Vector3(0, 0, 0);
+
+        }
+        else if (transform.parent != null && !Equipped)
+        {
+            this.gameObject.transform.localPosition += new Vector3(100, 500, 300);
+        }
+    }
     public virtual void OnUse()
     {
         if (aresol)
@@ -61,15 +75,21 @@ public abstract class Item : MonoBehaviour
     }
     protected void RemoveItem()
     {
-        Destroy(this);//May need to update the inventory system 
+        transform.parent = null;
+        Destroy(this.gameObject);//May need to update the inventory system 
     }
     protected void interaction() {
         interact = GetComponent<Interaction>();
-        if (interact.Interacted) {
+        if (interact.Interacted)
+        {
+            this.GetComponent<BoxCollider>().enabled = false;
             FindObjectOfType<InventorySystem>().AddItem(this);
+            this.gameObject.transform.localPosition = new Vector3(0, 0, 0);
             //this.gameObject.transform.parent = FindObjectOfType<PlayerController>().gameObject.transform;
             //this.gameObject.transform.position += new Vector3(100, 500, 300);
+            transform.FindChild("Canvas").gameObject.SetActive(false);
             interact.Interacted = false;
+
         }
     }
     
@@ -89,7 +109,7 @@ public abstract class Weapon : Item //Weapons: use a collider for weapon range
     void Start() {
         cameras = FindObjectsOfType<Camera>();
     }
-    public virtual void Update() {
+    public override void Update() {
         if (Equipped)
         {
             //this.gameObject.GetComponent<Interaction>().enabled = false;

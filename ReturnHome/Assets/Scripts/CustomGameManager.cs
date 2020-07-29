@@ -23,7 +23,7 @@ public class CustomGameManager : MonoBehaviour
     GameObject[] ItemSpawnPoints;
     public GameObject Box;
 
-    public Slider HPBar;
+    public Image HPBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,8 +33,8 @@ public class CustomGameManager : MonoBehaviour
         //ship health hp bar 
         ShipHealth = MaxShipHealth;
         ShipHealth = ShipHealth * 0.1f;
-        HPBar.maxValue = MaxShipHealth;
-        HPBar.value = ShipHealth;
+        ShipHealth = ShipHealth / MaxShipHealth;
+        HPBar.fillAmount = ShipHealth;
         //reset playerpref
         if (reset)
             PlayerPrefs.DeleteAll();
@@ -54,16 +54,20 @@ public class CustomGameManager : MonoBehaviour
            
 
         }
+        //make objects in rooms invisible 
+
+        //spawns boxes
         ItemSpawnPoints = GameObject.FindGameObjectsWithTag("ItemSpawnPoint");
         for (int i = 0; i < ItemSpawnPoints.Length - 1; i++) {
             Instantiate(Box, ItemSpawnPoints[i].transform.position, ItemSpawnPoints[i].transform.rotation);
         }
+        MakeObjectInv();
     }
 
     // Update is called once per frame
     void Update()
     {
-        HPBar.value = ShipHealth;
+        HPBar.fillAmount = ShipHealth;
         if (player.health <= 0 && once == 0) {
             CheckEverything(); 
             player.gameObject.transform.Rotate(0,0,90);
@@ -144,7 +148,19 @@ public class CustomGameManager : MonoBehaviour
         return result;
     }
 
+    void MakeObjectInv()
+    {
+        GameObject[] rooms = GameObject.FindGameObjectsWithTag("Room");
+        Transform[] childs = new Transform[50];
+        for (int i = 0; i < rooms.Length - 1; i++)
+        {
 
+            if (rooms[i].transform.FindChild("fog") != null)
+            {
+                rooms[i].transform.FindChild("fog").gameObject.SetActive(true);
+            }
+        }
+    }
 
     #region get/set and +/- functions
     //playerpref functions

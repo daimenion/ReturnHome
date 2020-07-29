@@ -10,9 +10,13 @@ public class Lighter : Item
     private bool useLight;
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
+        base.Update();
         interaction();
+        if (Input.GetKeyUp(KeyCode.Mouse0)) {
+            light.intensity = 0;
+        }
     }
     public Lighter()
     {
@@ -26,21 +30,11 @@ public class Lighter : Item
 
     public override void OnUse()
     {
-        if (!Equipped)
-        {
-            Equipped = true;
-        }
-
-        useLight = !useLight;
+        useLight = true;
         if (Equipped && useLight)
         {
             light.intensity = 10;
             base.OnUse();
-
-        }
-        else
-        {
-            light.intensity = 0;
         }
     }
 

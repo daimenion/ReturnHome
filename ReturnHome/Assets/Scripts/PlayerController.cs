@@ -9,6 +9,7 @@ public class PlayerController : Actor
     public bool isMoving;
     //oxygen
     public float oxygen;
+    public float MaxOxygen;
     public bool LowOxygen;
     //Ill
     bool Ill;
@@ -18,6 +19,8 @@ public class PlayerController : Actor
     public Vector3 CamPos;
     string TypeOfAttack;
     public Transform rig;
+    Image healthbar;
+    Image oxy;
     public enum PlayerStates
     {
         Idle,
@@ -33,16 +36,21 @@ public class PlayerController : Actor
     }
     void Start()
     {
+        oxygen = MaxOxygen;
         state = PlayerStates.Move;
         speed = 5;
         //HPBar.maxValue = MaxHealth;
         //HPBar.value = health;
         CamPos = cam.gameObject.transform.localPosition;
+        healthbar = GameObject.Find("PlayerHealthBar").GetComponent<Image>();
+        oxy = GameObject.Find("OxygenBar").GetComponent<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        healthbar.fillAmount = health / MaxHealth;
+        oxy.fillAmount = oxygen / MaxOxygen;
         //Move();
         HandleStates();
 
@@ -124,6 +132,9 @@ public class PlayerController : Actor
         //}
         if (other.CompareTag("Room"))
         {
+            //make objects visible 
+            other.transform.FindChild("fog").gameObject.SetActive(false);
+            //move camera
             cam.gameObject.transform.position = Vector3.MoveTowards(cam.gameObject.transform.position, other.GetComponentInChildren<Camera>().gameObject.transform.position,15*Time.deltaTime);
             if (cam.gameObject.transform.position == other.GetComponentInChildren<Camera>().gameObject.transform.position)
             {
@@ -141,6 +152,7 @@ public class PlayerController : Actor
         //}
         if (other.CompareTag("Room"))
         {
+            other.transform.FindChild("fog").gameObject.SetActive(true);
             cam.gameObject.transform.parent = this.gameObject.transform;
             cam.gameObject.transform.localPosition =  CamPos;
             cam.gameObject.SetActive(true);
@@ -156,7 +168,8 @@ public class PlayerController : Actor
     }
     public void Electrocute(float Damage)
     {
-        PlayerDecreaseHealth(Damage, "Electricity");
+        //StartCoroutine(TakeDamage(0.0f, Damage)); Change damage to new damage type when it's available
+        PlayerDecreaseHealth(10, "Electricity");
         anim.Play("Base Layer.electrocution", 0, .25f);
     }
 }

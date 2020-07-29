@@ -47,7 +47,6 @@ public class InventorySystem : MonoBehaviour
         if (Inventory[currentItem] == null) {
             Inventory[currentItem] = null;
         }
-
     }
 
 
@@ -76,7 +75,7 @@ public class InventorySystem : MonoBehaviour
                     Item.transform.parent = FindObjectOfType<PlayerController>().gameObject.transform;
                     Item.transform.position += new Vector3(100, 500, 300);
                     Inventory[i] = Item;
-
+                    return;
                     //Items[Items.Length - 1] = null;
                 }
             }

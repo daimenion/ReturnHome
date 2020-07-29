@@ -4782,7 +4782,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9025200576874599673}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!212 &8527400399680347096
 SpriteRenderer:
@@ -4944,7 +4944,7 @@ RectTransform:
   m_Children:
   - {fileID: 3627313856230562908}
   m_Father: {fileID: 9025200576874599673}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5041,8 +5041,8 @@ Transform:
   m_LocalPosition: {x: 7.73, y: 0.92, z: -15.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4282582500199983709}
   - {fileID: 1233556420267907597}
+  - {fileID: 4282582500199983709}
   - {fileID: 6314265003058201683}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -5079,6 +5079,8 @@ MonoBehaviour:
   - {fileID: 4790506623948226274, guid: 6aa40a8a97b81ff4eb59c45dfecaa3e7, type: 3}
   - {fileID: 3054366791823221833, guid: 611c7db01546a7946a974e22dce28b57, type: 3}
   - {fileID: 4400171518245295845, guid: b3849fe08ae440447aec7814bd1c3cf9, type: 3}
+  - {fileID: 5369780014575304015, guid: c49e5dbf36a8a4c43a28443d874873c7, type: 3}
+  - {fileID: 4885785761811188491, guid: 1464eee4e2185fc4ba66f5988c8afa1e, type: 3}
   spawnRate: 0
   openbox: {fileID: 21300000, guid: 4ddaa7d0e02928d4eb38f7b54c5a98d1, type: 3}
   emptybox: {fileID: 21300000, guid: 37b0d16eb3e9d7641a8d7535df38a8e8, type: 3}
