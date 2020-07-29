@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 188222898465771441}
   - component: {fileID: 188222898465771443}
   - component: {fileID: 188222898465771452}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -150,8 +150,9 @@ MonoBehaviour:
   MaxHealth: 0
   isMoving: 0
   oxygen: 100
+  MaxOxygen: 0
   LowOxygen: 0
-  HPBar: {fileID: 0}
+  bCoffee: 0
   cam: {fileID: 1377014132}
   CamPos: {x: 0, y: 0, z: 0}
   rig: {fileID: 4816217284360655034}
