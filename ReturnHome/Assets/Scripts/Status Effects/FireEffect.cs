@@ -10,7 +10,7 @@ public class FireEffect : StatusEffect
         duration = 2.0f;
         effectName = "On Fire!";
         effectDescription = "You're on fire! It's pretty self-explanitory.";
-        damage = 2.0f;
+        damage = 5.0f;
     }
     new void Update()
     {

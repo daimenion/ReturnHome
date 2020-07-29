@@ -71,6 +71,7 @@ public abstract class Item : MonoBehaviour
         else if (usesLeft > 0)
         {
             usesLeft -= 1;
+            FindObjectOfType<PlayerController>().AttackAnim();
         }
     }
     protected void RemoveItem()
