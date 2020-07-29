@@ -5,8 +5,9 @@ using UnityEngine;
 public class OxygenMask : Item
 {
     // Start is called before the first frame update
-    void Update()
+    public override void Update()
     {
+        base.Update();
         interaction();
 
     }

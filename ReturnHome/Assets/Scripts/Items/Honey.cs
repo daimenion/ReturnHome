@@ -5,8 +5,9 @@ using UnityEngine;
 public class Honey : Item
 {
     public float AddAmountHP;
-    void Update()
+    public override void Update()
     {
+        base.Update();
         interaction();
     }
 

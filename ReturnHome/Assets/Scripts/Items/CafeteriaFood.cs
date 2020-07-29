@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CafeteriaFood : Item
 {
-    void Update()
+    public override void Update()
     {
+        base.Update();
         interaction();
     }
     public CafeteriaFood()

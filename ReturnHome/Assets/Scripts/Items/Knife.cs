@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Knife : Weapon
 {
-    void Update()
+    public override void Update()
     {
+        base.Update();
         interaction();
 
     }

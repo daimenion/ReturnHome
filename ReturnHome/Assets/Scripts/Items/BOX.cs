@@ -26,7 +26,7 @@ public class BOX : MonoBehaviour
             StartCoroutine(spawnItem());
 
         }
-        if (once == 1 && inventory.Inventory[inventory.Inventory.Length - 1] == null)
+        if (once == 1)
             item.transform.position = new Vector3(item.transform.position.x, item.transform.position.y + 1.5f * Time.deltaTime, item.transform.position.z);
     }
 
@@ -48,12 +48,35 @@ public class BOX : MonoBehaviour
             }
             else
             {
-                item = Instantiate(SpawnList[rand],
-              transform.position + new Vector3(Random.Range(-2, -2.5f), 0, Random.Range(-2, -2.5f)), new Quaternion(0, 45, 0, 1)) as GameObject;
+                int x = 0;
+                for (int i = 0; i < inventory.Inventory.Length - 1; i++)
+                {
+                    if (inventory.Inventory[i] == null)
+                    {
+                        item = Instantiate(SpawnList[rand],
+                        transform.position, new Quaternion(0, 45, 0, 1)) as GameObject;
 
-                yield return new WaitForSeconds(1);
+                        yield return new WaitForSeconds(1);
 
-                changeBox();
+                        item.GetComponent<Interaction>().Interacted = true;
+                        changeBox();
+                        yield break;
+                    }
+                    else {
+                        x++;
+                    }
+                }
+                if (x == inventory.Inventory.Length - 1) {
+                    once = 2;
+                    item = Instantiate(SpawnList[rand],
+                        transform.position + new Vector3(Random.Range(-2, -2.5f), 0, Random.Range(-2, -2.5f)), new Quaternion(0, 45, 0, 1)) as GameObject;
+
+                        yield return new WaitForSeconds(1);
+
+                        changeBox();
+                        StopCoroutine(spawnItem());
+                }
+
             }
         }
         else {

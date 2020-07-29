@@ -5,8 +5,9 @@ using UnityEngine;
 public class MedPack : Item
 {
     public float AddAmountHP;
-    void Update()
+    public override void Update()
     {
+        base.Update();
         interaction();
     }
 
