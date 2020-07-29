@@ -1551,7 +1551,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 7.67
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -1691,7 +1691,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.1
+      value: 0.32
       mode: 0
       spread: 0
       speed:
@@ -2425,7 +2425,8 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: f0b365d392dcfba429e5668ca925502a, type: 3}
+    - sprite: {fileID: -8247135902912832453, guid: 7dd828ad5a69f254aa57871b750515fc,
+        type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -5675,7 +5676,7 @@ ParticleSystemRenderer:
   m_SortingLayerID: 946500333
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 1
@@ -5685,7 +5686,7 @@ ParticleSystemRenderer:
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
-  m_RenderAlignment: 0
+  m_RenderAlignment: 2
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
@@ -6295,7 +6296,7 @@ ParticleSystemRenderer:
   m_SortingLayerID: 946500333
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 1
@@ -6305,7 +6306,7 @@ ParticleSystemRenderer:
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
-  m_RenderAlignment: 0
+  m_RenderAlignment: 2
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
@@ -6892,7 +6893,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 7.67
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -7032,7 +7033,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.1
+      value: 0.32
       mode: 0
       spread: 0
       speed:
@@ -7766,7 +7767,8 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: f0b365d392dcfba429e5668ca925502a, type: 3}
+    - sprite: {fileID: -8247135902912832453, guid: 7dd828ad5a69f254aa57871b750515fc,
+        type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -11836,7 +11838,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 7.67
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -11976,7 +11978,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.1
+      value: 0.32
       mode: 0
       spread: 0
       speed:
@@ -12710,7 +12712,8 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: f0b365d392dcfba429e5668ca925502a, type: 3}
+    - sprite: {fileID: -8247135902912832453, guid: 7dd828ad5a69f254aa57871b750515fc,
+        type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -15960,7 +15963,7 @@ ParticleSystemRenderer:
   m_SortingLayerID: 946500333
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 1
@@ -15970,7 +15973,7 @@ ParticleSystemRenderer:
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
-  m_RenderAlignment: 0
+  m_RenderAlignment: 2
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
@@ -16670,7 +16673,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 7.67
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -16810,7 +16813,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.1
+      value: 0.32
       mode: 0
       spread: 0
       speed:
@@ -17544,7 +17547,8 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: f0b365d392dcfba429e5668ca925502a, type: 3}
+    - sprite: {fileID: -8247135902912832453, guid: 7dd828ad5a69f254aa57871b750515fc,
+        type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -20794,7 +20798,7 @@ ParticleSystemRenderer:
   m_SortingLayerID: 946500333
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 1
@@ -20804,7 +20808,7 @@ ParticleSystemRenderer:
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
-  m_RenderAlignment: 0
+  m_RenderAlignment: 2
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0

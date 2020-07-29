@@ -8,14 +8,13 @@ public class FollowThePath : MinigameScript
     public bool isActive = false;
     public MeshCollider myCollider;
     public LineRenderer myLine;
+    private SpriteRenderer sprite;
 
     // Update is called once per frame
     void Start()
     {
         isBroken = true;
-    }
-    void OnMouseOver()
-    {
+        sprite = GetComponent<SpriteRenderer>();
     }
     void OnMouseExit()
     {
@@ -36,6 +35,7 @@ public class FollowThePath : MinigameScript
     }
     public IEnumerator WinGame()
     {
+        isActive = false;
         myLine.startColor = Color.green;
         myLine.endColor = Color.green;
         base.success();
