@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿#if UNITY_EDITOR
+using System.Collections;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.Experimental.TerrainAPI;
@@ -18,3 +19,4 @@ public class EditorScript : Editor
         Handles.DrawLine(view.transform.position, view.transform.position + ViewAngleB * view.viewRadius);
     }
 }
+#endif
