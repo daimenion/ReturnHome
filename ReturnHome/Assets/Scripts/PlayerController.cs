@@ -192,4 +192,12 @@ public class PlayerController : Actor
         speed = 5;
         StopCoroutine("Coffee");
     }
+    public void DeathAnim()
+    {
+        anim.Play("Base Layer.playerdeath");
+    }
+    public void AttackAnim()
+    {
+        anim.Play("Base Layer.Attack");
+    }
 }

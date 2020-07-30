@@ -71,7 +71,7 @@ public class CustomGameManager : MonoBehaviour
         HPBar.fillAmount = ShipHealth;
         if (player.health <= 0 && once == 0) {
             CheckEverything(); 
-            player.gameObject.transform.Rotate(0,0,90);
+            //player.gameObject.transform.Rotate(0,0,90);
             playerDeaths++;
             SaveData();
             StartCoroutine(ResetScene());
@@ -86,6 +86,7 @@ public class CustomGameManager : MonoBehaviour
         }
     }
     IEnumerator ResetScene() {
+        player.DeathAnim();
         yield return new WaitForSeconds(3.0f);
         SceneManager.LoadScene("SampleScene");
 
