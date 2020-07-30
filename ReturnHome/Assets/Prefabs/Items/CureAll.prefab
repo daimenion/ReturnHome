@@ -205,6 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aresol: 0
   usesLeft: 1
+  MaxUsesLeft: 1
   myName: Cure-All
   description: It cures all!
   type: Consumable

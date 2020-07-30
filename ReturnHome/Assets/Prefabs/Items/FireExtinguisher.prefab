@@ -209,7 +209,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aresol: 1
-  usesLeft: 50
+  usesLeft: 20
+  MaxUsesLeft: 20
   myName: Fire Extinguisher
   description: The enemy of fire . . . you got a wild Fire Extinguisher
   type: Weapon

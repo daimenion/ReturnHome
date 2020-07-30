@@ -274,6 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aresol: 0
   usesLeft: 30
+  MaxUsesLeft: 30
   myName: Flamethrower
   description: Light em up!
   type: Weapon

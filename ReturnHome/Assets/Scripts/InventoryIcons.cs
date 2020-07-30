@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class InventoryIcons : MonoBehaviour
 {
     public int ItemNumber;
+    public Image Background;
     InventorySystem inv;
     Sprite defau;
     // Start is called before the first frame update
@@ -23,14 +24,21 @@ public class InventoryIcons : MonoBehaviour
             if (inv.Inventory[ItemNumber] != null)
             {
                 GetComponent<Image>().sprite = inv.Inventory[ItemNumber].GetComponent<SpriteRenderer>().sprite;
+                GetComponent<Image>().type = Image.Type.Filled;
+                GetComponent<Image>().fillMethod = Image.FillMethod.Vertical;
+                GetComponent<Image>().fillAmount = inv.Inventory[ItemNumber].GetComponent<Item>().usesLeft / inv.Inventory[ItemNumber].GetComponent<Item>().MaxUsesLeft;
+                Background.color = new Color(1,1,1,0.25f);
+                Background.sprite = inv.Inventory[ItemNumber].GetComponent<SpriteRenderer>().sprite;
             }
             else
             {
                 GetComponent<Image>().sprite = defau;
+                Background.sprite = defau;
             }
         }
         else {
             GetComponent<Image>().sprite = defau;
+            Background.sprite = defau;
         }
     }
 }

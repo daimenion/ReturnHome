@@ -129,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aresol: 1
   usesLeft: 20
+  MaxUsesLeft: 20
   myName: Vacuum Cleaner
   description: Pull the ghost's closer to you.
   type: Cleaning tool

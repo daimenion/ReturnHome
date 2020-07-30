@@ -449,6 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aresol: 1
   usesLeft: 30
+  MaxUsesLeft: 30
   myName: Lighter
   description: Could use a cigarette.
   type: Lighter

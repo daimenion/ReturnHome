@@ -209,10 +209,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aresol: 0
   usesLeft: -1
+  MaxUsesLeft: -1
   myName: Knife
   description: Let me see what you have...
   type: Weapon
   Equipped: 0
+  gone: 0
   damage: 5
   WeaponHitBox: {fileID: 1401966745539697313}
 --- !u!1 &3054366791947101070

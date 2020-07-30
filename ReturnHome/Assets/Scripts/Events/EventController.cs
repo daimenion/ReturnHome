@@ -7,7 +7,7 @@ using UnityEngine;
 {
     private Collider range;
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         range = GetComponent<Collider>();
     }

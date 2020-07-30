@@ -33,6 +33,7 @@ public abstract class Item : MonoBehaviour
 {
     public bool aresol; //Whether this item uses GetButton or GetButtonDown
     public float usesLeft;
+    public float MaxUsesLeft;
 
     public string myName;
     public string description;
@@ -40,6 +41,7 @@ public abstract class Item : MonoBehaviour
     protected Interaction interact;
     public bool Equipped;
     public bool gone;
+
     public void UseItem()
     {
         OnUse();
@@ -122,7 +124,7 @@ public abstract class Weapon : Item //Weapons: use a collider for weapon range
 
             for (int i = 0; i < cameras.Length; i++)
             {
-                if (cameras[i].isActiveAndEnabled)
+                if (Camera.allCameras[0].isActiveAndEnabled)
                 {
                     Vector2 PositionOnScreen = Camera.allCameras[0].WorldToViewportPoint(transform.position);
 

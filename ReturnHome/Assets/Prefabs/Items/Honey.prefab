@@ -76,6 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aresol: 0
   usesLeft: 1
+  MaxUsesLeft: 1
   myName: Honey
   description: It tastes sweet.
   type: Consumable

@@ -334,6 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aresol: 0
   usesLeft: 1
+  MaxUsesLeft: 1
   myName: Med Pack
   description: Heals the player, one time use
   type: Consumable

@@ -279,6 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aresol: 1
   usesLeft: 30
+  MaxUsesLeft: 30
   myName: Hairspray
   description: Good Morning Baltimore!
   type: Hair Product
