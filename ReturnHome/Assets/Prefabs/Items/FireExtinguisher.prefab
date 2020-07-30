@@ -214,6 +214,7 @@ MonoBehaviour:
   description: The enemy of fire . . . you got a wild Fire Extinguisher
   type: Weapon
   Equipped: 0
+  gone: 1
   damage: 5
   WeaponHitBox: {fileID: 622787132279060713}
   particles: {fileID: 3671237668129792684}

@@ -338,6 +338,7 @@ MonoBehaviour:
   description: Heals the player, one time use
   type: Consumable
   Equipped: 0
+  gone: 1
   AddAmountHP: 20
 --- !u!212 &6672298997106101861
 SpriteRenderer:

@@ -293,6 +293,7 @@ MonoBehaviour:
   description: This will give you air
   type: Consumable
   Equipped: 0
+  gone: 1
 --- !u!1 &3054366791947101070
 GameObject:
   m_ObjectHideFlags: 0

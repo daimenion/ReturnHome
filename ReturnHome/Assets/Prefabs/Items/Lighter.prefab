@@ -453,6 +453,7 @@ MonoBehaviour:
   description: Could use a cigarette.
   type: Lighter
   Equipped: 0
+  gone: 1
   light: {fileID: 3205711670210328270}
 --- !u!65 &-3686294023231523963
 BoxCollider:

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IllEffect : StatusEffect
 {
-    float Illdmg;
+    public float Illdmg;
     public IllEffect()
     {
         duration = -1;

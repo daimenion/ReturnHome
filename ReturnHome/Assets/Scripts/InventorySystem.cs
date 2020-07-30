@@ -54,7 +54,7 @@ public class InventorySystem : MonoBehaviour
         //check if last item of the array is empty
         if (Inventory[Inventory.Length - 1] == null)
         {
-            Item.transform.parent = FindObjectOfType<PlayerController>().gameObject.transform;
+            Item.transform.parent = FindObjectOfType<PlayerController>().ObjectOnHand.transform;
             Item.transform.position += new Vector3(100, 500, 300);
             Inventory[Inventory.Length - 1] = Item;
             for (int i = 0; i < Inventory.Length - 1; i++)

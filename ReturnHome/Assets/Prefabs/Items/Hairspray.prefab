@@ -189,6 +189,8 @@ GameObject:
   - component: {fileID: 590078487951509099}
   - component: {fileID: 788544461162990020}
   - component: {fileID: 8651936818728685362}
+  - component: {fileID: 2948767149974192508}
+  - component: {fileID: -3193846300608591622}
   m_Layer: 0
   m_Name: Hairspray
   m_TagString: Untagged
@@ -281,11 +283,38 @@ MonoBehaviour:
   description: Good Morning Baltimore!
   type: Hair Product
   Equipped: 0
+  gone: 1
   damage: 0.5
   WeaponHitBox: {fileID: 3837237511188811189}
   IsUsed: 0
   particles: {fileID: 6130048757092329533}
   particle: {fileID: 7533015114514300295}
+--- !u!65 &2948767149974192508
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4885785761811188491}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.9852114, y: 11.835971, z: 14.768822}
+  m_Center: {x: -1.3939359, y: -2.0833898, z: 0.13475776}
+--- !u!114 &-3193846300608591622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4885785761811188491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615bd63589b4fb64589ef2ef3c5c421c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interacted: 0
 --- !u!1 &7533015114514300295
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,13 +341,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7533015114514300295}
-  m_LocalRotation: {x: 0, y: 0.7734531, z: 0, w: 0.6338535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 590078487951509099}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 101.33, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -5078,7 +5107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2804081775762457701
 Transform:
   m_ObjectHideFlags: 0

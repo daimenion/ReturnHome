@@ -278,6 +278,7 @@ MonoBehaviour:
   description: Light em up!
   type: Weapon
   Equipped: 0
+  gone: 1
   damage: 15
   WeaponHitBox: {fileID: 8324011383263088350}
   IsUsed: 0

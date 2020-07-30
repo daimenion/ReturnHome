@@ -8,12 +8,13 @@ public class Hairspray : Weapon
     public bool IsUsed;
     public ParticleSystem particles;
     public GameObject particle;
-    void Update() {
+    public override void Update() {
         interaction();
         if (Input.GetButtonUp("UseItem"))
         {
             particle.SetActive(false);
         }
+        base.Update();
     }
     public Hairspray()
     {
