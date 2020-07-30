@@ -22,6 +22,7 @@ public class PlayerController : Actor
     public Transform rig;
     Image healthbar;
     Image oxy;
+    public GameObject ObjectOnHand;
     public enum PlayerStates
     {
         Idle,

@@ -96,6 +96,7 @@ public class InventorySystem : MonoBehaviour
         Inventory[Item].Equipped = false;
         Inventory[Item].GetComponent<BoxCollider>().enabled = true;
         Inventory[Item].gameObject.transform.position = player.gameObject.transform.position + new Vector3 (Random.Range(-1.5f, 1.5f),0, Random.Range(-1.5f ,1.5f));
+        Inventory[Item].gameObject.transform.rotation = new Quaternion(0, 0, 0,0);
 
     }
     //public void SwitchItems<T>(IList<T> list) {

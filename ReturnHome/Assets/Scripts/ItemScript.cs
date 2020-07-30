@@ -39,10 +39,11 @@ public abstract class Item : MonoBehaviour
     public string type; //part of the user-facing description
     protected Interaction interact;
     public bool Equipped;
+    public bool gone;
     public void UseItem()
     {
         OnUse();
-        if (usesLeft <= 0)
+        if (usesLeft <= 0&& gone)
         {
             RemoveItem();
             //Remove item from inventory. In some cases, replace the item with a dead version of itself (Empty Fire Extinguisher can be used as a blunt weapon)
