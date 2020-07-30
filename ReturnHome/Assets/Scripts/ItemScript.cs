@@ -67,14 +67,17 @@ public abstract class Item : MonoBehaviour
     }
     public virtual void OnUse()
     {
-        if (aresol)
+        if (FindObjectOfType<MinigameScript>() == null)
         {
-            usesLeft -= 1 * Time.deltaTime;
-        }
-        else if (usesLeft > 0)
-        {
-            usesLeft -= 1;
-            FindObjectOfType<PlayerController>().AttackAnim();
+            if (aresol)
+            {
+                usesLeft -= 1 * Time.deltaTime;
+            }
+            else if (usesLeft > 0)
+            {
+                usesLeft -= 1;
+                FindObjectOfType<PlayerController>().AttackAnim();
+            }
         }
     }
     protected void RemoveItem()

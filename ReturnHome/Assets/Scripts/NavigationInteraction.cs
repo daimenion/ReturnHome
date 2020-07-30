@@ -16,11 +16,12 @@ public class NavigationInteraction : Interaction
     override protected void myInteraction()
     {
         float currentHealth = gameManager.GetShipHealth();
-        if (currentHealth >= gameManager.MaxShipHealth && Interacted == false)
+        if (currentHealth >= 1 && Interacted == false)
         {
             print("Congrats, you returned home.");
-            anim.Play("Base Layer.Winscreen",0,0.25f);
+            anim.Play("Base Layer.Winscreen", 0, 0.25f);
             Interacted = true;
         }
+        else print("Current:" + currentHealth + "  Max:" + 1);
     }
 }
