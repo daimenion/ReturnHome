@@ -107,10 +107,16 @@ public abstract class Weapon : Item //Weapons: use a collider for weapon range
     protected Collider myRange;
     Camera[] cameras;
     public Collider WeaponHitBox;
-    new void OnUse()
+    public bool Melee;
+    public override void OnUse()
     {
         base.OnUse();
-        WeaponHitBox.enabled = true;
+        if (WeaponHitBox != null)
+            WeaponHitBox.enabled = true;
+        if (Melee)
+        {
+            FindObjectOfType<PlayerController>().AttackAnim();
+        }
         //Spawn a collider to determine the weapon range
     }
     void Start() {
@@ -120,20 +126,29 @@ public abstract class Weapon : Item //Weapons: use a collider for weapon range
     public override void Update() {
         if (Equipped)
         {
+            if (FindObjectOfType<PlayerController>().rig.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack")){
+                if (WeaponHitBox != null)
+                {
+                    WeaponHitBox.enabled = false;
+                }
+            }
             FindObjectOfType<PlayerController>().AttackDamage = damage;
             //this.gameObject.GetComponent<Interaction>().enabled = false;
             this.GetComponent<BoxCollider>().enabled = false;
             this.gameObject.transform.localPosition = new Vector3(0, 0, 0);
 
-            for (int i = 0; i < cameras.Length; i++)
+            if (!Melee)
             {
-                if (Camera.allCameras[0].isActiveAndEnabled)
+                for (int i = 0; i < cameras.Length; i++)
                 {
-                    Vector2 PositionOnScreen = Camera.allCameras[0].WorldToViewportPoint(transform.position);
+                    if (Camera.allCameras[0].isActiveAndEnabled)
+                    {
+                        Vector2 PositionOnScreen = Camera.allCameras[0].WorldToViewportPoint(transform.position);
 
-                    Vector2 MouseOnScreen = (Vector2)Camera.allCameras[0].ScreenToViewportPoint(Input.mousePosition);
-                    float angle = AngleBetweenTwoPoints(PositionOnScreen, MouseOnScreen);
-                    this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0f, -angle - 45, 0f));
+                        Vector2 MouseOnScreen = (Vector2)Camera.allCameras[0].ScreenToViewportPoint(Input.mousePosition);
+                        float angle = AngleBetweenTwoPoints(PositionOnScreen, MouseOnScreen);
+                        this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0f, -angle - 45, 0f));
+                    }
                 }
             }
         }

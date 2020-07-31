@@ -4801,7 +4801,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 65fe6c08b2df4544a814216f18aa56dd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5072,6 +5072,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81359fbfd5fa7b44f8f9d11480929d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NotRadnom: 0
+  SetItem: {fileID: 0}
   SpawnList:
   - {fileID: 3054366791823221833, guid: c9f7e804a76b9e54588d799f2699e02e, type: 3}
   - {fileID: 3054366791823221833, guid: aa49196f349cf0648a5e2eddb067f2c7, type: 3}

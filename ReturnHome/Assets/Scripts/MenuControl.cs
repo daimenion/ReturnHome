@@ -8,6 +8,7 @@ public class MenuControl : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("SampleScene");
+        PlayerPrefs.DeleteAll();
     }
     public void Continue()
     {

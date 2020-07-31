@@ -102,11 +102,11 @@ public class AI : Actor
         }
     }
 
-    void OnTriggerStay(Collider other) {
-        if (other.CompareTag("PlayerHitBox")) {
-            DecreaseHealth(playerController.AttackDamage);// other.GetComponentInParent<Weapon>().damage);
-        }
-    }
+    //void OnTriggerStay(Collider other) {
+    //    if (other.CompareTag("PlayerHitBox")) {
+    //        DecreaseHealth(playerController.AttackDamage);// other.GetComponentInParent<Weapon>().damage);
+    //    }
+    //}
     void OnTriggerExit(Collider other)
     {
 
