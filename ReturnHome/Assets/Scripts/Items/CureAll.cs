@@ -22,7 +22,7 @@ public class CureAll : Item
     public override void OnUse()
     {
         FindObjectOfType<PlayerController>().DecreaseHealth(-AddAmountHP);
-        if (FindObjectOfType<PlayerController>().gameObject.GetComponent<IllEffect>())
+        if (FindObjectOfType<PlayerController>().gameObject.GetComponent<StatusEffect>())
         {
             //FindObjectOfType<PlayerController>().gameObject.GetComponent<StatusEffect>().EndEffect(); //EndEffect needs to public in order to deletethis.
             Destroy(FindObjectOfType<PlayerController>().gameObject.GetComponent<StatusEffect>());//delete the add the "ill" effect to the player(?)
