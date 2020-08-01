@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class PlayerController : Actor
 {
     public bool isMoving;
+    public float normalSpeed = 5;
     //oxygen
     public float oxygen;
     public float MaxOxygen;
-    public bool LowOxygen;
     //Ill
     bool Ill;
     float Illdmg;
@@ -41,7 +41,7 @@ public class PlayerController : Actor
     {
         oxygen = MaxOxygen;
         state = PlayerStates.Move;
-        speed = 5;
+        speed = normalSpeed;
         //HPBar.maxValue = MaxHealth;
         //HPBar.value = health;
         CamPos = cam.gameObject.transform.localPosition;
@@ -104,11 +104,11 @@ public class PlayerController : Actor
         }
         else if (oxygen < 40)
         {
-            LowOxygen = true;
-            GetComponent<LowOxygenEffect>().enabled = true;
+            AddEffect("Low Oxygen");
         }
-        else {
-            GetComponent<LowOxygenEffect>().enabled = false;
+        else if (GetComponentInChildren<LowOxygenEffect>())
+        {
+            GetComponentInChildren<LowOxygenEffect>().EndEffect();
         }
     }
     void OnParticleCollision(GameObject other)

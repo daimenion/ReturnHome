@@ -15,4 +15,9 @@ public class MenuControl : MonoBehaviour
         UnityEngine.UI.Text mytext = GameObject.Find("Flavor").GetComponent<UnityEngine.UI.Text>();
         mytext.text = "What did I just say?";
     }
+    public void Unpause()
+    {
+        Time.timeScale = 1;
+        gameObject.SetActive(false);
+    }
 }

@@ -161,6 +161,8 @@ MonoBehaviour:
   - {fileID: 972642561789819815, guid: 86ad6afb688949f4da184eb5dece62d6, type: 3}
   - {fileID: 131058413389423231, guid: b83b9f5dfd25288459fca262729fa65e, type: 3}
   - {fileID: 972642561789819815, guid: 773552b9dc69d7747a8afe21fae1d26d, type: 3}
+  - {fileID: 972642561789819815, guid: de8469f3b02751b44a14ad2356f312d7, type: 3}
+  - {fileID: 972642561789819815, guid: d62a55477af381d49a07d1a8411308ca, type: 3}
 --- !u!136 &188222898465771452
 CapsuleCollider:
   m_ObjectHideFlags: 0

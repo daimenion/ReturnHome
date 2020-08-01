@@ -22,7 +22,7 @@ public class InventorySystem : MonoBehaviour
     void Update()
     {
         currentItem = FindObjectOfType<InventorySelector>().ItemNumber;
-        if (Input.GetButton("UseItem"))
+        if (Input.GetButton("UseItem") && !FindObjectOfType<Pause>().isPaused)
         {
             if (Inventory[currentItem] == null)
             {
