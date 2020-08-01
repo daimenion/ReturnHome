@@ -59,9 +59,9 @@ public class IllnessGhostScript : GeneralGhost
     IEnumerator AttackOvertime()
     {
         yield return new WaitForSeconds(0.5f);
-        if (playerController.gameObject.GetComponent<IllEffect>())
+        if (playerController.gameObject.GetComponentInChildren<IllEffect>())
         {
-            AttackDamage = AttackDamage * playerController.gameObject.GetComponent<IllEffect>().Illdmg;
+            AttackDamage = AttackDamage * playerController.gameObject.GetComponentInChildren<IllEffect>().Illdmg;
         }
         playerController.PlayerDecreaseHealth(AttackDamage,"Ghost");
 

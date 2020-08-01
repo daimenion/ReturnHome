@@ -13,13 +13,15 @@ public class FireEvent : EventController
     }
     protected override void EventStay(Collider other)
     {
-        if (other.gameObject.GetComponent<FireEffect>() == null)
-        {
-            other.gameObject.AddComponent<FireEffect>();
-        }
-        else
-        {
-            other.gameObject.GetComponent<FireEffect>().Reset();
+        if (other.GetComponent<PlayerController>()) {
+            if (other.gameObject.GetComponentInChildren<FireEffect>() == null)
+            {
+                other.GetComponent<PlayerController>().AddEffect("On Fire!");
+            }
+            else
+            {
+                other.gameObject.GetComponentInChildren<FireEffect>().Reset();
+            }
         }
     }
     void OnParticleCollision(GameObject other)

@@ -23,9 +23,9 @@ public class Honey : Item
     public override void OnUse()
     {
         FindObjectOfType<PlayerController>().DecreaseHealth(-AddAmountHP);
-        if (FindObjectOfType<PlayerController>().gameObject.GetComponent<IllEffect>())
+        if (FindObjectOfType<PlayerController>().gameObject.GetComponentInChildren<IllEffect>())
         { 
-            Destroy(FindObjectOfType<PlayerController>().gameObject.GetComponent<IllEffect>());//delete the add the "ill" effect to the player(?)
+            FindObjectOfType<PlayerController>().gameObject.GetComponentInChildren<IllEffect>().EndEffect();//delete the add the "ill" effect to the player(?)
         }
         base.OnUse();
     }
