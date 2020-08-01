@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3573671071543611108}
   - component: {fileID: 3573671071543611106}
   - component: {fileID: 3573671071543611111}
+  - component: {fileID: -4891496327021893960}
   m_Layer: 2
   m_Name: Broken(Path Test)
   m_TagString: Interactable
@@ -186,9 +187,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1798691383
+  m_SortingLayer: 3
+  m_SortingOrder: 2
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -4901,6 +4902,18 @@ MonoBehaviour:
   Interacted: 0
   minigame: {fileID: 4629380061664657382, guid: f5d8e87665074f54999350f2bbca18ec,
     type: 3}
+--- !u!114 &-4891496327021893960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2913913784008759044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b485d38fd65173445a90e402e739fa2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2913913784083550403
 GameObject:
   m_ObjectHideFlags: 0
@@ -5145,8 +5158,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1798691383
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 522394cec02bfe5449d0be3f1c1cf9e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

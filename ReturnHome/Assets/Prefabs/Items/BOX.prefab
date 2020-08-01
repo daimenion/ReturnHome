@@ -4969,7 +4969,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1798691383
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &4612557196946205066
@@ -5023,6 +5023,7 @@ GameObject:
   - component: {fileID: 9025200576874599678}
   - component: {fileID: 9025200576874599677}
   - component: {fileID: 2691317300140536977}
+  - component: {fileID: 4397988559046266778}
   m_Layer: 0
   m_Name: BOX
   m_TagString: Untagged
@@ -5072,6 +5073,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81359fbfd5fa7b44f8f9d11480929d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NotRadnom: 0
+  SetItem: {fileID: 0}
   SpawnList:
   - {fileID: 3054366791823221833, guid: c9f7e804a76b9e54588d799f2699e02e, type: 3}
   - {fileID: 3054366791823221833, guid: aa49196f349cf0648a5e2eddb067f2c7, type: 3}
@@ -5098,3 +5101,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Interacted: 0
+--- !u!114 &4397988559046266778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025200576874599676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b485d38fd65173445a90e402e739fa2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
