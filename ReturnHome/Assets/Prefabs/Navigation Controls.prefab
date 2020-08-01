@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 760307874320208270}
   - component: {fileID: 1397611467983108432}
   - component: {fileID: 760307874320208267}
+  - component: {fileID: -2352916477630973764}
   m_Layer: 0
   m_Name: Navigation Controls
   m_TagString: Interactable
@@ -128,6 +129,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Interacted: 0
+--- !u!114 &-2352916477630973764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760307874320208268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b485d38fd65173445a90e402e739fa2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &760307874430129739
 GameObject:
   m_ObjectHideFlags: 0

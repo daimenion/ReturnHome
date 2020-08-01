@@ -23,6 +23,7 @@ public class PlayerController : Actor
     Image healthbar;
     Image oxy;
     public GameObject ObjectOnHand;
+    public GameObject[] statusEffects;
     public enum PlayerStates
     {
         Idle,
@@ -200,5 +201,36 @@ public class PlayerController : Actor
     public void AttackAnim()
     {
         anim.Play("Base Layer.Attack");
+    }
+    public void AddEffect(string effectName)
+    {
+        bool effectFound = false;
+        
+        foreach(GameObject gm in statusEffects)
+        {
+            if (gm.GetComponent<StatusEffect>().effectName == effectName)
+            {
+                StatusEffect component = gm.GetComponent<StatusEffect>();
+                StatusEffect[] allEffects = GetComponentsInChildren<StatusEffect>();
+                bool effectExists = false;
+                foreach (StatusEffect se in allEffects)
+                {
+                    if (se.effectName == component.effectName)
+                    {
+                        effectExists = true;
+                        break;
+                    }
+                }
+                if (!effectExists)
+                {
+                    GameObject newEffect = Instantiate(gm, transform.position, transform.rotation);
+                    newEffect.transform.parent = transform;
+                    FindObjectOfType<StatusUI>().AddEffect(newEffect.GetComponent<StatusEffect>());
+                }
+                effectFound = true;
+                break;
+            }
+        }
+        if (!effectFound) print("Effect not found!");
     }
 }
