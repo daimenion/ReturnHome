@@ -26,6 +26,7 @@ public class BOX : MonoBehaviour
             GetComponent<Interaction>().enabled = false;
             transform.GetComponentInChildren<SpriteRenderer>().sprite = openbox;
             transform.GetComponentInChildren<ParticleSystem>().Play();
+            FindObjectOfType<PlayerController>().GetComponentInChildren<Animator>().Play("Base Layer.PickUp");
             if (!NotRadnom)
             {
                 StartCoroutine(spawnItem());

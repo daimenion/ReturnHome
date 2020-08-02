@@ -96,7 +96,7 @@ public abstract class Item : MonoBehaviour
             //this.gameObject.transform.position += new Vector3(100, 500, 300);
             transform.Find("Canvas").gameObject.SetActive(false);
             interact.Interacted = false;
-
+            FindObjectOfType<PlayerController>().GetComponentInChildren<Animator>().Play("Base Layer.PickUp");
         }
     }
     

@@ -20,4 +20,8 @@ public class MenuControl : MonoBehaviour
         Time.timeScale = 1;
         gameObject.SetActive(false);
     }
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }
