@@ -168,7 +168,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 65fe6c08b2df4544a814216f18aa56dd, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -5011,11 +5011,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2913913784008759041}
     m_Modifications:
-    - target: {fileID: 200364316928098950, guid: d09072394d2469e4abf951f675127f88,
-        type: 3}
-      propertyPath: m_Name
-      value: Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 7860684768863663175, guid: d09072394d2469e4abf951f675127f88,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5120,6 +5115,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 200364316928098950, guid: d09072394d2469e4abf951f675127f88,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d09072394d2469e4abf951f675127f88, type: 3}

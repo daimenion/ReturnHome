@@ -7,13 +7,14 @@ public class FireExtinguisher : Weapon
 {
     public ParticleSystem particles;
     public GameObject particle;
-    void Update()
+    public override void Update()
     {
         base.Update();
         interaction();
         if (Input.GetButtonUp("UseItem"))
         {
-            particle.SetActive(false);
+            //particle.SetActive(false);
+            particles.Play();
         }
     }
     public FireExtinguisher() {
@@ -43,7 +44,8 @@ public class FireExtinguisher : Weapon
     public override void OnUse()
     {
         base.OnUse();
-        particle.SetActive(true);
+        //particle.SetActive(true);
+        particles.Stop();
         particles.Emit(1);
 
     }

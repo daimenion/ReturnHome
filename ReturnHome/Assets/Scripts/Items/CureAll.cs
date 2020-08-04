@@ -5,7 +5,7 @@ using UnityEngine;
 public class CureAll : Item
 {
     public float AddAmountHP;
-    void Update()
+    public override void Update()
     {
         interaction();
     }

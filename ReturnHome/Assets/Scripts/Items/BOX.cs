@@ -49,7 +49,7 @@ public class BOX : MonoBehaviour
             {
                 item = Instantiate(SpawnList[rand],
                       transform.position, new Quaternion(0, 45, 0, 1)) as GameObject;
-
+                item.GetComponent<BoxCollider>().enabled = false;
                 yield return new WaitForSeconds(1);
 
                 item.GetComponent<Interaction>().Interacted = true;
@@ -65,7 +65,7 @@ public class BOX : MonoBehaviour
                     {
                         item = Instantiate(SpawnList[rand],
                         transform.position, new Quaternion(0, 45, 0, 1)) as GameObject;
-
+                        item.GetComponent<BoxCollider>().enabled = false;
                         yield return new WaitForSeconds(1);
 
                         item.GetComponent<Interaction>().Interacted = true;
@@ -77,14 +77,15 @@ public class BOX : MonoBehaviour
                     }
                 }
                 if (x == inventory.Inventory.Length - 1) {
-                    once = 2;
+                    //once = 2;
                     item = Instantiate(SpawnList[rand],
-                        transform.position + new Vector3(Random.Range(-2, -2.5f), 0, Random.Range(-2, -2.5f)), new Quaternion(0, 45, 0, 1)) as GameObject;
+                        transform.position, new Quaternion(0, 45, 0, 1)) as GameObject;
 
                         yield return new WaitForSeconds(1);
 
                         changeBox();
-                        StopCoroutine(spawnItem());
+                    item.transform.position = transform.position;
+                    StopCoroutine(spawnItem());
                 }
 
             }
@@ -105,7 +106,7 @@ public class BOX : MonoBehaviour
                       transform.position, new Quaternion(0, 45, 0, 1)) as GameObject;
 
                 yield return new WaitForSeconds(1);
-
+            item.GetComponent<BoxCollider>().enabled = false;
                 item.GetComponent<Interaction>().Interacted = true;
                 changeBox();
 
@@ -119,8 +120,8 @@ public class BOX : MonoBehaviour
                     {
                         item = Instantiate(SetItem,
                         transform.position, new Quaternion(0, 45, 0, 1)) as GameObject;
-
-                        yield return new WaitForSeconds(1);
+                    item.GetComponent<BoxCollider>().enabled = false;
+                    yield return new WaitForSeconds(1);
 
                         item.GetComponent<Interaction>().Interacted = true;
                         changeBox();
@@ -133,13 +134,14 @@ public class BOX : MonoBehaviour
                 }
                 if (x == inventory.Inventory.Length - 1)
                 {
-                    once = 2;
+
                     item = Instantiate(SetItem,
-                        transform.position + new Vector3(Random.Range(-2, -2.5f), 0, Random.Range(-2, -2.5f)), new Quaternion(0, 45, 0, 1)) as GameObject;
+                        transform.position, new Quaternion(0, 45, 0, 1)) as GameObject;
 
                     yield return new WaitForSeconds(1);
 
                     changeBox();
+                item.transform.position = transform.position;
                     StopCoroutine(spawnItem());
                 }
 

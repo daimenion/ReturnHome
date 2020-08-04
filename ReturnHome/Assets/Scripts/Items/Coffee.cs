@@ -8,7 +8,7 @@ public class Coffee : Item
     public float effectiveTime;
     public int newSpeed;
 
-    void Update()
+    public override void Update()
     {
         interaction();
     }

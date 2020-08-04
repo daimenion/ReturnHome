@@ -8,6 +8,7 @@ public class GoneGhost : GeneralGhost
     public float TeleportInterval;
     public float BehindPlayerOffset;
     float tpCoolDown;
+    bool hit;
     protected override void Awake()
     {
         MaxHealth = 25;
@@ -17,7 +18,7 @@ public class GoneGhost : GeneralGhost
     //Teleport using a coroutine
     IEnumerator TeleportAround()
     {
-
+        Vector3 randpos = randompos();
         yield return new WaitForSeconds(TeleportInterval);
         //get random value
         Debug.Log("Starting coroutine");
@@ -29,7 +30,7 @@ public class GoneGhost : GeneralGhost
         //    //    break;
 
         //    case 1:  //Teleport to random part of ship
-                Teleport(randompos().x, transform.position.y, randompos().z);
+                Teleport(randpos.x, transform.position.y, randpos.z);
                 Debug.Log("teleported random1");
         //    break;
 
@@ -79,10 +80,15 @@ public class GoneGhost : GeneralGhost
 
     IEnumerator MovePlayer()
     {
-        yield return new WaitForSeconds(TeleportInterval);
-        Debug.Log("moved player");
-        playerController.transform.position = new Vector3(randompos().x, playerController.transform.position.y, randompos().z);
-        transform.position = new Vector3(randompos().x, transform.position.y, randompos().z);
-        StopCoroutine(MovePlayer());
+        hit = GetHit();
+        Vector3 randpos = randompos();
+        if (!hit)
+        {
+            yield return new WaitForSeconds(TeleportInterval);
+            Debug.Log("moved player");
+            playerController.transform.position = new Vector3(randpos.x, playerController.transform.position.y, randpos.z);
+            transform.position = new Vector3(randpos.x, transform.position.y, randpos.z);
+            StopCoroutine(MovePlayer());
+        }
     }
 }

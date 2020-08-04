@@ -140,6 +140,7 @@ MonoBehaviour:
   OriginalPos: {x: 0, y: 0, z: 0}
   SeemPlayer: 0
   cooldown: 0
+  HitBox: {fileID: 3519482869002174727}
   RandomPosition: {x: 0, y: 0, z: 0}
   wanderingRadius: 3
   sprite: {fileID: 8547738694824419330}

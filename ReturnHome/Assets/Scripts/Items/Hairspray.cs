@@ -12,7 +12,7 @@ public class Hairspray : Weapon
         interaction();
         if (Input.GetButtonUp("UseItem"))
         {
-            particle.SetActive(false);
+            particles.Stop();
         }
         base.Update();
     }
@@ -30,7 +30,8 @@ public class Hairspray : Weapon
     {
         IsUsed = !IsUsed;
         base.OnUse();
-        particle.SetActive(true);
+        //particle.SetActive(true);
+        particles.Play();
         particles.Emit(1);
     }
 

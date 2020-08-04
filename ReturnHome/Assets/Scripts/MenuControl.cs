@@ -14,6 +14,8 @@ public class MenuControl : MonoBehaviour
     {
         UnityEngine.UI.Text mytext = GameObject.Find("Flavor").GetComponent<UnityEngine.UI.Text>();
         mytext.text = "What did I just say?";
+        if(PlayerPrefs.HasKey("PlayerDeath")|| PlayerPrefs.HasKey("HowPlayerDie") || PlayerPrefs.HasKey("PlayerLastLocation"))
+        SceneManager.LoadScene("SampleScene");
     }
     public void Unpause()
     {

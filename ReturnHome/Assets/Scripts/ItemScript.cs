@@ -83,11 +83,12 @@ public abstract class Item : MonoBehaviour
     protected void RemoveItem()
     {
         transform.parent = null;
+        FindObjectOfType<InventorySystem>().ItemAmount--;
         Destroy(this.gameObject);//May need to update the inventory system 
     }
     protected void interaction() {
         interact = GetComponent<Interaction>();
-        if (interact.Interacted)
+        if (interact.Interacted && FindObjectOfType<InventorySystem>().ItemAmount < FindObjectOfType<InventorySystem>().Inventory.Length)
         {
             this.GetComponent<BoxCollider>().enabled = false;
             FindObjectOfType<InventorySystem>().AddItem(this);
@@ -116,6 +117,7 @@ public abstract class Weapon : Item //Weapons: use a collider for weapon range
         if (Melee)
         {
             FindObjectOfType<PlayerController>().AttackAnim();
+
         }
         //Spawn a collider to determine the weapon range
     }
@@ -126,17 +128,18 @@ public abstract class Weapon : Item //Weapons: use a collider for weapon range
     public override void Update() {
         if (Equipped)
         {
-            if (FindObjectOfType<PlayerController>().rig.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack")){
+            if (FindObjectOfType<PlayerController>().rig.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+            {
                 if (WeaponHitBox != null)
                 {
                     WeaponHitBox.enabled = false;
                 }
             }
+
             FindObjectOfType<PlayerController>().AttackDamage = damage;
             //this.gameObject.GetComponent<Interaction>().enabled = false;
             this.GetComponent<BoxCollider>().enabled = false;
             this.gameObject.transform.localPosition = new Vector3(0, 0, 0);
-
             if (!Melee)
             {
                 for (int i = 0; i < cameras.Length; i++)
@@ -151,6 +154,10 @@ public abstract class Weapon : Item //Weapons: use a collider for weapon range
                     }
                 }
             }
+            else {
+
+                FindScale();
+            }
         }
         else if (transform.parent != null && !Equipped) {
             this.gameObject.transform.localPosition += new Vector3(100, 500, 300);
@@ -163,6 +170,17 @@ public abstract class Weapon : Item //Weapons: use a collider for weapon range
     {
         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
     }
+    GameObject parents;
+    void FindScale()
+    {
+            parents = transform.parent.gameObject;
+            while (parents.transform.localScale.x != 0.1f)
+            {
+                parents = parents.transform.parent.gameObject;
+            }
+            WeaponHitBox.gameObject.transform.eulerAngles = new Vector3(0, 45, 135);
+    }
+
 }
 //public class Hairspray : Weapon
 //{

@@ -182,7 +182,7 @@ public class PlayerController : Actor
     public void Electrocute(float Damage)
     {
         //StartCoroutine(TakeDamage(0.0f, Damage)); Change damage to new damage type when it's available
-        PlayerDecreaseHealth(10, "Electricity");
+        PlayerDecreaseHealth(Damage, "Electricity");
         anim.Play("Base Layer.electrocution", 0, .25f);
     }
 

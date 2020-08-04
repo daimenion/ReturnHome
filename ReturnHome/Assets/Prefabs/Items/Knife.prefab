@@ -164,13 +164,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5073136146317707007}
-  m_LocalRotation: {x: 0.77634597, y: 0.3295394, z: -0.49458683, w: -0.20993969}
+  m_LocalRotation: {x: 0.77919215, y: 0.32275194, z: -0.49640003, w: -0.20561562}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3054366791823221836}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 245, z: 134}
+  m_LocalEulerAnglesHint: {x: 0, y: 245, z: 135}
 --- !u!212 &1882269998913980117
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -228,11 +228,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5073136146317707007}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_IsTrigger: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.27936086, y: 1.1171265, z: 0.2}
-  m_Center: {x: 0.043340366, y: 0.3503418, z: -0.00003051746}
+  m_Size: {x: 0.27936086, y: 1.1171265, z: 1.5}
+  m_Center: {x: 0.043336306, y: 0.35034174, z: 0.004898688}
 --- !u!1001 &2211838268027584387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -240,11 +240,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3054366791823221836}
     m_Modifications:
-    - target: {fileID: 200364316928098950, guid: d09072394d2469e4abf951f675127f88,
-        type: 3}
-      propertyPath: m_Name
-      value: Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 7860684768863663175, guid: d09072394d2469e4abf951f675127f88,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -349,6 +344,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 200364316928098950, guid: d09072394d2469e4abf951f675127f88,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d09072394d2469e4abf951f675127f88, type: 3}
