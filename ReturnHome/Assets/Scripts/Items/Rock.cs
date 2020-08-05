@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rock : Weapon
 {
-    void Update()
+    public override void Update()
     {
         interaction();
 

@@ -67,24 +67,28 @@ public abstract class Item : MonoBehaviour
     }
     public virtual void OnUse()
     {
-        if (aresol)
+        if (FindObjectOfType<MinigameScript>() == null)
         {
-            usesLeft -= 1 * Time.deltaTime;
-        }
-        else if (usesLeft > 0)
-        {
-            usesLeft -= 1;
-            FindObjectOfType<PlayerController>().AttackAnim();
+            if (aresol)
+            {
+                usesLeft -= 1 * Time.deltaTime;
+            }
+            else if (usesLeft > 0)
+            {
+                usesLeft -= 1;
+                FindObjectOfType<PlayerController>().AttackAnim();
+            }
         }
     }
     protected void RemoveItem()
     {
         transform.parent = null;
+        FindObjectOfType<InventorySystem>().ItemAmount--;
         Destroy(this.gameObject);//May need to update the inventory system 
     }
     protected void interaction() {
         interact = GetComponent<Interaction>();
-        if (interact.Interacted)
+        if (interact.Interacted && FindObjectOfType<InventorySystem>().ItemAmount < FindObjectOfType<InventorySystem>().Inventory.Length)
         {
             this.GetComponent<BoxCollider>().enabled = false;
             FindObjectOfType<InventorySystem>().AddItem(this);
@@ -93,7 +97,7 @@ public abstract class Item : MonoBehaviour
             //this.gameObject.transform.position += new Vector3(100, 500, 300);
             transform.Find("Canvas").gameObject.SetActive(false);
             interact.Interacted = false;
-
+            FindObjectOfType<PlayerController>().GetComponentInChildren<Animator>().Play("Base Layer.PickUp");
         }
     }
     
@@ -104,10 +108,17 @@ public abstract class Weapon : Item //Weapons: use a collider for weapon range
     protected Collider myRange;
     Camera[] cameras;
     public Collider WeaponHitBox;
-    new void OnUse()
+    public bool Melee;
+    public override void OnUse()
     {
         base.OnUse();
-        WeaponHitBox.enabled = true;
+        if (WeaponHitBox != null)
+            WeaponHitBox.enabled = true;
+        if (Melee)
+        {
+            FindObjectOfType<PlayerController>().AttackAnim();
+
+        }
         //Spawn a collider to determine the weapon range
     }
     void Start() {
@@ -117,21 +128,35 @@ public abstract class Weapon : Item //Weapons: use a collider for weapon range
     public override void Update() {
         if (Equipped)
         {
+            if (FindObjectOfType<PlayerController>().rig.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+            {
+                if (WeaponHitBox != null)
+                {
+                    WeaponHitBox.enabled = false;
+                }
+            }
+
             FindObjectOfType<PlayerController>().AttackDamage = damage;
             //this.gameObject.GetComponent<Interaction>().enabled = false;
             this.GetComponent<BoxCollider>().enabled = false;
             this.gameObject.transform.localPosition = new Vector3(0, 0, 0);
-
-            for (int i = 0; i < cameras.Length; i++)
+            if (!Melee)
             {
-                if (Camera.allCameras[0].isActiveAndEnabled)
+                for (int i = 0; i < cameras.Length; i++)
                 {
-                    Vector2 PositionOnScreen = Camera.allCameras[0].WorldToViewportPoint(transform.position);
+                    if (Camera.allCameras[0].isActiveAndEnabled)
+                    {
+                        Vector2 PositionOnScreen = Camera.allCameras[0].WorldToViewportPoint(transform.position);
 
-                    Vector2 MouseOnScreen = (Vector2)Camera.allCameras[0].ScreenToViewportPoint(Input.mousePosition);
-                    float angle = AngleBetweenTwoPoints(PositionOnScreen, MouseOnScreen);
-                    this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0f, -angle - 45, 0f));
+                        Vector2 MouseOnScreen = (Vector2)Camera.allCameras[0].ScreenToViewportPoint(Input.mousePosition);
+                        float angle = AngleBetweenTwoPoints(PositionOnScreen, MouseOnScreen);
+                        this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0f, -angle - 45, 0f));
+                    }
                 }
+            }
+            else {
+
+                FindScale();
             }
         }
         else if (transform.parent != null && !Equipped) {
@@ -145,6 +170,17 @@ public abstract class Weapon : Item //Weapons: use a collider for weapon range
     {
         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
     }
+    GameObject parents;
+    void FindScale()
+    {
+            parents = transform.parent.gameObject;
+            while (parents.transform.localScale.x != 0.1f)
+            {
+                parents = parents.transform.parent.gameObject;
+            }
+            WeaponHitBox.gameObject.transform.eulerAngles = new Vector3(0, 45, 135);
+    }
+
 }
 //public class Hairspray : Weapon
 //{

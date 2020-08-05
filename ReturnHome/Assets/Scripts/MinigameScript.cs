@@ -19,6 +19,6 @@ public class MinigameScript : MonoBehaviour
     {
         isBroken = false;
         //What do we put here?
-        GameManager.AdjustShipHealth((GameManager.MaxShipHealth * 0.15f)/ GameManager.MaxShipHealth);
+        GameManager.AdjustShipHealth((GameManager.MaxShipHealth * 0.20f)/ GameManager.MaxShipHealth);
     }
 }

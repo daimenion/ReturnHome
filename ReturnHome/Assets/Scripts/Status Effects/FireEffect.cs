@@ -7,18 +7,18 @@ public class FireEffect : StatusEffect
     private float damage;
     public FireEffect()
     {
-        duration = 2.0f;
+        duration = 7f;
         effectName = "On Fire!";
         effectDescription = "You're on fire! It's pretty self-explanitory.";
-        damage = 5.0f;
+        damage = 4f;
     }
     new void Update()
     {
         base.Update();
-        gameObject.GetComponent<PlayerController>().PlayerDecreaseHealth(damage * Time.deltaTime,"Fire");
+        FindObjectOfType<PlayerController>().PlayerDecreaseHealth(damage * Time.deltaTime,"Fire");
     }
     public void Reset()
     {
-        duration = 2.0f;
+        duration = 7f;
     }
 }

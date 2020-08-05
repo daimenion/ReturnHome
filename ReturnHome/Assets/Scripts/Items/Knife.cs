@@ -8,7 +8,6 @@ public class Knife : Weapon
     {
         base.Update();
         interaction();
-
     }
     public Knife()
     {
@@ -19,4 +18,5 @@ public class Knife : Weapon
         type = "Weapon";
         damage = 5.0f;
     }
+
 }

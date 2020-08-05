@@ -8,6 +8,7 @@ public class AI : Actor
     protected PlayerController playerController;
     IEnumerator spriteFlashCoroutine;
     public GameObject spawningAttacks;
+    //navmesh 
     public NavMeshAgent agent;
     public Vector3 OriginalPos;
     public bool SeemPlayer;
@@ -16,6 +17,10 @@ public class AI : Actor
     int CoolDownOnce;
     public float cooldown;
     float maxCoolDown;
+
+    public Collider HitBox;
+
+    bool hited;
     protected override void Awake()
     {
         base.Awake();
@@ -86,7 +91,8 @@ public class AI : Actor
         base.Death();
         StartCoroutine(reset());
         OriginalPos = transform.position;
-        transform.position = new Vector3(500, 500, 600);
+        transform.position = new Vector3(1000, 1000, 1000);
+        return;
 
     }
     IEnumerator reset() {
@@ -95,20 +101,27 @@ public class AI : Actor
         Instantiate(this.gameObject, OriginalPos, transform.rotation);
         Destroy(this.gameObject);
     }
-    void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("PlayerHitBox"))
+    public virtual void OnTriggerEnter(Collider other) {
+        //other = HitBox;
+        if (other.tag == ("PlayerHitBox"))
         {
+            Debug.Log("hit");
             DecreaseHealth(playerController.AttackDamage);// other.GetComponentInParent<Weapon>().damage);
+            hited = true;
         }
     }
 
-    void OnTriggerStay(Collider other) {
-        if (other.CompareTag("PlayerHitBox")) {
-            DecreaseHealth(playerController.AttackDamage);// other.GetComponentInParent<Weapon>().damage);
-        }
-    }
+    //void OnTriggerStay(Collider other) {
+    //    if (other.CompareTag("PlayerHitBox")) {
+    //        DecreaseHealth(playerController.AttackDamage);// other.GetComponentInParent<Weapon>().damage);
+    //    }
+    //}
     void OnTriggerExit(Collider other)
     {
+        hited = false;
+    }
 
+    public bool GetHit() {
+        return hited;
     }
 }

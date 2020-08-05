@@ -6,7 +6,7 @@ public class HomeReturner : Item
 {
     public GameObject player;
     public Vector3 homeLocation;
-    void Update()
+    public override void Update()
     {
         interaction();
     }

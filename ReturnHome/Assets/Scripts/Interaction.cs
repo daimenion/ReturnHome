@@ -11,7 +11,7 @@ public class Interaction : MonoBehaviour//This will eventually be an abstract cl
     virtual protected void Start()
     {
         canvas = gameObject.transform.Find("Canvas").gameObject;
-        //if (canvas == null) print("no canvas");
+        if (canvas == null) print(gameObject.name);
     }
     private void OnTriggerStay(Collider other)
     {
@@ -22,12 +22,14 @@ public class Interaction : MonoBehaviour//This will eventually be an abstract cl
     }
     private void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "Player"){
         canvas.SetActive(true);
+        }
     }
     protected void OnTriggerExit(Collider other)
     {
         canvas.SetActive(false);
-        //Interacted = false;
+        Interacted = false;
     }
      virtual protected void myInteraction()
     {

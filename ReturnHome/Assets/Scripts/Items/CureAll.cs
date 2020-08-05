@@ -5,7 +5,7 @@ using UnityEngine;
 public class CureAll : Item
 {
     public float AddAmountHP;
-    void Update()
+    public override void Update()
     {
         interaction();
     }
@@ -22,10 +22,10 @@ public class CureAll : Item
     public override void OnUse()
     {
         FindObjectOfType<PlayerController>().DecreaseHealth(-AddAmountHP);
-        if (FindObjectOfType<PlayerController>().gameObject.GetComponent<IllEffect>())
+        if (FindObjectOfType<PlayerController>().gameObject.GetComponentInChildren<IllEffect>())
         {
-            //FindObjectOfType<PlayerController>().gameObject.GetComponent<StatusEffect>().EndEffect(); //EndEffect needs to public in order to deletethis.
-            Destroy(FindObjectOfType<PlayerController>().gameObject.GetComponent<StatusEffect>());//delete the add the "ill" effect to the player(?)
+            FindObjectOfType<PlayerController>().gameObject.GetComponentInChildren<StatusEffect>().EndEffect(); //Well now it's public, so
+            //Destroy(FindObjectOfType<PlayerController>().gameObject.GetComponent<StatusEffect>());//delete the add the "ill" effect to the player(?)
         }
         base.OnUse();
     }

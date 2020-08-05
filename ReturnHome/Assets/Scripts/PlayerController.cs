@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class PlayerController : Actor
 {
     public bool isMoving;
+    public float normalSpeed = 5;
     //oxygen
     public float oxygen;
     public float MaxOxygen;
-    public bool LowOxygen;
     //Ill
     bool Ill;
     float Illdmg;
@@ -23,6 +23,7 @@ public class PlayerController : Actor
     Image healthbar;
     Image oxy;
     public GameObject ObjectOnHand;
+    public GameObject[] statusEffects;
     public enum PlayerStates
     {
         Idle,
@@ -40,7 +41,7 @@ public class PlayerController : Actor
     {
         oxygen = MaxOxygen;
         state = PlayerStates.Move;
-        speed = 5;
+        speed = normalSpeed;
         //HPBar.maxValue = MaxHealth;
         //HPBar.value = health;
         CamPos = cam.gameObject.transform.localPosition;
@@ -103,11 +104,11 @@ public class PlayerController : Actor
         }
         else if (oxygen < 40)
         {
-            LowOxygen = true;
-            GetComponent<LowOxygenEffect>().enabled = true;
+            AddEffect("Low Oxygen");
         }
-        else {
-            GetComponent<LowOxygenEffect>().enabled = false;
+        else if (GetComponentInChildren<LowOxygenEffect>())
+        {
+            GetComponentInChildren<LowOxygenEffect>().EndEffect();
         }
     }
     void OnParticleCollision(GameObject other)
@@ -181,7 +182,7 @@ public class PlayerController : Actor
     public void Electrocute(float Damage)
     {
         //StartCoroutine(TakeDamage(0.0f, Damage)); Change damage to new damage type when it's available
-        PlayerDecreaseHealth(10, "Electricity");
+        PlayerDecreaseHealth(Damage, "Electricity");
         anim.Play("Base Layer.electrocution", 0, .25f);
     }
 
@@ -200,5 +201,36 @@ public class PlayerController : Actor
     public void AttackAnim()
     {
         anim.Play("Base Layer.Attack");
+    }
+    public void AddEffect(string effectName)
+    {
+        bool effectFound = false;
+        
+        foreach(GameObject gm in statusEffects)
+        {
+            if (gm.GetComponent<StatusEffect>().effectName == effectName)
+            {
+                StatusEffect component = gm.GetComponent<StatusEffect>();
+                StatusEffect[] allEffects = GetComponentsInChildren<StatusEffect>();
+                bool effectExists = false;
+                foreach (StatusEffect se in allEffects)
+                {
+                    if (se.effectName == component.effectName)
+                    {
+                        effectExists = true;
+                        break;
+                    }
+                }
+                if (!effectExists)
+                {
+                    GameObject newEffect = Instantiate(gm, transform.position, transform.rotation);
+                    newEffect.transform.parent = transform;
+                    FindObjectOfType<StatusUI>().AddEffect(newEffect.GetComponent<StatusEffect>());
+                }
+                effectFound = true;
+                break;
+            }
+        }
+        if (!effectFound) print("Effect not found!");
     }
 }

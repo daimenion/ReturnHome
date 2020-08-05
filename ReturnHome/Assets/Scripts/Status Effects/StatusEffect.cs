@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-[RequireComponent(typeof(Actor))]
+//[RequireComponent(typeof(Actor))]
 public class StatusEffect : MonoBehaviour
 {
  
         public float duration; //-1 duration means forever
         public string effectName;
         public string effectDescription;
+        public Sprite sprite;
 
     public StatusEffect()
     {
@@ -27,8 +29,9 @@ public class StatusEffect : MonoBehaviour
             EndEffect();
         }
     }
-    void EndEffect()
+    public void EndEffect()
     {
-        Destroy(this);
+        FindObjectOfType<StatusUI>().RemoveEffect(this);
+        Destroy(gameObject);
     }
 }

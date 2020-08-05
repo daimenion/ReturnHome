@@ -23,7 +23,7 @@ public class CafeteriaFood : Item
         FindObjectOfType<PlayerController>().DecreaseHealth(-10f);
         if (Random.Range(0, 0) == 0)
         {
-            FindObjectOfType<PlayerController>().gameObject.AddComponent<IllEffect>(); //add the "ill" effect to the player
+            FindObjectOfType<PlayerController>().AddEffect("Ill");
         }
         base.OnUse();
     }

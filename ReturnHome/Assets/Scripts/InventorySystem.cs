@@ -11,6 +11,7 @@ public class InventorySystem : MonoBehaviour
     public int itemA;
     public int itemB;
     PlayerController player;
+    public int ItemAmount;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class InventorySystem : MonoBehaviour
     void Update()
     {
         currentItem = FindObjectOfType<InventorySelector>().ItemNumber;
-        if (Input.GetButton("UseItem"))
+        if (Input.GetButton("UseItem") && !FindObjectOfType<Pause>().isPaused)
         {
             if (Inventory[currentItem] == null)
             {
@@ -41,7 +42,7 @@ public class InventorySystem : MonoBehaviour
                 }
             }
         }
-        if (Input.GetButton("DropItem")) {
+        if (Input.GetButtonUp("DropItem")) {
             RemoveItem(currentItem);
         }
         if (Inventory[currentItem] == null) {
@@ -57,12 +58,16 @@ public class InventorySystem : MonoBehaviour
             Item.transform.parent = FindObjectOfType<PlayerController>().ObjectOnHand.transform;
             Item.transform.position += new Vector3(100, 500, 300);
             Inventory[Inventory.Length - 1] = Item;
+            ItemAmount++;
             for (int i = 0; i < Inventory.Length - 1; i++)
             {
                 if (Inventory[i] == null)
                 {
                     Inventory[i] = Inventory[Inventory.Length - 1];
                     Inventory[Inventory.Length - 1] = null;
+                    //ItemAmount++;
+
+                    return;
                 }
             }
         }
@@ -75,6 +80,8 @@ public class InventorySystem : MonoBehaviour
                     Item.transform.parent = FindObjectOfType<PlayerController>().gameObject.transform;
                     Item.transform.position += new Vector3(100, 500, 300);
                     Inventory[i] = Item;
+                    ItemAmount++;
+
                     return;
                     //Items[Items.Length - 1] = null;
                 }
@@ -82,11 +89,13 @@ public class InventorySystem : MonoBehaviour
         }
 
 
+
     }
     public void RemoveItem(int Item) {
         //Inventory[Item]
         DropItem(Item);
         Inventory[Item] = null;
+        ItemAmount--;
     }
 
     void DropItem(int Item)
@@ -95,8 +104,10 @@ public class InventorySystem : MonoBehaviour
         Inventory[Item].GetComponent<Interaction>().enabled = true;
         Inventory[Item].Equipped = false;
         Inventory[Item].GetComponent<BoxCollider>().enabled = true;
-        Inventory[Item].gameObject.transform.position = player.gameObject.transform.position + new Vector3 (Random.Range(-1.5f, 1.5f),0, Random.Range(-1.5f ,1.5f));
-        Inventory[Item].gameObject.transform.rotation = new Quaternion(0, 0, 0,0);
+        Inventory[Item].gameObject.transform.position = player.gameObject.transform.position;
+        Inventory[Item].gameObject.transform.rotation = new Quaternion(0, 45, 0,0);
+        Inventory[Item].gameObject.transform.localScale = new Vector3(1, 1, 1);
+
 
     }
     //public void SwitchItems<T>(IList<T> list) {

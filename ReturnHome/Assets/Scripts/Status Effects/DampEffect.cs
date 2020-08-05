@@ -6,7 +6,7 @@ public class DampEffect : StatusEffect
 {
     public DampEffect()
     {
-        duration = -1;
+        duration = 20f;
         effectName = "Damp";
         effectDescription = "In space, no-one can see you shiver.";
     }

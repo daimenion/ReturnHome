@@ -11,6 +11,7 @@ TagManager:
   - Ghost
   - PlayerHitBox
   - ItemSpawnPoint
+  - CTWGoal
   layers:
   - Default
   - TransparentFX
@@ -48,9 +49,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: UI
+  - name: Background
     uniqueID: 946500333
     locked: 0
-  - name: New Layer
+  - name: Player
     uniqueID: 472200723
+    locked: 0
+  - name: Foreground
+    uniqueID: 2496275913
+    locked: 0
+  - name: Minigames
+    uniqueID: 236869761
+    locked: 0
+  - name: UI
+    uniqueID: 1410969463
     locked: 0
