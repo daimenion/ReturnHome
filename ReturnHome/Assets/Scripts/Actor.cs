@@ -58,6 +58,7 @@ public class Actor : MonoBehaviour
     }
     public virtual void PlayerDecreaseHealth(float amount, string type)
     {
+        if (type == "Fire" && GetComponentInChildren<DampEffect>()) amount = amount * 0.70f;
         health = Mathf.Clamp(health - amount, 0, MaxHealth);
         AttackType = type;
         if (amount >= 0) { Debug.Log(name + " took " + amount + " damage."); }

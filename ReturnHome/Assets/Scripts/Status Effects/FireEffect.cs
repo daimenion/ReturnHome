@@ -17,7 +17,7 @@ public class FireEffect : StatusEffect
         base.Update();
         FindObjectOfType<PlayerController>().PlayerDecreaseHealth(damage * Time.deltaTime,"Fire");
     }
-    public void Reset()
+    public new void Reset()
     {
         duration = 7f;
     }
