@@ -7408,11 +7408,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1029066765}
     m_Modifications:
-    - target: {fileID: 8772908923520616893, guid: 5de24123855ae7344a51fb646b47c66a,
-        type: 3}
-      propertyPath: m_Name
-      value: Puddle
-      objectReference: {fileID: 0}
     - target: {fileID: 8772908923520616882, guid: 5de24123855ae7344a51fb646b47c66a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7467,6 +7462,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772908923520616893, guid: 5de24123855ae7344a51fb646b47c66a,
+        type: 3}
+      propertyPath: m_Name
+      value: Puddle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5de24123855ae7344a51fb646b47c66a, type: 3}
@@ -56421,11 +56421,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1709769398}
     m_Modifications:
-    - target: {fileID: 8772908923520616893, guid: 5de24123855ae7344a51fb646b47c66a,
-        type: 3}
-      propertyPath: m_Name
-      value: Puddle
-      objectReference: {fileID: 0}
     - target: {fileID: 8772908923520616882, guid: 5de24123855ae7344a51fb646b47c66a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -56480,6 +56475,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772908923520616893, guid: 5de24123855ae7344a51fb646b47c66a,
+        type: 3}
+      propertyPath: m_Name
+      value: Puddle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5de24123855ae7344a51fb646b47c66a, type: 3}
@@ -67443,6 +67443,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1593871646}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1596273416 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5123188562721300919, guid: 2d404ad262d6b5e4ab965b3469c0a0d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1942797289871083161}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1596438048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67833,6 +67845,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 760307874320208267, guid: 31cae92abcc129e408b77a393193cae6,
+        type: 3}
+      propertyPath: outline
+      value: 
+      objectReference: {fileID: 1596273416}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31cae92abcc129e408b77a393193cae6, type: 3}
 --- !u!4 &1606955916 stripped
@@ -81139,11 +81156,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2138019430}
     m_Modifications:
-    - target: {fileID: 8772908923520616893, guid: 5de24123855ae7344a51fb646b47c66a,
-        type: 3}
-      propertyPath: m_Name
-      value: Puddle
-      objectReference: {fileID: 0}
     - target: {fileID: 8772908923520616882, guid: 5de24123855ae7344a51fb646b47c66a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -81198,6 +81210,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772908923520616893, guid: 5de24123855ae7344a51fb646b47c66a,
+        type: 3}
+      propertyPath: m_Name
+      value: Puddle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5de24123855ae7344a51fb646b47c66a, type: 3}
@@ -84966,11 +84983,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 831043604}
     m_Modifications:
-    - target: {fileID: 8772908923520616893, guid: 5de24123855ae7344a51fb646b47c66a,
-        type: 3}
-      propertyPath: m_Name
-      value: Puddle
-      objectReference: {fileID: 0}
     - target: {fileID: 8772908923520616882, guid: 5de24123855ae7344a51fb646b47c66a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -85025,6 +85037,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772908923520616893, guid: 5de24123855ae7344a51fb646b47c66a,
+        type: 3}
+      propertyPath: m_Name
+      value: Puddle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5de24123855ae7344a51fb646b47c66a, type: 3}
@@ -87994,11 +88011,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 920068141}
     m_Modifications:
-    - target: {fileID: 8772908923520616893, guid: 5de24123855ae7344a51fb646b47c66a,
-        type: 3}
-      propertyPath: m_Name
-      value: Puddle
-      objectReference: {fileID: 0}
     - target: {fileID: 8772908923520616882, guid: 5de24123855ae7344a51fb646b47c66a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -88053,6 +88065,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772908923520616893, guid: 5de24123855ae7344a51fb646b47c66a,
+        type: 3}
+      propertyPath: m_Name
+      value: Puddle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5de24123855ae7344a51fb646b47c66a, type: 3}
@@ -90587,6 +90604,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1942797289137362339, guid: 2d404ad262d6b5e4ab965b3469c0a0d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7960117507367680245, guid: 2d404ad262d6b5e4ab965b3469c0a0d1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -90602,6 +90624,16 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1471236682}
+    - target: {fileID: 3665172007624565449, guid: 2d404ad262d6b5e4ab965b3469c0a0d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942797288982529543, guid: 2d404ad262d6b5e4ab965b3469c0a0d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d404ad262d6b5e4ab965b3469c0a0d1, type: 3}
 --- !u!1001 &2146177829421074228
@@ -90878,6 +90910,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: StatusEffectsUi
       objectReference: {fileID: 0}
+    - target: {fileID: 6129164738752323170, guid: b6681d17b62989f428c75d36b65589f0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6129164739190218317, guid: b6681d17b62989f428c75d36b65589f0,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -91004,6 +91041,12 @@ PrefabInstance:
       propertyPath: ghosts.Array.data[8]
       value: 
       objectReference: {fileID: 1623301767476806027, guid: c00ca600ecb8e024eb75670047b9384d,
+        type: 3}
+    - target: {fileID: 8226711440829455088, guid: 5ac814d158aa6fa4eacbee372b4d2da7,
+        type: 3}
+      propertyPath: loosescreen
+      value: 
+      objectReference: {fileID: 3157097874095965909, guid: ed292e8d8a7f10c498200f0890f08dbf,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ac814d158aa6fa4eacbee372b4d2da7, type: 3}
