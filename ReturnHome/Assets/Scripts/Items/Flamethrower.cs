@@ -15,7 +15,7 @@ public class Flamethrower : Weapon
         base.Update();
         if (Input.GetButtonUp("UseItem"))
         {
-            particle.SetActive(false);
+            particles.Play();
         }
     }
 
@@ -29,19 +29,20 @@ public class Flamethrower : Weapon
         damage = 15.0f;
     }
 
-    public void OnTriggerEnter(Collider other)
+    void OnParticleCollision(GameObject other)
     {
-        //If inside the hitbox, item is used, and other object is an enemy
-        if (WeaponHitBox.bounds.Intersects(other.bounds) && IsUsed && other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        Debug.Log("collided");
+        if (other.tag == "Ghost")
         {
-            //Do damage to other object
+            other.GetComponent<AI>().DecreaseHealth(damage);
 
         }
+
     }
     public override void OnUse()
     {
         base.OnUse();
-        particle.SetActive(true);
+        particles.Stop();
         particles.Emit(1);
 
     }

@@ -7,7 +7,8 @@ public class CraftingTable : MonoBehaviour
     Interaction interaction;
     InventorySystem inventory;
     Item[] StoredItems;
-    Item Flamethrower;
+    public Item Flamethrower;
+    public GameObject Canvas;
 
     private bool bHairspray;
     private bool bLighter;
@@ -31,15 +32,18 @@ public class CraftingTable : MonoBehaviour
     void Update()
     {
         if (interaction.Interacted) {
-            CheckInventory();
-            //option to make flamethrower
-            //option to make Molotov Vacuum Cleaner
+            OpenTable();
         }
+    }
+    void OpenTable() {
+        Canvas.SetActive(true);
+        Canvas.GetComponent<Canvas>().worldCamera = Camera.allCameras[0];
+      
     }
 
     void CheckInventory() {
         for (int i = 0; i < inventory.Inventory.Length - 1; i++) {
-            if (inventory.Inventory[i].myName == "HairSpray")
+            if (inventory.Inventory[i].myName == "Hairspray")
             {
                 bHairspray = true;
                 itemIndex[0] = i;
@@ -49,6 +53,9 @@ public class CraftingTable : MonoBehaviour
             {
                 bLighter = true;
                 itemIndex[1] = i;
+            }
+            if (bLighter && bHairspray) {
+                return;
             }
         }
 
@@ -65,26 +72,49 @@ public class CraftingTable : MonoBehaviour
                 bPropane = true;
                 itemIndex[3] = i;
             }
+            if (bPropane && bVacuumCleaner)
+            {
+                return;
+            }
         }
     }
 
-    void MakeFlamethrower()
+    public void MakeFlamethrower()
     {
+        CheckInventory();
         if (bHairspray && bLighter)
         {
-            inventory.RemoveItem(itemIndex[0]);
-            inventory.RemoveItem(itemIndex[1]);
-            inventory.AddItem(Flamethrower);
+            //inventory.RemoveItem(itemIndex[0]);
+            Destroy(inventory.Inventory[itemIndex[0]].gameObject);
+            Destroy(inventory.Inventory[itemIndex[1]].gameObject);
+            GameObject item = Instantiate(Flamethrower.gameObject,
+                        transform.position, new Quaternion(0, 45, 0, 1)) as GameObject;
+            item.GetComponent<BoxCollider>().enabled = false;
+            item.GetComponent<Interaction>().Interacted = true;
+            //Exit();
         }
     }
 
-    void MakeMolotovVacuum()
+    public void MakeMolotovVacuum()
     {
+        CheckInventory();
         if (bVacuumCleaner && bPropane)
         {
-            inventory.RemoveItem(itemIndex[2]);
-            inventory.RemoveItem(itemIndex[3]);
+            Destroy(inventory.Inventory[itemIndex[2]]);
+            Destroy(inventory.Inventory[itemIndex[3]]);
             //inventory.AddItem(Flamethrower); Add Molotov Vacuum Cleaner
+
+            //Exit();
+        }
+    }
+
+    void Exit() {
+        Canvas.SetActive(false) ;
+    }
+
+    void OnTriggerExit(Collider other) {
+        if (other.CompareTag("Player")) {
+            Exit();
         }
     }
 }
