@@ -34,4 +34,5 @@ public class StatusEffect : MonoBehaviour
         FindObjectOfType<StatusUI>().RemoveEffect(this);
         Destroy(gameObject);
     }
+    public void Reset() { }
 }

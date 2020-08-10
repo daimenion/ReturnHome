@@ -182,6 +182,7 @@ public class PlayerController : Actor
     public void Electrocute(float Damage)
     {
         //StartCoroutine(TakeDamage(0.0f, Damage)); Change damage to new damage type when it's available
+        if (GetComponentInChildren<DampEffect>()) Damage = Damage * 1.5f;
         PlayerDecreaseHealth(Damage, "Electricity");
         anim.Play("Base Layer.electrocution", 0, .25f);
     }
@@ -218,6 +219,7 @@ public class PlayerController : Actor
                     if (se.effectName == component.effectName)
                     {
                         effectExists = true;
+                        se.Reset();
                         break;
                     }
                 }
