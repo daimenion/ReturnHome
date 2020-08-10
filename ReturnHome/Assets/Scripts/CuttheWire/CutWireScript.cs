@@ -44,7 +44,7 @@ public class CutWireScript : MinigameScript
         {
             wireScripts[i].isActive = false;
         }
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2.5f);
         base.failure();
         Destroy(gameObject);
     }

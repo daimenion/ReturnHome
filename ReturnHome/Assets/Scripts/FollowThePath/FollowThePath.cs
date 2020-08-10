@@ -28,7 +28,7 @@ public class FollowThePath : MinigameScript
     {
         myLine.startColor = Color.red;
         myLine.endColor = Color.red;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2.5f);
         base.failure();
         
         Destroy(transform.parent.gameObject);
