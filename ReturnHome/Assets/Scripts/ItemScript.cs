@@ -109,6 +109,7 @@ public abstract class Weapon : Item //Weapons: use a collider for weapon range
     Camera[] cameras;
     public Collider WeaponHitBox;
     public bool Melee;
+    public Vector3 meleeRot;
     public override void OnUse()
     {
         base.OnUse();
@@ -178,7 +179,7 @@ public abstract class Weapon : Item //Weapons: use a collider for weapon range
             {
                 parents = parents.transform.parent.gameObject;
             }
-            WeaponHitBox.gameObject.transform.eulerAngles = new Vector3(0, 45, 135);
+            WeaponHitBox.gameObject.transform.localEulerAngles = meleeRot;
     }
 
 }
