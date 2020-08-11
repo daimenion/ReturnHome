@@ -6,6 +6,7 @@ public class CutWireScript : MinigameScript
 {
     public GameObject[] wires;
     public MoveWire[] wireScripts;
+    private bool playable = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,23 +20,28 @@ public class CutWireScript : MinigameScript
     // Update is called once per frame
     void Update()
     {
-        bool isComplete = true;
-        for (int i = 0; i < wireScripts.Length; i += 1)
+        if (playable)
         {
-            if (wireScripts[i].isBroken == -1)
+            bool isComplete = true;
+            for (int i = 0; i < wireScripts.Length; i += 1)
             {
-                StartCoroutine(SelfDestruct());
-                isComplete = false;
-                break;
+                if (wireScripts[i].isBroken == -1)
+                {
+                    StartCoroutine(SelfDestruct());
+                    isComplete = false;
+                    playable = false;
+                    break;
+                }
+                else if (wireScripts[i].isBroken == 0)
+                {
+                    isComplete = false;
+                }
             }
-            else if (wireScripts[i].isBroken == 0)
+            if (isComplete)
             {
-                isComplete = false;
+                StartCoroutine(WinGame());
+                playable = false;
             }
-        }
-        if (isComplete)
-        {
-            StartCoroutine(WinGame());
         }
     }
     protected IEnumerator SelfDestruct()
@@ -44,6 +50,8 @@ public class CutWireScript : MinigameScript
         {
             wireScripts[i].isActive = false;
         }
+        audioPlayer.clip = failureClip;
+        audioPlayer.Play();
         yield return new WaitForSeconds(2.5f);
         base.failure();
         Destroy(gameObject);
@@ -51,7 +59,8 @@ public class CutWireScript : MinigameScript
     public IEnumerator WinGame()
     {
         isBroken = false;
-     
+        audioPlayer.clip = winClip;
+        audioPlayer.Play();
         yield return new WaitForSeconds(1.5f);
         base.success();
         Destroy(transform.gameObject);
