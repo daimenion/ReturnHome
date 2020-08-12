@@ -44,6 +44,10 @@ public class InteractMinigame : Interaction
             particle.Stop();
             isBroken = false;
         }
+        else if (myGame == null && !isBroken)
+        {
+            Interacted = true;
+        }
     }
     new void OnTriggerExit(Collider other)
     {

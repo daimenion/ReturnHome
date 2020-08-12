@@ -22,14 +22,14 @@ public class Interaction : MonoBehaviour//This will eventually be an abstract cl
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player"){
+        if (other.tag == "Player" && !Interacted){
         canvas.SetActive(true);
         }
     }
     protected void OnTriggerExit(Collider other)
     {
         canvas.SetActive(false);
-        Interacted = false;
+        //Interacted = false;
     }
      virtual protected void myInteraction()
     {
