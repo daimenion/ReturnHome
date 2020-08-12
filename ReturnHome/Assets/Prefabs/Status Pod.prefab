@@ -90,6 +90,7 @@ GameObject:
   m_Component:
   - component: {fileID: 584473000762468461}
   - component: {fileID: 584473000762468450}
+  - component: {fileID: -8270647123070846235}
   m_Layer: 2
   m_Name: Status Pod
   m_TagString: Untagged
@@ -125,3 +126,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8270647123070846235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584473000762468460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b485d38fd65173445a90e402e739fa2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortpoint: {x: 1, y: 0, z: 1}
