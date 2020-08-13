@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VacuumCleaner : Weapon
+public class ModifiedVaccumCleaner : Weapon
 {
     public float pullForceX;
     public float pullForceZ;
@@ -18,14 +18,14 @@ public class VacuumCleaner : Weapon
         interaction();
     }
 
-    public VacuumCleaner()
+    public ModifiedVaccumCleaner()
     {
         aresol = true; //Get button down(?)
-        usesLeft = 20;
-        myName = "Vaccum Cleaner";
-        description = "Pull the ghost's closer to you.";
+        usesLeft = 40;
+        myName = "ModifiedVaccumCleaner";
+        description = "Pull the ghost's closer to you, but more powerful";
         type = "Cleaning tool"; //(?)
-        damage = 0.3f;
+        damage = 1.3f;
         //view = transform.GetComponentInChildren<ViewCircle>();
     }
 

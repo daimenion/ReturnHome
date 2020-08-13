@@ -144,10 +144,10 @@ GameObject:
   - component: {fileID: 4091349628512790328}
   - component: {fileID: 3431843912379892606}
   - component: {fileID: 217910745384781360}
-  - component: {fileID: 6987678586933404559}
+  - component: {fileID: 5269284127815499765}
   - component: {fileID: 6847577833384740426}
   m_Layer: 0
-  m_Name: Vacuum
+  m_Name: Modified Vaccum Cleaner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Interacted: 0
---- !u!114 &6987678586933404559
+--- !u!114 &5269284127815499765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,20 +205,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 4400171518245295845}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bcbe4984b1adb245b4db060f0a1d8ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f2a1eca5d278e341952559e3ae15bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   aresol: 1
-  usesLeft: 20
-  MaxUsesLeft: 20
-  myName: Vaccum Cleaner
-  description: Pull the ghost's closer to you.
+  usesLeft: 40
+  MaxUsesLeft: 40
+  myName: ModifiedVaccumCleaner
+  description: Pull the ghost's closer to you, but more powerful
   type: Cleaning tool
   Equipped: 0
   gone: 1
   WeaponHitBox: {fileID: 0}
   meleeRot: {x: 0, y: 0, z: 0}
-  damage: 0.3
+  damage: 1.3
   Melee: 0
   pullForceX: 1
   pullForceZ: 1

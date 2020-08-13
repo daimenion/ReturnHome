@@ -123,9 +123,10 @@ public class PlayerController : Actor
     }
     void OnTriggerEnter( Collider other) {
 
-        //if (other.CompareTag("EnemyAttacks")) {
-        //    StartCoroutine(TakeDamage(0.0f,10.0f));
-        //}
+        if (other.CompareTag("EnemyAttacks"))
+        {
+            PlayerDecreaseHealth(other.GetComponentInParent<GeneralGhost>().AttackDamage, "Ghost");
+        }
         if (other.CompareTag("Room"))
         {
 

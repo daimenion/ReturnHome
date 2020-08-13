@@ -28,6 +28,7 @@ public class AI : Actor
         maxCoolDown = cooldown;
         CoolDownStarted = false;
         agent = GetComponent<NavMeshAgent>();
+        AttackDamage = 3.0f;
     }
     // look at player
     protected virtual void FacePlayer()

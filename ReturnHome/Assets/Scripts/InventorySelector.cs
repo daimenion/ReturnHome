@@ -22,7 +22,7 @@ public class InventorySelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             PerviousNumber = ItemNumber;
             if (inv.Inventory[PerviousNumber] != null)
@@ -31,18 +31,18 @@ public class InventorySelector : MonoBehaviour
             }
             if (ItemNumber >= inv.Inventory.Length - 1)
             {
-                transform.localPosition = new Vector3(-200, transform.localPosition.y);
+                //transform.localPosition = new Vector3(-200, transform.localPosition.y);
                 ItemNumber = 0;
             }
             else {
                 ItemNumber++;
-                UpdateSelected(100);
+                //UpdateSelected(100);
             }
 
 
 
         }
-       else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+       else if (Input.GetAxis("Mouse ScrollWheel") > 0)
        {
             PerviousNumber = ItemNumber;
             if (inv.Inventory[PerviousNumber] != null)
@@ -51,13 +51,13 @@ public class InventorySelector : MonoBehaviour
             }
             if (ItemNumber <= 0)
             {
-                transform.localPosition = new Vector3(200, transform.localPosition.y);
+                //transform.localPosition = new Vector3(200, transform.localPosition.y);
                 ItemNumber = inv.Inventory.Length-1;
 
             }
             else {
                 ItemNumber--;
-                UpdateSelected(-100);
+                //UpdateSelected(-100);
             }
 
        }

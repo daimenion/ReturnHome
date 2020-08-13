@@ -8,6 +8,7 @@ public class CraftingTable : MonoBehaviour
     InventorySystem inventory;
     Item[] StoredItems;
     public Item Flamethrower;
+    public Item ModVaccumCleaner;
     public GameObject Canvas;
 
     private bool bHairspray;
@@ -58,16 +59,17 @@ public class CraftingTable : MonoBehaviour
                 return;
             }
         }
-
+    }
+    void CheckVaccum() {
         for (int i = 0; i < inventory.Inventory.Length - 1; i++)
         {
-            if (inventory.Inventory[i].myName == "Vacuum Cleaner")
+            if (inventory.Inventory[i].myName == "Vaccum Cleaner")
             {
                 bVacuumCleaner = true;
                 itemIndex[2] = i;
             }
 
-            if (inventory.Inventory[i].myName == "Propane Pack")
+            if (inventory.Inventory[i].myName == "Toy")
             {
                 bPropane = true;
                 itemIndex[3] = i;
@@ -97,11 +99,15 @@ public class CraftingTable : MonoBehaviour
 
     public void MakeMolotovVacuum()
     {
-        CheckInventory();
+        CheckVaccum();
         if (bVacuumCleaner && bPropane)
         {
-            Destroy(inventory.Inventory[itemIndex[2]]);
-            Destroy(inventory.Inventory[itemIndex[3]]);
+            Destroy(inventory.Inventory[itemIndex[2]].gameObject);
+            Destroy(inventory.Inventory[itemIndex[3]].gameObject);
+            GameObject item = Instantiate(ModVaccumCleaner.gameObject,
+                       transform.position, new Quaternion(0, 45, 0, 1)) as GameObject;
+            item.GetComponent<BoxCollider>().enabled = false;
+            item.GetComponent<Interaction>().Interacted = true;
             //inventory.AddItem(Flamethrower); Add Molotov Vacuum Cleaner
 
             //Exit();
@@ -115,6 +121,7 @@ public class CraftingTable : MonoBehaviour
     void OnTriggerExit(Collider other) {
         if (other.CompareTag("Player")) {
             Exit();
+            interaction.Interacted = false;
         }
     }
 }

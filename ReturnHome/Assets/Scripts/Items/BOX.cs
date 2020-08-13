@@ -106,9 +106,9 @@ public class BOX : MonoBehaviour
             {
                 item = Instantiate(SetItem,
                       transform.position, new Quaternion(0, 0, 0, 1)) as GameObject;
-
-                yield return new WaitForSeconds(1);
             item.GetComponent<BoxCollider>().enabled = false;
+            yield return new WaitForSeconds(1);
+            
                 item.GetComponent<Interaction>().Interacted = true;
                 changeBox();
 

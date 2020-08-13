@@ -19,7 +19,7 @@ MonoBehaviour:
   OriginalPos: {x: 0, y: 0, z: 0}
   SeemPlayer: 0
   cooldown: 5
-  HitBox: {fileID: 1377100475239951261}
+  HitBox: {fileID: 9197192377689362838}
   Viewcircle: {fileID: 4484224393133529780}
   RandomPosition: {x: 0, y: 0, z: 0}
   wanderingRadius: 0
@@ -555,12 +555,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4951421132367831292}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &1377100475239951261 stripped
-CapsuleCollider:
-  m_CorrespondingSourceObject: {fileID: 6317014118907202401, guid: 6211723a3caa1d44a8956c627f090bc4,
-    type: 3}
-  m_PrefabInstance: {fileID: 4951421132367831292}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2233661107350885956 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6505860570189985464, guid: 6211723a3caa1d44a8956c627f090bc4,
@@ -582,6 +576,12 @@ GameObject:
 --- !u!1 &8329398882949069371 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3972460119086815943, guid: 6211723a3caa1d44a8956c627f090bc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 4951421132367831292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &9197192377689362838 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 4257035194344632682, guid: 6211723a3caa1d44a8956c627f090bc4,
     type: 3}
   m_PrefabInstance: {fileID: 4951421132367831292}
   m_PrefabAsset: {fileID: 0}

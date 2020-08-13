@@ -26,6 +26,7 @@ public class GeneralGhost : AI
     Quaternion iniRot;
     public int StoppingDistance;
     bool Chasing;
+    int attack = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,7 @@ public class GeneralGhost : AI
         RandomMovePoint();
         ViewLight.GetComponent<Light>().range = Viewcircle.gameObject.GetComponent<ViewCircle>().viewRadius;
         ViewLight.GetComponent<Light>().spotAngle = Viewcircle.gameObject.GetComponent<ViewCircle>().viewAngle;
+
     }
     public virtual void HandleStates()
     {
@@ -64,11 +66,18 @@ public class GeneralGhost : AI
                 }
                 break;
             case States.Attack:
-                BasicAttack();
+
                 RotateTowards(playerController.gameObject.transform);
                 if (!CoolDownStarted)
                 {
+                    StopCoroutine(WaitBasicAttack());
                     Attack();
+                }
+                else {
+                    if (attack == 1)
+                    {
+                        BasicAttack();
+                    }
                 }
                 CoolDownTimer();
                 break;
@@ -82,6 +91,7 @@ public class GeneralGhost : AI
     {        //if player is in the view circle 
         if (Viewcircle.GetComponent<ViewCircle>().visibleTargets.Contains(Viewcircle.GetComponent<ViewCircle>().Player))
         {
+            StopCoroutine(PlayerOutOfSight());
             SeemPlayer = true;
             Chasing = true;
         }
@@ -150,8 +160,23 @@ public class GeneralGhost : AI
         //something
 
     }
-    protected virtual void BasicAttack() { 
+    protected virtual void BasicAttack() {
         
+        anim.SetBool("Attacking", true);
+        StartCoroutine(WaitBasicAttack());
+        HitBox.enabled = true;
+    }
+    IEnumerator WaitBasicAttack() {
+        yield return new WaitForSeconds(0.7f);
+        anim.SetBool("Attacking", false);
+        HitBox.enabled = false;
+        attack = 2;
+
+        yield return new WaitForSeconds(1);
+        attack = 0;
+
+        yield return new WaitForSeconds(1);
+        attack = 1;
     }
     public virtual void ChasePlayer() {
         StoppingDistance = 5;
@@ -165,7 +190,6 @@ public class GeneralGhost : AI
         {
             Chasing = false;
         }
-        StopCoroutine(PlayerOutOfSight());
     }
     private void RotateTowards(Transform target)
     {
