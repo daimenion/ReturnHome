@@ -28,7 +28,9 @@ public class FollowThePath : MinigameScript
     {
         myLine.startColor = Color.red;
         myLine.endColor = Color.red;
-        yield return new WaitForSeconds(1.5f);
+        audioPlayer.clip = failureClip;
+        audioPlayer.Play();
+        yield return new WaitForSeconds(2.5f);
         base.failure();
         
         Destroy(transform.parent.gameObject);
@@ -36,6 +38,8 @@ public class FollowThePath : MinigameScript
     public IEnumerator WinGame()
     {
         isActive = false;
+        audioPlayer.clip = winClip;
+        audioPlayer.Play();
         myLine.startColor = Color.green;
         myLine.endColor = Color.green;
         base.success();

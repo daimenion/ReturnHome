@@ -475,8 +475,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
+  m_AnchoredPosition: {x: 0, y: -0.0006572077}
+  m_SizeDelta: {x: 0, y: 350}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &5870429857446477884
 CanvasRenderer:
@@ -519,7 +519,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' Credits'
+  m_Text: " <b>Designers</b>\n Jack Huang\n Sophia Vogan\n\n <b>2D Art</b>\n Barry
+    Brar\n Negin\n Cici Vogan-Lowe\n\n <b>3D Art</b>\n Gong Shao\n Yasaman\n\n <b>Programming</b>\nAiden
+    Lavoie\n J.P."
 --- !u!1 &5870429857549955104
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +699,7 @@ RectTransform:
   m_Father: {fileID: 5870429856738540253}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.33333325}
+  m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -1135,7 +1137,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5870429857631015104}
   m_HandleRect: {fileID: 5870429857631015105}
   m_Direction: 2
-  m_Value: 0.9999997
+  m_Value: 1.0000064
   m_Size: 0.6666667
   m_NumberOfSteps: 0
   m_OnValueChanged:

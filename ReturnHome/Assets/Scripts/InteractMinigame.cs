@@ -24,7 +24,7 @@ public class InteractMinigame : Interaction
     {
         if (!Interacted && isBroken) {
             myGame = Instantiate(minigame, transform.parent);
-            minigame.transform.localPosition = new Vector3(1.5f, 0, 1.5f);
+            minigame.transform.localPosition = new Vector3(2f, 0, 1.5f);
             MinigameScript = myGame.GetComponentInChildren<MinigameScript>();
         }
         Interacted = true;
@@ -43,6 +43,10 @@ public class InteractMinigame : Interaction
         {
             particle.Stop();
             isBroken = false;
+        }
+        else if (myGame == null && !isBroken)
+        {
+            Interacted = true;
         }
     }
     new void OnTriggerExit(Collider other)

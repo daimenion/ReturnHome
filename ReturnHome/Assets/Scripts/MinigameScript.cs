@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class MinigameScript : MonoBehaviour
 {
+    public AudioClip openClip;
+    public AudioClip failureClip;
+    public AudioClip winClip;
+    public AudioSource audioPlayer;
     public bool isBroken = true;
     CustomGameManager GameManager;
     void Awake() {
         GameManager = FindObjectOfType<CustomGameManager>();
+        audioPlayer = GetComponent<AudioSource>();
     }
     protected void failure()
     {

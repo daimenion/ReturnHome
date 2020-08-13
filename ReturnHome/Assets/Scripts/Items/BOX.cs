@@ -95,6 +95,8 @@ public class BOX : MonoBehaviour
             yield return new WaitForSeconds(1);
             changeBox();
         }
+
+        StartCoroutine(removeBox());
         StopCoroutine(spawnItem());
 
     }
@@ -146,8 +148,18 @@ public class BOX : MonoBehaviour
                 }
 
             }
+        StartCoroutine(removeBox());
         StopCoroutine(spawnItem());
 
+    }
+    IEnumerator removeBox()
+    {
+        for (float t = 0f; t < 3; t += Time.deltaTime) {
+            transform.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, Color.clear,t/3);
+            print(t);
+            yield return null;
+        }
+        Destroy(gameObject);
     }
 
     void changeBox() {
@@ -155,6 +167,5 @@ public class BOX : MonoBehaviour
         transform.GetComponentInChildren<SpriteRenderer>().sprite = emptybox;
         transform.GetComponentInChildren<ParticleSystem>().Stop();
         once = 2;
-
     }
 }
