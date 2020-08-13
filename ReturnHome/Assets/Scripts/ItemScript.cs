@@ -27,11 +27,14 @@ public abstract class Item : MonoBehaviour
     }
     public void UseItem()
     {
-        OnUse();
-        if (usesLeft <= 0&& gone)
+        if (FindObjectOfType<MinigameScript>() == null)
         {
-            StartCoroutine(RemoveItem());
-            
+            OnUse();
+            if (usesLeft <= 0 && gone)
+            {
+                StartCoroutine(RemoveItem());
+
+            }
         }
     }
     public virtual void Update()
