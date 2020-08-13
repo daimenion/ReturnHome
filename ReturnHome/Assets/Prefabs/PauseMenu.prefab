@@ -519,9 +519,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: " <b>Designers</b>\n Jack Huang\n Sophia Vogan\n\n <b>2D Art</b>\n Barry
-    Brar\n Negin\n Cici Vogan-Lowe\n\n <b>3D Art</b>\n Gong Shao\n Yasaman\n\n <b>Programming</b>\nAiden
-    Lavoie\n J.P."
+  m_Text: " <b>Game Design</b>\n Jack Huang\n Sophia Vogan\n\n <b>2D Art</b>\n Negin
+    Abdollah\n Barry Brar\n Cici Vogan-Lowe\n\n <b>3D Art</b>\n Yasaman Moaddab\n
+    Gong Shao\n\n <b>Programming</b>\n Aiden Lavoie\n J.P. Valdez"
 --- !u!1 &5870429857549955104
 GameObject:
   m_ObjectHideFlags: 0
