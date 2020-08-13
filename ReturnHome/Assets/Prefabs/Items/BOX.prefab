@@ -4907,6 +4907,8 @@ MonoBehaviour:
   - {fileID: 5369780014575304015, guid: c49e5dbf36a8a4c43a28443d874873c7, type: 3}
   - {fileID: 4885785761811188491, guid: 1464eee4e2185fc4ba66f5988c8afa1e, type: 3}
   - {fileID: 3054366791823221833, guid: 960470604d4cba84e8aee3a95dd3f5c8, type: 3}
+  - {fileID: 3054366791823221833, guid: 842c1adf38efcfd4b9cdf175d2ae077f, type: 3}
+  - {fileID: 3054366791823221833, guid: 252c9d3d252cca848bdeae4e7d23187a, type: 3}
   spawnRate: 0
   openbox: {fileID: 21300000, guid: 4ddaa7d0e02928d4eb38f7b54c5a98d1, type: 3}
   emptybox: {fileID: 21300000, guid: 37b0d16eb3e9d7641a8d7535df38a8e8, type: 3}
@@ -4942,11 +4944,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9025200576874599673}
     m_Modifications:
-    - target: {fileID: 200364316928098950, guid: d09072394d2469e4abf951f675127f88,
-        type: 3}
-      propertyPath: m_Name
-      value: Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 7860684768863663175, guid: d09072394d2469e4abf951f675127f88,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5051,6 +5048,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 200364316928098950, guid: d09072394d2469e4abf951f675127f88,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d09072394d2469e4abf951f675127f88, type: 3}

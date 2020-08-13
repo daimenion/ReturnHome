@@ -11,7 +11,7 @@ public class Knife : Weapon
     }
     public Knife()
     {
-        meleeRot = new Vector3(0, 0, -45);
+        meleeRot = new Vector3(0,45, 135);
         aresol = false;
         usesLeft = -1;
         myName = "Knife";

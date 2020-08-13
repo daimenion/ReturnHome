@@ -3,30 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
-
-public class ItemScript : MonoBehaviour
-{
-    ////added to inventory system script
-    //Item[] Inventory;
-    //int currentItem;
-    //void Update()
-    //{
-    //    if (Inventory[currentItem].aresol)
-    //    {
-    //        if (Input.GetButton("UseItem"))
-    //        {
-    //            Inventory[currentItem].UseItem();
-    //        }
-    //    }
-    //    else//Might want some type of cooldown
-    //    {
-    //        if (Input.GetButtonDown("UseItem"))
-    //        {
-    //            Inventory[currentItem].UseItem();
-    //        }
-    //    }
-    //}
-}
+using UnityEngine.Experimental.U2D.IK;
 
 //Begin Items
 public abstract class Item : MonoBehaviour
@@ -41,14 +18,20 @@ public abstract class Item : MonoBehaviour
     protected Interaction interact;
     public bool Equipped;
     public bool gone;
-
+    public Collider WeaponHitBox;
+    Vector3 OriRot;
+    public virtual void Start() { 
+        if (WeaponHitBox != null)
+        OriRot = WeaponHitBox.gameObject.transform.localEulerAngles; 
+    
+    }
     public void UseItem()
     {
         OnUse();
         if (usesLeft <= 0&& gone)
         {
-            RemoveItem();
-            //Remove item from inventory. In some cases, replace the item with a dead version of itself (Empty Fire Extinguisher can be used as a blunt weapon)
+            StartCoroutine(RemoveItem());
+            
         }
     }
     public virtual void Update()
@@ -57,16 +40,26 @@ public abstract class Item : MonoBehaviour
         {
             //this.gameObject.GetComponent<Interaction>().enabled = false;
             this.GetComponent<BoxCollider>().enabled = false;
-            this.gameObject.transform.localPosition = new Vector3(0, 0, 0);
-
+            if (Input.GetButtonDown("UseItem"))
+            {
+                this.gameObject.transform.localPosition = new Vector3(0, 0, 0);
+            }
+            if (Input.GetButtonUp("UseItem")) {
+                StartCoroutine(wait());
+            }
         }
         else if (transform.parent != null && !Equipped)
         {
             this.gameObject.transform.localPosition += new Vector3(100, 500, 300);
         }
+        if (transform.parent == null) {
+            if(WeaponHitBox != null) 
+            WeaponHitBox.gameObject.transform.localEulerAngles = OriRot;
+        }
     }
     public virtual void OnUse()
     {
+
         if (FindObjectOfType<MinigameScript>() == null)
         {
             if (aresol)
@@ -80,10 +73,12 @@ public abstract class Item : MonoBehaviour
             }
         }
     }
-    protected void RemoveItem()
+    protected IEnumerator RemoveItem()
     {
+        yield return new WaitForSeconds(1);
         transform.parent = null;
         FindObjectOfType<InventorySystem>().ItemAmount--;
+
         Destroy(this.gameObject);//May need to update the inventory system 
     }
     protected void interaction() {
@@ -92,24 +87,46 @@ public abstract class Item : MonoBehaviour
         {
             this.GetComponent<BoxCollider>().enabled = false;
             FindObjectOfType<InventorySystem>().AddItem(this);
-            this.gameObject.transform.localPosition = new Vector3(0, 0, 0);
+            this.gameObject.transform.localPosition += new Vector3(100, 500, 300);
             //this.gameObject.transform.parent = FindObjectOfType<PlayerController>().gameObject.transform;
             //this.gameObject.transform.position += new Vector3(100, 500, 300);
             transform.Find("Canvas").gameObject.SetActive(false);
+            if (interact.Interacted) { FindScale(); Debug.Log("0.1"); }
             interact.Interacted = false;
             FindObjectOfType<PlayerController>().GetComponentInChildren<Animator>().Play("Base Layer.PickUp");
         }
     }
-    
+    //fix weapon flip with player
+    public Vector3 meleeRot;
+    GameObject parents;
+    void FindScale()
+    {
+        parents = FindObjectOfType<PlayerController>().gameObject.GetComponentInChildren<IKManager2D>().gameObject;
+        if (parents.transform.localScale.x == 0.1f)
+        {
+            if (WeaponHitBox != null)
+
+                WeaponHitBox.gameObject.transform.localEulerAngles = meleeRot;
+        }
+        if (parents.transform.localScale.x == -0.1f)
+        {
+            if (WeaponHitBox != null)
+
+                WeaponHitBox.gameObject.transform.localEulerAngles = OriRot;
+        }
+    }
+    public IEnumerator wait() {
+        yield return new WaitForSeconds(1f);
+        this.gameObject.transform.localPosition += new Vector3(100, 500, 300);
+    }
 }
 public abstract class Weapon : Item //Weapons: use a collider for weapon range
 {
     public float damage;
     protected Collider myRange;
     Camera[] cameras;
-    public Collider WeaponHitBox;
+
     public bool Melee;
-    public Vector3 meleeRot;
     public override void OnUse()
     {
         base.OnUse();
@@ -120,15 +137,19 @@ public abstract class Weapon : Item //Weapons: use a collider for weapon range
             FindObjectOfType<PlayerController>().AttackAnim();
 
         }
+
         //Spawn a collider to determine the weapon range
     }
-    void Start() {
+    public override void Start() {
+        base.Start();
         cameras = FindObjectsOfType<Camera>();
        
     }
     public override void Update() {
+        base.Update();
         if (Equipped)
         {
+
             if (FindObjectOfType<PlayerController>().rig.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack"))
             {
                 if (WeaponHitBox != null)
@@ -140,7 +161,7 @@ public abstract class Weapon : Item //Weapons: use a collider for weapon range
             FindObjectOfType<PlayerController>().AttackDamage = damage;
             //this.gameObject.GetComponent<Interaction>().enabled = false;
             this.GetComponent<BoxCollider>().enabled = false;
-            this.gameObject.transform.localPosition = new Vector3(0, 0, 0);
+            //this.gameObject.transform.localPosition = new Vector3(0, 0, 0);
             if (!Melee)
             {
                 for (int i = 0; i < cameras.Length; i++)
@@ -155,33 +176,19 @@ public abstract class Weapon : Item //Weapons: use a collider for weapon range
                     }
                 }
             }
-            else {
-
-                FindScale();
-            }
         }
         else if (transform.parent != null && !Equipped) {
             this.gameObject.transform.localPosition += new Vector3(100, 500, 300);
         }
+ 
 
-       
     }
 
     float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
     {
         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
     }
-    GameObject parents;
-    void FindScale()
-    {
-            parents = transform.parent.gameObject;
-            while (parents.transform.localScale.x != 0.1f)
-            {
-                parents = parents.transform.parent.gameObject;
-            }
-            WeaponHitBox.gameObject.transform.localEulerAngles = meleeRot;
-    }
-
+    
 }
 //public class Hairspray : Weapon
 //{

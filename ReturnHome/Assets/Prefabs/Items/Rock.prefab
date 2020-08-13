@@ -139,6 +139,7 @@ MonoBehaviour:
   damage: 2
   WeaponHitBox: {fileID: 1401966745539697313}
   Melee: 1
+  meleeRot: {x: 0, y: 45, z: 135}
 --- !u!1 &5073136146317707007
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,13 +165,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5073136146317707007}
-  m_LocalRotation: {x: 0.77919215, y: 0.32275194, z: -0.49640003, w: -0.20561562}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 3054366791823221836}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 245, z: 135}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1882269998913980117
 SpriteRenderer:
   m_ObjectHideFlags: 0

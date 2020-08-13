@@ -16,6 +16,7 @@ public class Flamethrower : Weapon
         if (Input.GetButtonUp("UseItem"))
         {
             particles.Play();
+            StartCoroutine(wait());
         }
     }
 

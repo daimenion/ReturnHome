@@ -48,7 +48,7 @@ public class BOX : MonoBehaviour
             if (inventory.Inventory[inventory.Inventory.Length - 1] == null)
             {
                 item = Instantiate(SpawnList[rand],
-                      transform.position, new Quaternion(0, 45, 0, 1)) as GameObject;
+                      transform.position, new Quaternion(0, 0, 0, 1)) as GameObject;
                 item.GetComponent<BoxCollider>().enabled = false;
                 yield return new WaitForSeconds(1);
 
@@ -64,7 +64,7 @@ public class BOX : MonoBehaviour
                     if (inventory.Inventory[i] == null)
                     {
                         item = Instantiate(SpawnList[rand],
-                        transform.position, new Quaternion(0, 45, 0, 1)) as GameObject;
+                        transform.position, new Quaternion(0, 0, 0, 1)) as GameObject;
                         item.GetComponent<BoxCollider>().enabled = false;
                         yield return new WaitForSeconds(1);
 
@@ -79,7 +79,7 @@ public class BOX : MonoBehaviour
                 if (x == inventory.Inventory.Length - 1) {
                     //once = 2;
                     item = Instantiate(SpawnList[rand],
-                        transform.position, new Quaternion(0, 45, 0, 1)) as GameObject;
+                        transform.position, new Quaternion(0, 0, 0, 1)) as GameObject;
 
                         yield return new WaitForSeconds(1);
 
@@ -103,7 +103,7 @@ public class BOX : MonoBehaviour
             if (inventory.Inventory[inventory.Inventory.Length - 1] == null)
             {
                 item = Instantiate(SetItem,
-                      transform.position, new Quaternion(0, 45, 0, 1)) as GameObject;
+                      transform.position, new Quaternion(0, 0, 0, 1)) as GameObject;
 
                 yield return new WaitForSeconds(1);
             item.GetComponent<BoxCollider>().enabled = false;
@@ -119,7 +119,7 @@ public class BOX : MonoBehaviour
                     if (inventory.Inventory[i] == null)
                     {
                         item = Instantiate(SetItem,
-                        transform.position, new Quaternion(0, 45, 0, 1)) as GameObject;
+                        transform.position, new Quaternion(0, 0, 0, 1)) as GameObject;
                     item.GetComponent<BoxCollider>().enabled = false;
                     yield return new WaitForSeconds(1);
 
@@ -136,7 +136,7 @@ public class BOX : MonoBehaviour
                 {
 
                     item = Instantiate(SetItem,
-                        transform.position, new Quaternion(0, 45, 0, 1)) as GameObject;
+                        transform.position, new Quaternion(0, 0, 0, 1)) as GameObject;
 
                     yield return new WaitForSeconds(1);
 
