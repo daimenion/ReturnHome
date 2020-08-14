@@ -23,12 +23,13 @@ public class AI : Actor
     bool hited;
     protected override void Awake()
     {
+        AttackDamage = 3.0f;
         base.Awake();
         playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         maxCoolDown = cooldown;
         CoolDownStarted = false;
         agent = GetComponent<NavMeshAgent>();
-        AttackDamage = 3.0f;
+
     }
     // look at player
     protected virtual void FacePlayer()

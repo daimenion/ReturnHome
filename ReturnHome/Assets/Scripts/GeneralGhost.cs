@@ -70,8 +70,9 @@ public class GeneralGhost : AI
                 RotateTowards(playerController.gameObject.transform);
                 if (!CoolDownStarted)
                 {
-                    StopCoroutine(WaitBasicAttack());
+
                     Attack();
+                    StopCoroutine(WaitBasicAttack());
                 }
                 else {
                     if (attack == 1)

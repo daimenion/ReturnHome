@@ -156,7 +156,7 @@ public class BOX : MonoBehaviour
     {
         for (float t = 0f; t < 3; t += Time.deltaTime) {
             transform.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, Color.clear,t/3);
-            print(t);
+            //print(t);
             yield return null;
         }
         Destroy(gameObject);

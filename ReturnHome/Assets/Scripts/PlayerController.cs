@@ -28,6 +28,7 @@ public class PlayerController : Actor
     {
         Idle,
         Move,
+        Death,
     }
     PlayerStates state;
 
@@ -69,6 +70,9 @@ public class PlayerController : Actor
                 break;
             case PlayerStates.Move:
                 Move();
+                break;
+            case PlayerStates.Death:
+                
                 break;
             default:
                 break;
@@ -183,9 +187,13 @@ public class PlayerController : Actor
     public void Electrocute(float Damage)
     {
         //StartCoroutine(TakeDamage(0.0f, Damage)); Change damage to new damage type when it's available
-        if (GetComponentInChildren<DampEffect>()) Damage = Damage * 1.5f;
+        if (GetComponentInChildren<DampEffect>()) 
+            Damage = Damage * 1.5f;
+
         PlayerDecreaseHealth(Damage, "Electricity");
+
         anim.Play("Base Layer.electrocution", 0, .25f);
+        Debug.Log("hit");
     }
 
     public IEnumerator Coffee(float time, int newSpeed)
@@ -198,6 +206,7 @@ public class PlayerController : Actor
     }
     public void DeathAnim()
     {
+        state = PlayerStates.Death;
         anim.Play("Base Layer.playerdeath");
     }
     public void AttackAnim()

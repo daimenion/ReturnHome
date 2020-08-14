@@ -18,20 +18,18 @@ public class ElectricityGhost : GeneralGhost
     {
         if (attacking == false)
         {
-
             base.Attack();
             playerController.Electrocute(AttackDamage);
             StartCoroutine(reset());
             attacking = true;
-            
         }
-        
+
     }
     IEnumerator reset() {
 
-        yield return new WaitForSeconds(0.0f);
+        yield return new WaitForSeconds(5f);
         attacking = false;
-        StopCoroutine(reset());
+        //StopCoroutine(reset());
     }
 
 }

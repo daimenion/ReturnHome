@@ -7,7 +7,7 @@ public class IllEffect : StatusEffect
     public float Illdmg;
     public IllEffect()
     {
-        duration = -1;
+        duration =10;
         effectName = "Ill";
         effectDescription = "You are sick, you need to see a doctor";
         Illdmg = 1.2f;

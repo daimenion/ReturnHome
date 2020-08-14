@@ -4724,7 +4724,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &6244095336688580072
+--- !u!114 &-5534207805902509219
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4733,11 +4733,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7343974242252153627}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9175ce8f39a708c4691cd33e91c8d0f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f63e0d4d61c02a4baddda60cfacbbe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
-  MaxHealth: 100
+  MaxHealth: 75
   spawningAttacks: {fileID: 0}
   agent: {fileID: 6096988347081026625}
   OriginalPos: {x: 0, y: 0, z: 0}
@@ -4750,7 +4750,7 @@ MonoBehaviour:
   attacking: 0
   ViewLight: {fileID: 7895838206341919956}
   sprite: {fileID: 70880935033182379}
-  StoppingDistance: 0
+  StoppingDistance: 2
   Skill: {fileID: 0}
 --- !u!1001 &4024760921108988524
 PrefabInstance:
