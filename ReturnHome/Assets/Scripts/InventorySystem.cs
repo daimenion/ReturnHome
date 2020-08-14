@@ -100,13 +100,16 @@ public class InventorySystem : MonoBehaviour
 
     void DropItem(int Item)
     {
-        Inventory[Item].gameObject.transform.parent = null;
-        Inventory[Item].GetComponent<Interaction>().enabled = true;
-        Inventory[Item].Equipped = false;
-        Inventory[Item].GetComponent<BoxCollider>().enabled = true;
-        Inventory[Item].gameObject.transform.position = player.gameObject.transform.position;
-        Inventory[Item].gameObject.transform.rotation = new Quaternion(0, 0, 0,0);
-        Inventory[Item].gameObject.transform.localScale = new Vector3(1, 1, 1);
+        if (Inventory[Item] != null)
+        {
+            Inventory[Item].gameObject.transform.parent = null;
+            Inventory[Item].GetComponent<Interaction>().enabled = true;
+            Inventory[Item].Equipped = false;
+            Inventory[Item].GetComponent<BoxCollider>().enabled = true;
+            Inventory[Item].gameObject.transform.position = player.gameObject.transform.position;
+            Inventory[Item].gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
+            Inventory[Item].gameObject.transform.localScale = new Vector3(1, 1, 1);
+        }
 
 
     }

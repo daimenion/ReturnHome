@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19621384664994500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.010614, y: 1.09, z: 4.146061}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7666715340527705497}
@@ -82,6 +82,8 @@ MonoBehaviour:
   type: Consumable
   Equipped: 0
   gone: 1
+  WeaponHitBox: {fileID: 0}
+  meleeRot: {x: 0, y: 0, z: 0}
   AddAmountHP: 20
 --- !u!212 &4441366346769868620
 SpriteRenderer:
@@ -219,11 +221,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 19621384664994505}
     m_Modifications:
-    - target: {fileID: 200364316928098950, guid: d09072394d2469e4abf951f675127f88,
-        type: 3}
-      propertyPath: m_Name
-      value: Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 7860684768863663175, guid: d09072394d2469e4abf951f675127f88,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -328,6 +325,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 200364316928098950, guid: d09072394d2469e4abf951f675127f88,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d09072394d2469e4abf951f675127f88, type: 3}
