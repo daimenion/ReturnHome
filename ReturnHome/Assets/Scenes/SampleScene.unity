@@ -4129,6 +4129,85 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c1e48ecd3d8b1f4380633c6f9f05af6, type: 3}
+--- !u!1001 &120479569
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1737980042}
+    m_Modifications:
+    - target: {fileID: 7726619381079072529, guid: 54b491de0f74be845a26516b9c5fa3b1,
+        type: 3}
+      propertyPath: m_Name
+      value: Crafting Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726619381079072530, guid: 54b491de0f74be845a26516b9c5fa3b1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726619381079072530, guid: 54b491de0f74be845a26516b9c5fa3b1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726619381079072530, guid: 54b491de0f74be845a26516b9c5fa3b1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726619381079072530, guid: 54b491de0f74be845a26516b9c5fa3b1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726619381079072530, guid: 54b491de0f74be845a26516b9c5fa3b1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726619381079072530, guid: 54b491de0f74be845a26516b9c5fa3b1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726619381079072530, guid: 54b491de0f74be845a26516b9c5fa3b1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726619381079072530, guid: 54b491de0f74be845a26516b9c5fa3b1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726619381079072530, guid: 54b491de0f74be845a26516b9c5fa3b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726619381079072530, guid: 54b491de0f74be845a26516b9c5fa3b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726619381079072530, guid: 54b491de0f74be845a26516b9c5fa3b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585313494011980687, guid: 54b491de0f74be845a26516b9c5fa3b1,
+        type: 3}
+      propertyPath: sortpoint.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585313494011980687, guid: 54b491de0f74be845a26516b9c5fa3b1,
+        type: 3}
+      propertyPath: sortpoint.z
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 54b491de0f74be845a26516b9c5fa3b1, type: 3}
 --- !u!1001 &121783925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13526,7 +13605,7 @@ PrefabInstance:
     - target: {fileID: 1467598087942968673, guid: 5232efff9e20e6044adb310169e610c6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1467598087942968674, guid: 5232efff9e20e6044adb310169e610c6,
         type: 3}
@@ -13586,7 +13665,7 @@ PrefabInstance:
     - target: {fileID: 1467598087942968476, guid: 5232efff9e20e6044adb310169e610c6,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5232efff9e20e6044adb310169e610c6, type: 3}
@@ -20256,7 +20335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsprite: {fileID: 7134176316312683471}
-  accentColor: {r: 0.40392157, g: 0.7882353, b: 0.9372549, a: 1}
+  accentColor: {r: 0.88235295, g: 0.47843137, b: 0.75686276, a: 1}
 --- !u!1001 &502589362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22320,6 +22399,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7374431579242927424, guid: c223b9376195dc2468aa6b7b589e000e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2471a70bfc61ce48b80689299c597b5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c223b9376195dc2468aa6b7b589e000e, type: 3}
 --- !u!1001 &545361759
@@ -24028,7 +24112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsprite: {fileID: 1129966147494475400}
-  accentColor: {r: 0.40392157, g: 0.7882353, b: 0.9372549, a: 1}
+  accentColor: {r: 0.88235295, g: 0.47843137, b: 0.75686276, a: 1}
 --- !u!1001 &602914334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28260,7 +28344,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: NaN, y: -407.91724, z: 3.04e-43, w: 3.85e-43}
+  m_BoundingSphereOverride: {x: 0, y: 2.3509887e-38, z: 3.436708e+10, w: 7.7371252e+25}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -33344,7 +33428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsprite: {fileID: 3598080423242890077}
-  accentColor: {r: 0.40392157, g: 0.7882353, b: 0.9372549, a: 1}
+  accentColor: {r: 0.88235295, g: 0.47843137, b: 0.75686276, a: 1}
 --- !u!1001 &832109334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36871,7 +36955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsprite: {fileID: 455055511080428748}
-  accentColor: {r: 0.40392157, g: 0.7882353, b: 0.9372549, a: 1}
+  accentColor: {r: 0.88235295, g: 0.47843137, b: 0.75686276, a: 1}
 --- !u!4 &920530435 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 40a5f1e2f6a37034fb9f152db2effcb3,
@@ -37412,7 +37496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsprite: {fileID: 13613204159801303}
-  accentColor: {r: 0.40392157, g: 0.7882353, b: 0.9372549, a: 1}
+  accentColor: {r: 0.88235295, g: 0.47843137, b: 0.75686276, a: 1}
 --- !u!1 &932572347 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 9dde7999d30b753439bd86f65223c6a0,
@@ -41172,7 +41256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsprite: {fileID: 8814902036286071581}
-  accentColor: {r: 0.40392157, g: 0.7882353, b: 0.9372549, a: 1}
+  accentColor: {r: 0.88235295, g: 0.47843137, b: 0.75686276, a: 1}
 --- !u!1 &1029326422
 GameObject:
   m_ObjectHideFlags: 0
@@ -55953,7 +56037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsprite: {fileID: 7705809580669594900}
-  accentColor: {r: 0.40392157, g: 0.7882353, b: 0.9372549, a: 1}
+  accentColor: {r: 0.88235295, g: 0.47843137, b: 0.75686276, a: 1}
 --- !u!1001 &1369630198
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56723,7 +56807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsprite: {fileID: 6801014072143620175}
-  accentColor: {r: 0.40392157, g: 0.7882353, b: 0.9372549, a: 1}
+  accentColor: {r: 0.88235295, g: 0.47843137, b: 0.75686276, a: 1}
 --- !u!1 &1381838176
 GameObject:
   m_ObjectHideFlags: 0
@@ -59646,7 +59730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsprite: {fileID: 3440605917540019968}
-  accentColor: {r: 0.40392157, g: 0.7882353, b: 0.9372549, a: 1}
+  accentColor: {r: 0.88235295, g: 0.47843137, b: 0.75686276, a: 1}
 --- !u!1 &1428485802
 GameObject:
   m_ObjectHideFlags: 0
@@ -66344,7 +66428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsprite: {fileID: 1897001339729072978}
-  accentColor: {r: 0.40392157, g: 0.7882353, b: 0.9372549, a: 1}
+  accentColor: {r: 0.88235295, g: 0.47843137, b: 0.75686276, a: 1}
 --- !u!4 &1559601097 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 83bd0285af034d74e892d2370d33f2ff,
@@ -70300,7 +70384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsprite: {fileID: 6679366245277655397}
-  accentColor: {r: 0.40392157, g: 0.7882353, b: 0.9372549, a: 1}
+  accentColor: {r: 0.88235295, g: 0.47843137, b: 0.75686276, a: 1}
 --- !u!1 &1657457633
 GameObject:
   m_ObjectHideFlags: 0
@@ -72024,7 +72108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsprite: {fileID: 1386942636533317904}
-  accentColor: {r: 0.40392157, g: 0.7882353, b: 0.9372549, a: 1}
+  accentColor: {r: 0.88235295, g: 0.47843137, b: 0.75686276, a: 1}
 --- !u!4 &1684270215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: af658e38444c0724a9ff36d45634cd21,
@@ -73107,7 +73191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsprite: {fileID: 5010980036483404096}
-  accentColor: {r: 0.40392157, g: 0.7882353, b: 0.9372549, a: 1}
+  accentColor: {r: 0.88235295, g: 0.47843137, b: 0.75686276, a: 1}
 --- !u!1001 &1710061652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74655,6 +74739,7 @@ Transform:
   - {fileID: 1019347088}
   - {fileID: 429118634}
   - {fileID: 1005928489}
+  - {fileID: 2135678486}
   m_Father: {fileID: 814100701}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -74685,7 +74770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsprite: {fileID: 4137726261161760156}
-  accentColor: {r: 0.40392157, g: 0.7882353, b: 0.9372549, a: 1}
+  accentColor: {r: 0.88235295, g: 0.47843137, b: 0.75686276, a: 1}
 --- !u!4 &1738132214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 83bd0285af034d74e892d2370d33f2ff,
@@ -90872,6 +90957,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 610959632}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2135678486 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7726619381079072530, guid: 54b491de0f74be845a26516b9c5fa3b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 120479569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2135774058 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: af658e38444c0724a9ff36d45634cd21,
@@ -91045,7 +91136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsprite: {fileID: 8177537496200675304}
-  accentColor: {r: 0.40392157, g: 0.7882353, b: 0.9372549, a: 1}
+  accentColor: {r: 0.88235295, g: 0.47843137, b: 0.75686276, a: 1}
 --- !u!4 &2138775705 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7956200179023641657, guid: 1d8c4bf326fbe4143b5f489dff1afcd9,
@@ -92276,7 +92367,7 @@ PrefabInstance:
     - target: {fileID: 8226711440829455088, guid: 5ac814d158aa6fa4eacbee372b4d2da7,
         type: 3}
       propertyPath: reset
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8226711440829455088, guid: 5ac814d158aa6fa4eacbee372b4d2da7,
         type: 3}
