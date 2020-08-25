@@ -1,7 +1,8 @@
-﻿using System;
+﻿//using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+//
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -25,6 +26,7 @@ public class CustomGameManager : MonoBehaviour
     public GameObject loosescreen;
 
     public Image HPBar;
+    public GameObject[] UniqueItems;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,9 +54,10 @@ public class CustomGameManager : MonoBehaviour
             {
                 Instantiate(ghosts[Deaths[i]], StringToVector3(PlayerLastLocations[i]), ghosts[Deaths[i]].transform.rotation);
             }
-           
+
 
         }
+        SpawnUniqueItems();
         //make objects in rooms invisible 
 
         //spawns boxes
@@ -165,6 +168,11 @@ public class CustomGameManager : MonoBehaviour
         }
     }
 
+    void SpawnUniqueItems() {
+        if (playerDeaths > 0) {
+           Instantiate(UniqueItems[Random.Range(0, UniqueItems.Length)],new Vector3(player.gameObject.transform.position.x, player.gameObject.transform.position.y - 1.6f, player.gameObject.transform.position.z), new Quaternion(0, 45, 0, 0));
+        }
+    }
     #region get/set and +/- functions
     //playerpref functions
     int[] GetIntPref()
@@ -203,7 +211,7 @@ public class CustomGameManager : MonoBehaviour
     {
         for (int i = 0; i < playerDeaths; i++)
         {
-            if (String.IsNullOrEmpty(PlayerLastLocations[i]))
+            if (string.IsNullOrEmpty(PlayerLastLocations[i]))
             {
                 PlayerLastLocations[i] = player.gameObject.transform.position.ToString();
                 PlayerPrefs.SetString("PlayerLastLocation" + i, PlayerLastLocations[i]);

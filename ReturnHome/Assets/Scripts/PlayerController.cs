@@ -48,6 +48,7 @@ public class PlayerController : Actor
         CamPos = cam.gameObject.transform.localPosition;
         healthbar = GameObject.Find("PlayerHealthBar").GetComponent<Image>();
         oxy = GameObject.Find("OxygenBar").GetComponent<Image>();
+        AddAdandDis();
     }
 
     // Update is called once per frame
@@ -244,5 +245,40 @@ public class PlayerController : Actor
             }
         }
         if (!effectFound) print("Effect not found!");
+    }
+    //Advantage and Disadvantage
+    public void AddAdandDis() {
+        //advantage
+        switch (Random.Range(0, 3)) {
+
+            case 0:
+                gameObject.AddComponent<Rough>();
+                break;
+
+            case 1:
+                gameObject.AddComponent<Rough>();
+                break;
+
+            case 2:
+                gameObject.AddComponent<Rough>();
+                break;
+        
+        }
+        //Disadvantage
+        switch (Random.Range(0, 3))
+        {
+            case 0:
+                gameObject.AddComponent<HalfDead>();
+                break;
+
+            case 1:
+                gameObject.AddComponent<HalfDead>();
+                break;
+
+            case 2:
+                gameObject.AddComponent<HalfDead>();
+                break;
+
+        }
     }
 }

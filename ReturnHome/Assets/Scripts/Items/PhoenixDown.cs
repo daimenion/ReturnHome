@@ -20,6 +20,7 @@ public class PhoenixDown : Item
     public override void Update()
     {
         interaction();
+        base.Update();
         Player = FindObjectOfType<PlayerController>();
         if (Player.health <= 0)
         {
@@ -33,6 +34,5 @@ public class PhoenixDown : Item
                 Destroy(Player.gameObject.GetComponent<IllEffect>());
             }
         }
-        base.Update();
     }
 }
