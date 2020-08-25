@@ -5,10 +5,12 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     Animator anim;
+    AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -20,23 +22,29 @@ public class Door : MonoBehaviour
     {
         if (!other.CompareTag("Ghost"))
         {
-            anim.SetTrigger("Enter");
+            //anim.SetTrigger("Enter");
+            anim.Play("open");
         }
     }
     private void OnTriggerStay(Collider other)
     {
-        if (!other.CompareTag("Ghost"))
+        /*if (!other.CompareTag("Ghost"))
         {
             anim.SetTrigger("Enter");
-        }
+        }*/
 
     }
     private void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag("Ghost"))
         {
-            anim.ResetTrigger("Enter");
+            anim.Play("Close");
+            //anim.ResetTrigger("Enter");
         }
 
+    }
+    public void Play()
+    {
+        audio.Play();
     }
 }
