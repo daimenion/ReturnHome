@@ -9,7 +9,7 @@ public class IllEffect : StatusEffect
     {
         duration =10;
         effectName = "Ill";
-        effectDescription = "You are sick, you need to see a doctor";
+        effectDescription = "That caffeteria food seemed a little off...";
         Illdmg = 1.2f;
     }
 
