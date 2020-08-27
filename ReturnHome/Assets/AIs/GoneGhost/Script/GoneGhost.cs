@@ -7,6 +7,7 @@ public class GoneGhost : GeneralGhost
 {
     public float TeleportInterval;
     public float BehindPlayerOffset;
+    public GameObject teleportEffect;
     float tpCoolDown;
     bool hit;
     protected override void Awake()
@@ -30,6 +31,8 @@ public class GoneGhost : GeneralGhost
         //    //    break;
 
         //    case 1:  //Teleport to random part of ship
+                Instantiate(teleportEffect, transform);
+                yield return new WaitForSeconds(0.7f);
                 Teleport(randpos.x, transform.position.y, randpos.z);
                 Debug.Log("teleported random1");
         //    break;
@@ -85,6 +88,9 @@ public class GoneGhost : GeneralGhost
         if (!hit)
         {
             yield return new WaitForSeconds(TeleportInterval);
+
+            Instantiate(teleportEffect, playerController.transform);
+            yield return new WaitForSeconds(0.7f);
             Debug.Log("moved player");
             playerController.transform.position = new Vector3(randpos.x, playerController.transform.position.y, randpos.z);
             transform.position = new Vector3(randpos.x, transform.position.y, randpos.z);
