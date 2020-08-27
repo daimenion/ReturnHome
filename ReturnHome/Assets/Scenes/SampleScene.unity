@@ -28384,7 +28384,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 5.9908e-41, y: 1.991e-41, z: NaN, w: 3.57e-43}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -47422,6 +47422,7 @@ MonoBehaviour:
   rig: {fileID: 0}
   ObjectOnHand: {fileID: 0}
   statusEffects: []
+  electricityEffect: {fileID: 0}
 --- !u!95 &1172566119
 Animator:
   serializedVersion: 3
@@ -72763,6 +72764,12 @@ PrefabInstance:
       propertyPath: ObjectOnHand
       value: 
       objectReference: {fileID: 1997004886}
+    - target: {fileID: 188222898465771443, guid: ad1a305425954c74eb6317c78eb9de2d,
+        type: 3}
+      propertyPath: electricityEffect
+      value: 
+      objectReference: {fileID: 972642561789819815, guid: 764625931a780de4aaf248498b6efa4e,
+        type: 3}
     - target: {fileID: 1377014132, guid: ad1a305425954c74eb6317c78eb9de2d, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -91758,12 +91765,7 @@ PrefabInstance:
     - target: {fileID: 1942797289137362341, guid: 2d404ad262d6b5e4ab965b3469c0a0d1,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1226949948240383080, guid: 2d404ad262d6b5e4ab965b3469c0a0d1,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.78431374
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d404ad262d6b5e4ab965b3469c0a0d1, type: 3}
@@ -92225,6 +92227,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InStasisIntro
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155268694678370407, guid: 9ca13e9690873194cb593ebb19d70b4e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ca13e9690873194cb593ebb19d70b4e, type: 3}
