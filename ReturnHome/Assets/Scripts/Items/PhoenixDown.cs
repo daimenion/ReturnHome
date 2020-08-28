@@ -22,17 +22,26 @@ public class PhoenixDown : Item
         interaction();
         base.Update();
         Player = FindObjectOfType<PlayerController>();
-        if (Player.health <= 0)
+        if (transform.parent != null)
         {
-            Player.DecreaseHealth(-AddAmountHP);
-            if (Player.gameObject.GetComponent<StatusEffect>())
+            if (Player.health <= 3)
             {
-                Destroy(Player.gameObject.GetComponent<StatusEffect>());
-            }
-            if (Player.gameObject.GetComponent<IllEffect>())
-            {
-                Destroy(Player.gameObject.GetComponent<IllEffect>());
+                NewOnUse();
             }
         }
+    }
+    public void NewOnUse()
+    {
+        Player.DecreaseHealth(-AddAmountHP);
+        if (Player.transform.GetComponentsInChildren<StatusEffect>().Length!= 0)
+        {
+            for (int i = 0; i < Player.transform.GetComponentsInChildren<StatusEffect>().Length; i++)
+            {
+                Player.transform.GetComponentsInChildren<StatusEffect>()[i].EndEffect();
+            }
+        }
+
+        base.OnUse();
+        Destroy(this.gameObject);
     }
 }

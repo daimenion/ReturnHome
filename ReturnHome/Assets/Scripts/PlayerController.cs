@@ -24,6 +24,7 @@ public class PlayerController : Actor
     Image oxy;
     public GameObject ObjectOnHand;
     public GameObject[] statusEffects;
+    public bool stop;
     public enum PlayerStates
     {
         Idle,
@@ -84,20 +85,23 @@ public class PlayerController : Actor
     }
 
     void Move() {
-        anim.SetInteger("PlayerState", 1);
-        anim.SetFloat("MoveX", Input.GetAxis("Horizontal"));
-        anim.SetFloat("MoveZ", Input.GetAxis("Vertical"));
-        Vector3 moveVector = new Vector3 (Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * speed * Time.deltaTime;
-        transform.Translate(moveVector);
-        isMoving = (moveVector != Vector3.zero);
-        anim.SetBool("isMoving", isMoving);
-        if (Input.GetAxis("Horizontal") > 0)
+        if (!stop)
         {
-            rig.localScale = new Vector3(-0.1f, 0.1f, 0.1f);
-        }
-        else if (Input.GetAxis("Horizontal") < 0)
-        {
-            rig.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            anim.SetInteger("PlayerState", 1);
+            anim.SetFloat("MoveX", Input.GetAxis("Horizontal"));
+            anim.SetFloat("MoveZ", Input.GetAxis("Vertical"));
+            Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * speed * Time.deltaTime;
+            transform.Translate(moveVector);
+            isMoving = (moveVector != Vector3.zero);
+            anim.SetBool("isMoving", isMoving);
+            if (Input.GetAxis("Horizontal") > 0)
+            {
+                rig.localScale = new Vector3(-0.1f, 0.1f, 0.1f);
+            }
+            else if (Input.GetAxis("Horizontal") < 0)
+            {
+                rig.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            }
         }
     }
     //check Oxygen levels and Low Oxygen effects
@@ -152,7 +156,8 @@ public class PlayerController : Actor
         if (other.CompareTag("Room"))
         {
             //make objects visible 
-            other.transform.Find("fog").gameObject.SetActive(false);
+            if (GetComponent<Foresight>() == false)
+                other.transform.Find("fog").gameObject.SetActive(false);
             //move camera
             cam.gameObject.transform.position = Vector3.MoveTowards(cam.gameObject.transform.position, other.GetComponentInChildren<Camera>().gameObject.transform.position,15*Time.deltaTime);
             if (cam.gameObject.transform.position == other.GetComponentInChildren<Camera>().gameObject.transform.position)
@@ -171,7 +176,8 @@ public class PlayerController : Actor
         //}
         if (other.CompareTag("Room"))
         {
-            other.transform.Find("fog").gameObject.SetActive(true);
+            if (GetComponent<Foresight>() == false)
+                other.transform.Find("fog").gameObject.SetActive(true);
             cam.gameObject.transform.parent = this.gameObject.transform;
             cam.gameObject.transform.localPosition =  CamPos;
             cam.gameObject.SetActive(true);
@@ -256,11 +262,11 @@ public class PlayerController : Actor
                 break;
 
             case 1:
-                gameObject.AddComponent<Rough>();
+                gameObject.AddComponent<Backpacker>();
                 break;
 
             case 2:
-                gameObject.AddComponent<Rough>();
+                gameObject.AddComponent<Foresight>();
                 break;
         
         }
@@ -272,11 +278,11 @@ public class PlayerController : Actor
                 break;
 
             case 1:
-                gameObject.AddComponent<HalfDead>();
+                gameObject.AddComponent<Acid>();
                 break;
 
             case 2:
-                gameObject.AddComponent<HalfDead>();
+                gameObject.AddComponent<Concussed>();
                 break;
 
         }

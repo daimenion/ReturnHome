@@ -14,6 +14,8 @@ public class Beehive : AI
         Dead
     }
     float dis;
+    int GotHoney;
+    public GameObject Honey;
     public States CurrentState { set; get; } = States.Wander;
 
     Vector3 finalPosition;
@@ -27,6 +29,7 @@ public class Beehive : AI
    // bool Chasing;
     private GameObject Player;
     public Vector3 AttackCoords;
+    InventorySystem inve ;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +44,12 @@ public class Beehive : AI
     void Update()
     {
         HandleStates();
+        if (GetComponent<Interaction>().Interacted) {
+            CheckKnife();
+        }
+        if (health < MaxHealth) {
+            isAttacking();
+        }
     }
 
     public virtual void HandleStates()
@@ -112,4 +121,20 @@ public class Beehive : AI
     //TO DO
     //Check if bees are alive
     //Spawn bees if some are dead
+
+    public void CheckKnife() {
+        inve = FindObjectOfType<InventorySystem>();
+
+        for (int i = 0; i < inve.Inventory.Length - 1; i++) {
+            if (inve.Inventory[i].myName == "Knife" && GotHoney == 0)
+            {
+                SpawnHoney();
+                GotHoney = 1;
+            }
+        }
+    }
+    public void SpawnHoney() {
+        Instantiate(Honey, this.transform.position, Honey.transform.rotation);
+        GetComponent<Interaction>().Interacted = false;
+    }
 }

@@ -12,12 +12,17 @@ public class InventorySystem : MonoBehaviour
     public int itemB;
     PlayerController player;
     public int ItemAmount;
+    public GameObject extra;
     // Start is called before the first frame update
     void Start()
     {
         //Items = new List<GameObject>(5);
         //Item = new GameObject[5];
         Inventory = new Item[5];
+        if (Inventory.Length == 5)
+        {
+            extra.SetActive(false);
+        }
         player = FindObjectOfType<PlayerController>();
     }
     void Update()

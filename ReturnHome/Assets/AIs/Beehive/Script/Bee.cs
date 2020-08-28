@@ -18,9 +18,12 @@ public class Bee : AI
     public Vector3 RandomPosition;
     public float wanderingRadius;
     public float StoppingDistance;
+    public GameObject sprite;
+    Quaternion iniRot;
     // Start is called before the first frame update
     void Start()
     {
+        iniRot = sprite.transform.rotation;
         if (BHParent == null)
             BHParent = this.transform.parent.gameObject;
         RandomMovePoint();
@@ -30,13 +33,20 @@ public class Bee : AI
     void Update()
     {
         HandleStates();
+        //sprite.transform.position = new Vector3(transform.position.x, -0.1f, transform.position.z);
+        sprite.transform.rotation = iniRot;
     }
 
     public virtual void HandleStates()
     {
-        if (BHParent.GetComponent<Beehive>().isAttacking())
+        if (BHParent.GetComponent<Beehive>()!=null)
+            if(BHParent.GetComponent<Beehive>().isAttacking())
         {
             CurrentState = States.Attack;
+        }
+        else if(BHParent.GetComponent<BeehiveGhost>()!=null) {
+            if(BHParent.GetComponent<BeehiveGhost>().attacking)
+                CurrentState = States.Attack;
         }
         StartCoroutine(Timer());
         switch (CurrentState)
@@ -48,7 +58,7 @@ public class Bee : AI
                 MoveForward();
                 break;
             case States.Attack:
-
+                Attack();
                 break;
             case States.Dead:
 

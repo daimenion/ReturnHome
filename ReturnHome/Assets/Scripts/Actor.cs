@@ -52,20 +52,24 @@ public class Actor : MonoBehaviour
     }
     public virtual void DecreaseHealth(float amount)
     {
-        if(DamageAdjust==0)
-            health = Mathf.Clamp(health - amount, 0, MaxHealth);
+        if(DamageAdjust>0)
+            health = Mathf.Clamp(health - amount * DamageAdjust, 0, MaxHealth);
         else
-            health = Mathf.Clamp(health - amount, 0, MaxHealth*DamageAdjust);
+            health = Mathf.Clamp(health - amount, 0, MaxHealth);
+
+
         if (amount >= 0) { Debug.Log(name + " took " + amount + " damage."); }
         else { Debug.Log(name + " recovered " + -amount + " health."); }
     }
     public virtual void PlayerDecreaseHealth(float amount, string type)
     {
         if (type == "Fire" && GetComponentInChildren<DampEffect>()) amount = amount * 0.70f;
-        if (DamageAdjust == 0)
-            health = Mathf.Clamp(health - amount, 0, MaxHealth);
+
+        if (DamageAdjust > 0)
+            health = Mathf.Clamp(health - amount * DamageAdjust, 0, MaxHealth);
         else
-            health = Mathf.Clamp(health - amount, 0, MaxHealth * DamageAdjust);
+            health = Mathf.Clamp(health - amount, 0, MaxHealth);
+       
 
         AttackType = type;
         if (amount >= 0) { Debug.Log(name + " took " + amount + " damage."); }

@@ -211,7 +211,9 @@ MonoBehaviour:
   type: Consumable
   Equipped: 0
   gone: 1
-  AddAmountHP: 20
+  WeaponHitBox: {fileID: 0}
+  meleeRot: {x: 0, y: 0, z: 0}
+  AddAmountHP: 30
 --- !u!1001 &1409656281957633703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -219,11 +221,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7162604266882854789}
     m_Modifications:
-    - target: {fileID: 200364316928098950, guid: d09072394d2469e4abf951f675127f88,
-        type: 3}
-      propertyPath: m_Name
-      value: Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 7860684768863663175, guid: d09072394d2469e4abf951f675127f88,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -328,6 +325,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 200364316928098950, guid: d09072394d2469e4abf951f675127f88,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d09072394d2469e4abf951f675127f88, type: 3}
