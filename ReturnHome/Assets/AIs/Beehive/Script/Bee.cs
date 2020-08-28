@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,7 +11,8 @@ public class Bee : AI
         Idle,
         Wander,
         Attack,
-        Dead
+        Dead,
+        Return
     }
     public States CurrentState { set; get; } = States.Wander;
     public GameObject BHParent;
@@ -20,33 +22,46 @@ public class Bee : AI
     public float StoppingDistance;
     public GameObject sprite;
     Quaternion iniRot;
+    int attacking;
     // Start is called before the first frame update
     void Start()
     {
         iniRot = sprite.transform.rotation;
         if (BHParent == null)
+        {
             BHParent = this.transform.parent.gameObject;
+            this.transform.parent = null;
+        }
         RandomMovePoint();
+        AttackDamage = 5;
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         HandleStates();
         //sprite.transform.position = new Vector3(transform.position.x, -0.1f, transform.position.z);
         sprite.transform.rotation = iniRot;
+        base.Update();
+
     }
 
     public virtual void HandleStates()
     {
         if (BHParent.GetComponent<Beehive>()!=null)
-            if(BHParent.GetComponent<Beehive>().isAttacking())
         {
-            CurrentState = States.Attack;
+            float dist = Vector3.Distance(playerController.transform.position, BHParent.gameObject.transform.position);
+            if (BHParent.GetComponent<Beehive>().isAttacking()&& dist <5)
+                CurrentState = States.Attack;
         }
         else if(BHParent.GetComponent<BeehiveGhost>()!=null) {
             if(BHParent.GetComponent<BeehiveGhost>().attacking)
                 CurrentState = States.Attack;
+        }
+        float dis = Vector3.Distance(this.transform.position, BHParent.gameObject.transform.position);
+        if (dis > 5)
+        {
+            CurrentState = States.Return;
         }
         StartCoroutine(Timer());
         switch (CurrentState)
@@ -63,6 +78,9 @@ public class Bee : AI
             case States.Dead:
 
                 break;
+            case States.Return:
+                ReturnToBH();
+                break;
             default:
                 break;
         }
@@ -78,6 +96,7 @@ public class Bee : AI
             agent.SetDestination(new Vector3(finalPosition.x, this.transform.position.y, finalPosition.z));
         }
         //Debug.Log(agent.remainingDistance + this.name);
+        float dis = Vector3.Distance(this.transform.position, BHParent.gameObject.transform.position);
     }
 
     public void RandomMovePoint()
@@ -90,16 +109,39 @@ public class Bee : AI
 
     public void Attack()
     {
-        float dis = Vector3.Distance(this.transform.position, playerController.gameObject.transform.position);
-        if(dis <= StoppingDistance)
-        {
-            agent.isStopped = true;
-            //attack
+        //float dis = Vector3.Distance(this.transform.position, playerController.gameObject.transform.position);
+
+        //if (dis <= StoppingDistance)
+        //{
+        //    agent.isStopped = true;
+        //}
+        //else
+        //{
+
+        //}
+        agent.SetDestination(playerController.transform.position);
+        HitBox.enabled = true;
+    }
+    void OnTriggerEnter(Collider other) {
+
+        if (other.CompareTag("Player")) {
+            playerController.PlayerDecreaseHealth(AttackDamage, "Bee");
+            attacking = 1;
         }
-        else
+    
+    }
+    void ReturnToBH() {
+        agent.SetDestination(BHParent.transform.position);
+        if (agent.pathStatus == NavMeshPathStatus.PathComplete && (agent.remainingDistance > 0 && agent.remainingDistance < 1))
         {
-            //chase
+            CurrentState = States.Wander;
         }
+    }
+    public override void Death()
+    {
+        base.Death();
+        Destroy(this.gameObject);
+        return;
 
     }
 }

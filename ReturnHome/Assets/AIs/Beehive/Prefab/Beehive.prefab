@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 3657509344906276764}
   - component: {fileID: 3623382615542476485}
   - component: {fileID: 2691840263373590799}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Beehive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,9 +275,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -285,23 +285,41 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.2339639
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -8.922393
+      outSlope: -8.922393
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0.920904
+    - serializedVersion: 3
+      time: 0.37753856
+      value: 0.32499695
+      inSlope: -1.5988532
+      outSlope: -1.5988532
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.21308555
+    - serializedVersion: 3
+      time: 0.9411765
+      value: 0
+      inSlope: -0.29722518
+      outSlope: -0.29722518
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.49731922
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.058847014
+      outSlope: -0.058847014
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -310,7 +328,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -360,7 +378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3654583262409674655}
   - component: {fileID: 2390305373679502243}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,16 +560,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 200364316928098950, guid: d09072394d2469e4abf951f675127f88,
-        type: 3}
-      propertyPath: m_Name
-      value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 200364316928098950, guid: d09072394d2469e4abf951f675127f88,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7218926629713723974, guid: d09072394d2469e4abf951f675127f88,
         type: 3}
       propertyPath: m_SizeDelta.y
@@ -566,6 +574,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.552
+      objectReference: {fileID: 0}
+    - target: {fileID: 200364316928098950, guid: d09072394d2469e4abf951f675127f88,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 200364316928098950, guid: d09072394d2469e4abf951f675127f88,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 200364316928098950, guid: d09072394d2469e4abf951f675127f88,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844781161516038106, guid: d09072394d2469e4abf951f675127f88,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3757131742954307365, guid: d09072394d2469e4abf951f675127f88,
         type: 3}

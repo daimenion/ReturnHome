@@ -6,6 +6,7 @@ public class AdAndDis : MonoBehaviour
 {
     public bool Advantage;
     public PlayerController player;
+    public string myname;
     // Start is called before the first frame update
     public virtual void Start()
     {

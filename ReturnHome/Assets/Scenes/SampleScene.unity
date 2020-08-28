@@ -47423,6 +47423,7 @@ MonoBehaviour:
   ObjectOnHand: {fileID: 0}
   statusEffects: []
   electricityEffect: {fileID: 0}
+  stop: 0
 --- !u!95 &1172566119
 Animator:
   serializedVersion: 3
@@ -68738,7 +68739,7 @@ PrefabInstance:
     - target: {fileID: 39893042299979689, guid: 15fc0b47df682f44e90021b19bff0711,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -55.75527
+      value: -53.03
       objectReference: {fileID: 0}
     - target: {fileID: 39893042299979689, guid: 15fc0b47df682f44e90021b19bff0711,
         type: 3}
@@ -68748,7 +68749,7 @@ PrefabInstance:
     - target: {fileID: 39893042299979689, guid: 15fc0b47df682f44e90021b19bff0711,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.208786
+      value: -18.05
       objectReference: {fileID: 0}
     - target: {fileID: 39893042299979689, guid: 15fc0b47df682f44e90021b19bff0711,
         type: 3}
@@ -85636,7 +85637,7 @@ PrefabInstance:
     - target: {fileID: 3519482869002174733, guid: 08b7f384e3c58b04db0877d2dd3f3387,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3519482869002174724, guid: 08b7f384e3c58b04db0877d2dd3f3387,
         type: 3}

@@ -10,6 +10,7 @@ public class Concussed : AdAndDis
     public override void Start()
     {
         base.Start();
+        myname = "Concussed";
     }
     void Update() {
         StartCoroutine(MovementChange());

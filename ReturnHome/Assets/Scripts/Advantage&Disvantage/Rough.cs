@@ -9,6 +9,7 @@ public class Rough : AdAndDis
     GeneralGhost[] ghosts;
     public override void Start()
     {
+        myname = "Rough";
         Advantage = true;
         base.Start();
        

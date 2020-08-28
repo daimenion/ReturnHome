@@ -47,17 +47,14 @@ public class Beehive : AI
         if (GetComponent<Interaction>().Interacted) {
             CheckKnife();
         }
-        if (health < MaxHealth) {
-            isAttacking();
-        }
     }
 
     public virtual void HandleStates()
     {
         if (health < MaxHealth)
         {
-            CurrentState = States.Attack;
-            StoppingDistance = 3;
+                CurrentState = States.Attack;
+                StoppingDistance = 3;
         }
         StartCoroutine(Timer());
         switch (CurrentState)
@@ -102,14 +99,14 @@ public class Beehive : AI
 
     public void UpdateAttack()
     {
-        if(dis < StoppingDistance)
-        {
-            agent.isStopped = true;
-        }
-        else
-        {
-            agent.isStopped = false;
-        }
+        //if(dis < StoppingDistance)
+        //{
+        //    agent.isStopped = true;
+        //}
+        //else
+        //{
+        //    agent.isStopped = false;
+        //}
         AttackCoords = Player.transform.position;
     }
 
@@ -131,6 +128,10 @@ public class Beehive : AI
                 SpawnHoney();
                 GotHoney = 1;
             }
+            else {
+                GetComponent<Interaction>().Interacted = false;
+            }
+
         }
     }
     public void SpawnHoney() {

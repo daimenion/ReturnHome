@@ -8,6 +8,7 @@ public class Backpacker : AdAndDis
     public override void Start()
     {
         Advantage = true;
+        myname = "Backpacker";
         base.Start();
 
     }

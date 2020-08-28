@@ -7,6 +7,7 @@ public class Foresight : AdAndDis
     public override void Start()
     {
         Advantage = true;
+        myname = "Foresight";
         base.Start();
 
     }

@@ -106,8 +106,9 @@ MonoBehaviour:
   type: Weapon
   Equipped: 0
   gone: 1
-  damage: 15
   WeaponHitBox: {fileID: 0}
+  meleeRot: {x: 0, y: 0, z: 0}
+  damage: 15
   Melee: 0
   IsUsed: 0
   particles: {fileID: 5346031872913905569}
@@ -1003,7 +1004,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2

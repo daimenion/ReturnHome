@@ -20,6 +20,8 @@ public abstract class Item : MonoBehaviour
     public bool gone;
     public Collider WeaponHitBox;
     Vector3 OriRot;
+    int usin;
+    int tim;
     public virtual void Start() { 
         if (WeaponHitBox != null)
         OriRot = WeaponHitBox.gameObject.transform.localEulerAngles; 
@@ -41,14 +43,25 @@ public abstract class Item : MonoBehaviour
     {
         if (Equipped)
         {
+            if (usin == 1 && tim <50) {
+                tim++;
+                if (tim == 50)
+                {
+                    tim = 0;
+                    usin = 0;
+                    wait();
+                }
+            }
             //this.gameObject.GetComponent<Interaction>().enabled = false;
             this.GetComponent<BoxCollider>().enabled = false;
             if (Input.GetButtonDown("UseItem"))
             {
                 this.gameObject.transform.localPosition = new Vector3(0, 0, 0);
+                tim = 0;
+                usin = 0;
             }
-            if (Input.GetButtonUp("UseItem")) {
-                StartCoroutine(wait());
+            else if (Input.GetButtonUp("UseItem")) {
+                usin = 1;
             }
         }
         else if (transform.parent != null && !Equipped)
@@ -62,7 +75,6 @@ public abstract class Item : MonoBehaviour
     }
     public virtual void OnUse()
     {
-
         if (FindObjectOfType<MinigameScript>() == null)
         {
             if (aresol)
@@ -119,8 +131,7 @@ public abstract class Item : MonoBehaviour
                 WeaponHitBox.gameObject.transform.localEulerAngles = OriRot;
         }
     }
-    public IEnumerator wait() {
-        yield return new WaitForSeconds(1f);
+    public void  wait() {
         this.gameObject.transform.localPosition += new Vector3(100, 500, 300);
     }
 }

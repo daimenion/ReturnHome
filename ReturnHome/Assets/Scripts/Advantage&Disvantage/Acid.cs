@@ -6,6 +6,7 @@ public class Acid : AdAndDis
 {
     public override void Start()
     {
+        myname = "Acid Reflux";
         base.Start();
     }
 

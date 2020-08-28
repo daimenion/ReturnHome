@@ -137,8 +137,9 @@ MonoBehaviour:
   type: Weapon
   Equipped: 0
   gone: 1
-  damage: 5
   WeaponHitBox: {fileID: 0}
+  meleeRot: {x: 0, y: 0, z: 0}
+  damage: 5
   Melee: 0
   particles: {fileID: 3671237668129792684}
   particle: {fileID: 3812446091545658597}
@@ -3888,7 +3889,7 @@ ParticleSystem:
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
-    enabled: 1
+    enabled: 0
     collisionShape0: {fileID: 0}
     collisionShape1: {fileID: 0}
     collisionShape2: {fileID: 0}

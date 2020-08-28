@@ -19,7 +19,7 @@ public class AIParticleCollision : MonoBehaviour
     void OnParticleCollision(GameObject other)
     {
         Debug.Log("collided");
-        if (other.tag == "PlayerHitBox")
+        if (other.CompareTag("PlayerHitBox"))
         {
             GetComponent<AI>().DecreaseHealth(1f);
         }
