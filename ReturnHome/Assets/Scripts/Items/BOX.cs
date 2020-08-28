@@ -14,11 +14,13 @@ public class BOX : MonoBehaviour
     public Sprite openbox;
     public Sprite emptybox;
     InventorySystem inventory;
+    AudioSource audio;
 
     int once = 0;
     GameObject item;
     void Start() {
         inventory = FindObjectOfType<InventorySystem>();
+        audio = GetComponent<AudioSource>();
     }
     void Update() {
         if (GetComponent<Interaction>().Interacted && once == 0) {
@@ -45,6 +47,7 @@ public class BOX : MonoBehaviour
         int rand = Random.Range(0, SpawnList.Length);
         if (rand != SpawnList.Length)
         {
+            audio.Play();
             if (inventory.Inventory[inventory.Inventory.Length - 1] == null)
             {
                 item = Instantiate(SpawnList[rand],
@@ -104,6 +107,7 @@ public class BOX : MonoBehaviour
     {
             if (inventory.Inventory[inventory.Inventory.Length - 1] == null)
             {
+            audio.Play();
                 item = Instantiate(SetItem,
                       transform.position, new Quaternion(0, 0, 0, 1)) as GameObject;
             item.GetComponent<BoxCollider>().enabled = false;
