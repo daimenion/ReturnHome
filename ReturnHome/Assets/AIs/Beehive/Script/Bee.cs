@@ -48,15 +48,20 @@ public class Bee : AI
 
     public virtual void HandleStates()
     {
-        if (BHParent.GetComponent<Beehive>()!=null)
+        float dist = Vector3.Distance(playerController.transform.position, BHParent.gameObject.transform.position);
+        if (BHParent.GetComponent<Beehive>() != null)
         {
-            float dist = Vector3.Distance(playerController.transform.position, BHParent.gameObject.transform.position);
-            if (BHParent.GetComponent<Beehive>().isAttacking()&& dist <5)
+           
+            if (BHParent.GetComponent<Beehive>().isAttacking() && dist < 10)
                 CurrentState = States.Attack;
         }
-        else if(BHParent.GetComponent<BeehiveGhost>()!=null) {
-            if(BHParent.GetComponent<BeehiveGhost>().attacking)
+        else if (BHParent.GetComponent<BeehiveGhost>() != null)
+        {
+            if (BHParent.GetComponent<BeehiveGhost>().attacking)
                 CurrentState = States.Attack;
+        }
+        if (health < MaxHealth && dist < 10) {
+            CurrentState = States.Attack;
         }
         float dis = Vector3.Distance(this.transform.position, BHParent.gameObject.transform.position);
         if (dis > 5)

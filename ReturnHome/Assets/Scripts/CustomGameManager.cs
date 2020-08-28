@@ -27,6 +27,7 @@ public class CustomGameManager : MonoBehaviour
 
     public Image HPBar;
     public GameObject[] UniqueItems;
+    public GameObject UniqueSpawnPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -170,7 +171,7 @@ public class CustomGameManager : MonoBehaviour
 
     void SpawnUniqueItems() {
         if (playerDeaths > 0) {
-           Instantiate(UniqueItems[Random.Range(0, UniqueItems.Length)],new Vector3(player.gameObject.transform.position.x, player.gameObject.transform.position.y - 1.6f, player.gameObject.transform.position.z), new Quaternion(0, 45, 0, 0));
+           Instantiate(UniqueItems[Random.Range(0, UniqueItems.Length)],new Vector3(UniqueSpawnPoint.transform.position.x, 1.1f, UniqueSpawnPoint.transform.position.z), new Quaternion(0, 45, 0, 0));
         }
     }
     #region get/set and +/- functions
