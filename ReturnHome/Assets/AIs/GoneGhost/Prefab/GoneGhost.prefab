@@ -29,6 +29,8 @@ MonoBehaviour:
   StoppingDistance: 0
   TeleportInterval: 3
   BehindPlayerOffset: 5
+  teleportEffect: {fileID: 972642561789819815, guid: 19e6aecbe4330e844bd47a4cdd382ac9,
+    type: 3}
 --- !u!1001 &4951421132367831292
 PrefabInstance:
   m_ObjectHideFlags: 0

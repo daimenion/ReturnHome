@@ -4206,6 +4206,11 @@ PrefabInstance:
       propertyPath: sortpoint.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7757259949057557609, guid: 54b491de0f74be845a26516b9c5fa3b1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54b491de0f74be845a26516b9c5fa3b1, type: 3}
 --- !u!1001 &121783925
@@ -21369,6 +21374,36 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5209093160165883140, guid: bdffbf895b9a632439513180ef7ee8a6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209093160165883141, guid: bdffbf895b9a632439513180ef7ee8a6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111237730344791093, guid: bdffbf895b9a632439513180ef7ee8a6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537255718223596376, guid: bdffbf895b9a632439513180ef7ee8a6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537255718223596376, guid: bdffbf895b9a632439513180ef7ee8a6,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537255718223596376, guid: bdffbf895b9a632439513180ef7ee8a6,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdffbf895b9a632439513180ef7ee8a6, type: 3}
 --- !u!1001 &523830074
@@ -28349,7 +28384,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 9.7e-44, y: 0.28515625, z: 0.328125, w: 0.06640625}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -47387,6 +47422,7 @@ MonoBehaviour:
   rig: {fileID: 0}
   ObjectOnHand: {fileID: 0}
   statusEffects: []
+  electricityEffect: {fileID: 0}
 --- !u!95 &1172566119
 Animator:
   serializedVersion: 3
@@ -68618,6 +68654,61 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2851978925343838091, guid: 31cae92abcc129e408b77a393193cae6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875624368826418157, guid: 31cae92abcc129e408b77a393193cae6,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875624369112036472, guid: 31cae92abcc129e408b77a393193cae6,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875624369317134517, guid: 31cae92abcc129e408b77a393193cae6,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875624369450143472, guid: 31cae92abcc129e408b77a393193cae6,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875624369495956173, guid: 31cae92abcc129e408b77a393193cae6,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875624370139152951, guid: 31cae92abcc129e408b77a393193cae6,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875624370356497145, guid: 31cae92abcc129e408b77a393193cae6,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875624370464056148, guid: 31cae92abcc129e408b77a393193cae6,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875624370637961628, guid: 31cae92abcc129e408b77a393193cae6,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4875624370810000761, guid: 31cae92abcc129e408b77a393193cae6,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31cae92abcc129e408b77a393193cae6, type: 3}
 --- !u!4 &1606955916 stripped
@@ -72718,6 +72809,12 @@ PrefabInstance:
       propertyPath: ObjectOnHand
       value: 
       objectReference: {fileID: 1997004886}
+    - target: {fileID: 188222898465771443, guid: ad1a305425954c74eb6317c78eb9de2d,
+        type: 3}
+      propertyPath: electricityEffect
+      value: 
+      objectReference: {fileID: 972642561789819815, guid: 764625931a780de4aaf248498b6efa4e,
+        type: 3}
     - target: {fileID: 1377014132, guid: ad1a305425954c74eb6317c78eb9de2d, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -91713,12 +91810,7 @@ PrefabInstance:
     - target: {fileID: 1942797289137362341, guid: 2d404ad262d6b5e4ab965b3469c0a0d1,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1226949948240383080, guid: 2d404ad262d6b5e4ab965b3469c0a0d1,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.78431374
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d404ad262d6b5e4ab965b3469c0a0d1, type: 3}
@@ -92186,6 +92278,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InStasisIntro
       objectReference: {fileID: 0}
+    - target: {fileID: 4155268694678370407, guid: 9ca13e9690873194cb593ebb19d70b4e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ca13e9690873194cb593ebb19d70b4e, type: 3}
 --- !u!114 &5010980036483404096 stripped
@@ -92617,7 +92714,7 @@ PrefabInstance:
     - target: {fileID: 8226711440829455088, guid: 5ac814d158aa6fa4eacbee372b4d2da7,
         type: 3}
       propertyPath: reset
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8226711440829455088, guid: 5ac814d158aa6fa4eacbee372b4d2da7,
         type: 3}

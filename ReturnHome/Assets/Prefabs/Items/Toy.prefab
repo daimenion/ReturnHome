@@ -105,8 +105,8 @@ SpriteRenderer:
   m_SortingLayerID: -1798691383
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 15a33abbcd739c844b4c4ce90b960b44, type: 3}
-  m_Color: {r: 0, g: 0.17926931, b: 1, a: 0}
+  m_Sprite: {fileID: 21300000, guid: 6562406651f8f5940ad5b021918af57a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   aresol: 1
   usesLeft: -1
   MaxUsesLeft: -1
-  myName: Toy
+  myName: Proton Pack
   description: A TOY! Wait . . . This and vacuum
   type: Tool
   Equipped: 0
@@ -207,7 +207,7 @@ SpriteRenderer:
   m_SortingLayerID: -1798691383
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 15a33abbcd739c844b4c4ce90b960b44, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6562406651f8f5940ad5b021918af57a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
