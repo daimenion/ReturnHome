@@ -24,6 +24,7 @@ public class PlayerController : Actor
     Image oxy;
     public GameObject ObjectOnHand;
     public GameObject[] statusEffects;
+    public GameObject electricityEffect;
     public bool stop;
     public enum PlayerStates
     {
@@ -198,6 +199,7 @@ public class PlayerController : Actor
             Damage = Damage * 1.5f;
 
         PlayerDecreaseHealth(Damage, "Electricity");
+        Instantiate(electricityEffect, transform);
 
         anim.Play("Base Layer.electrocution", 0, .25f);
         Debug.Log("hit");
