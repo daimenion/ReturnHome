@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.229
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.21639642, g: 0.24336094, b: 0.2857844, a: 0.229}
+  m_IndirectSpecularColor: {r: 0.21639624, g: 0.24336061, b: 0.285784, a: 0.229}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -68659,7 +68659,7 @@ PrefabInstance:
     - target: {fileID: 1397611467455618292, guid: 31cae92abcc129e408b77a393193cae6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 760307874720609289, guid: 31cae92abcc129e408b77a393193cae6,
         type: 3}
@@ -91724,6 +91724,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 750372858}
     m_Modifications:
+    - target: {fileID: 1942797289137362339, guid: 2d404ad262d6b5e4ab965b3469c0a0d1,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerUI
+      objectReference: {fileID: 0}
     - target: {fileID: 1942797289137362343, guid: 2d404ad262d6b5e4ab965b3469c0a0d1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -91829,21 +91834,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1942797289137362339, guid: 2d404ad262d6b5e4ab965b3469c0a0d1,
+    - target: {fileID: 1942797289137362341, guid: 2d404ad262d6b5e4ab965b3469c0a0d1,
         type: 3}
-      propertyPath: m_Name
-      value: PlayerUI
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1942797288477872476, guid: 2d404ad262d6b5e4ab965b3469c0a0d1,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1471236682}
-    - target: {fileID: 1942797289137362341, guid: 2d404ad262d6b5e4ab965b3469c0a0d1,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d404ad262d6b5e4ab965b3469c0a0d1, type: 3}
 --- !u!1001 &2113436840369211694

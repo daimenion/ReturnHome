@@ -11,6 +11,13 @@ public class AstronautLivesText : MonoBehaviour
     {
         deaths = PlayerPrefs.GetInt("PlayerDeath");
         int inStasis = 4 - deaths;
-        text.text = inStasis.ToString();
+        if (deaths >= 0)
+        {
+            text.text = inStasis.ToString();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
