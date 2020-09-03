@@ -29,8 +29,10 @@ public class Interaction : MonoBehaviour//This will eventually be an abstract cl
     protected void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
+        {
             canvas.SetActive(false);
-        //Interacted = false;
+            Interacted = false;
+        }
     }
      virtual protected void myInteraction()
     {
